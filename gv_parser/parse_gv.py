@@ -50,7 +50,7 @@ for rawline in lines[1:-1]:
 		x = line.strip('assign')
 		x = x.replace(' ', '')
 		x = x.split('=')
-		x[1] = x[1].split("'b")[1]
+		# x[1] = x[1].split("'b")[1]
 		assign.append(x)
 		ipt[x[0]] = 'assign '+x[1]
 	else:
@@ -66,6 +66,10 @@ for rawline in lines[1:-1]:
 		for x in inout:
 			tmp = x[1:-1]
 			tmp = tmp.split('(')
+			if len(tmp) == 1:
+				continue
+			if tmp[1].startswith('{'):
+				continue
 			cur[tmp[1]] = tmp[0]
 			if jsobj[module[0]][tmp[0]] == 'input':
 				if tmp[1] in wire_connect.keys():
@@ -132,6 +136,7 @@ while not que.empty():
 			if submodule[m]['in_order'] == 0:
 				que.put(m)
 	res += "]\n"
-	f.write(res)
+	if jsobj[submodule[cur_mod]['motype']]['seq'] == 0:
+		f.write(res)
 f.close()
 	
