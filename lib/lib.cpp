@@ -4,6 +4,7 @@
 #include <vector>
 using namespace std;
 vector<char> GEN_AND2_D1(char a1,char a2){
+    // output 
     char z;
     z = and2(a1,a2);
 
@@ -12,6 +13,7 @@ vector<char> GEN_AND2_D1(char a1,char a2){
     return ans;
 }
 vector<char> GEN_AND2_D2(char a1,char a2){
+    // output 
     char z;
     z = and2(a1,a2);
 
@@ -20,6 +22,7 @@ vector<char> GEN_AND2_D2(char a1,char a2){
     return ans;
 }
 vector<char> GEN_AND2_D4(char a1,char a2){
+    // output 
     char z;
     z = and2(a1,a2);
 
@@ -28,6 +31,7 @@ vector<char> GEN_AND2_D4(char a1,char a2){
     return ans;
 }
 vector<char> GEN_AND2_D8(char a1,char a2){
+    // output 
     char z;
     z = and2(a1,a2);
 
@@ -36,6 +40,7 @@ vector<char> GEN_AND2_D8(char a1,char a2){
     return ans;
 }
 vector<char> GEN_AND3_D1(char a1,char a2,char a3){
+    // output 
     char z;
     z = and3(a1,a2,a3);
 
@@ -44,6 +49,7 @@ vector<char> GEN_AND3_D1(char a1,char a2,char a3){
     return ans;
 }
 vector<char> GEN_AND3_D2(char a1,char a2,char a3){
+    // output 
     char z;
     z = and3(a1,a2,a3);
 
@@ -52,6 +58,7 @@ vector<char> GEN_AND3_D2(char a1,char a2,char a3){
     return ans;
 }
 vector<char> GEN_AND3_D4(char a1,char a2,char a3){
+    // output 
     char z;
     z = and3(a1,a2,a3);
 
@@ -60,6 +67,7 @@ vector<char> GEN_AND3_D4(char a1,char a2,char a3){
     return ans;
 }
 vector<char> GEN_AND3_D8(char a1,char a2,char a3){
+    // output 
     char z;
     z = and3(a1,a2,a3);
 
@@ -68,6 +76,7 @@ vector<char> GEN_AND3_D8(char a1,char a2,char a3){
     return ans;
 }
 vector<char> GEN_AND4_D1(char a1,char a2,char a3,char a4){
+    // output 
     char z;
     z = and4(a1,a2,a3,a4);
 
@@ -76,6 +85,7 @@ vector<char> GEN_AND4_D1(char a1,char a2,char a3,char a4){
     return ans;
 }
 vector<char> GEN_AND4_D2(char a1,char a2,char a3,char a4){
+    // output 
     char z;
     z = and4(a1,a2,a3,a4);
 
@@ -84,6 +94,7 @@ vector<char> GEN_AND4_D2(char a1,char a2,char a3,char a4){
     return ans;
 }
 vector<char> GEN_AND4_D4(char a1,char a2,char a3,char a4){
+    // output 
     char z;
     z = and4(a1,a2,a3,a4);
 
@@ -92,6 +103,7 @@ vector<char> GEN_AND4_D4(char a1,char a2,char a3,char a4){
     return ans;
 }
 vector<char> GEN_AND4_D8(char a1,char a2,char a3,char a4){
+    // output 
     char z;
     z = and4(a1,a2,a3,a4);
 
@@ -100,7 +112,9 @@ vector<char> GEN_AND4_D8(char a1,char a2,char a3,char a4){
     return ans;
 }
 vector<char> GEN_AO211_D1(char a1,char a2,char b,char c){
+    // output 
     char z;
+    // wire 
     char net0; 
 
     net0 = and2(a1,a2);
@@ -111,7 +125,9 @@ vector<char> GEN_AO211_D1(char a1,char a2,char b,char c){
     return ans;
 }
 vector<char> GEN_AO211_D2(char a1,char a2,char b,char c){
+    // output 
     char z;
+    // wire 
     char net0; 
 
     net0 = and2(a1,a2);
@@ -122,7 +138,9 @@ vector<char> GEN_AO211_D2(char a1,char a2,char b,char c){
     return ans;
 }
 vector<char> GEN_AO211_D4(char a1,char a2,char b,char c){
+    // output 
     char z;
+    // wire 
     char net0; 
 
     net0 = and2(a1,a2);
@@ -133,7 +151,9 @@ vector<char> GEN_AO211_D4(char a1,char a2,char b,char c){
     return ans;
 }
 vector<char> GEN_AO21_D1(char a1,char a2,char b){
+    // output 
     char z;
+    // wire 
     char net0;
 
     net0 = and2(a1,a2);
@@ -144,7 +164,9 @@ vector<char> GEN_AO21_D1(char a1,char a2,char b){
     return ans;
 }
 vector<char> GEN_AO21_D2(char a1,char a2,char b){
+    // output 
     char z;
+    // wire 
     char net0;
 
     net0 = and2(a1,a2);
@@ -155,7 +177,9 @@ vector<char> GEN_AO21_D2(char a1,char a2,char b){
     return ans;
 }
 vector<char> GEN_AO21_D4(char a1,char a2,char b){
+    // output 
     char z;
+    // wire 
     char net0;
 
     net0 = and2(a1,a2);
@@ -166,7 +190,9 @@ vector<char> GEN_AO21_D4(char a1,char a2,char b){
     return ans;
 }
 vector<char> GEN_AO221_D1(char a1,char a2,char b1,char b2,char c){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
     net0 = and2(a1,a2);
@@ -178,7 +204,9 @@ vector<char> GEN_AO221_D1(char a1,char a2,char b1,char b2,char c){
     return ans;
 }
 vector<char> GEN_AO221_D2(char a1,char a2,char b1,char b2,char c){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
     net0 = and2(a1,a2);
@@ -190,7 +218,9 @@ vector<char> GEN_AO221_D2(char a1,char a2,char b1,char b2,char c){
     return ans;
 }
 vector<char> GEN_AO221_D4(char a1,char a2,char b1,char b2,char c){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
     net0 = and2(a1,a2);
@@ -202,7 +232,9 @@ vector<char> GEN_AO221_D4(char a1,char a2,char b1,char b2,char c){
     return ans;
 }
 vector<char> GEN_AO222_D1(char a1,char a2,char b1,char b2,char c1,char c2){
+    // output 
     char z;
+    // wire 
     char net0, net1, net2; 
 
     net0 = and2(c1,c2);
@@ -215,7 +247,9 @@ vector<char> GEN_AO222_D1(char a1,char a2,char b1,char b2,char c1,char c2){
     return ans;
 }
 vector<char> GEN_AO222_D2(char a1,char a2,char b1,char b2,char c1,char c2){
+    // output 
     char z;
+    // wire 
     char net0, net1, net2; 
 
     net0 = and2(c1,c2);
@@ -228,7 +262,9 @@ vector<char> GEN_AO222_D2(char a1,char a2,char b1,char b2,char c1,char c2){
     return ans;
 }
 vector<char> GEN_AO222_D4(char a1,char a2,char b1,char b2,char c1,char c2){
+    // output 
     char z;
+    // wire 
     char net0, net1, net2; 
 
     net0 = and2(c1,c2);
@@ -241,7 +277,9 @@ vector<char> GEN_AO222_D4(char a1,char a2,char b1,char b2,char c1,char c2){
     return ans;
 }
 vector<char> GEN_AO22_D1(char a1,char a2,char b1,char b2){
+    // output 
     char z;
+    // wire 
     char net0, net1;
 
     net0 = and2(b1,b2);
@@ -253,7 +291,9 @@ vector<char> GEN_AO22_D1(char a1,char a2,char b1,char b2){
     return ans;
 }
 vector<char> GEN_AO22_D2(char a1,char a2,char b1,char b2){
+    // output 
     char z;
+    // wire 
     char net0, net1;
 
     net0 = and2(b1,b2);
@@ -265,7 +305,9 @@ vector<char> GEN_AO22_D2(char a1,char a2,char b1,char b2){
     return ans;
 }
 vector<char> GEN_AO22_D4(char a1,char a2,char b1,char b2){
+    // output 
     char z;
+    // wire 
     char net0, net1;
 
     net0 = and2(b1,b2);
@@ -277,7 +319,9 @@ vector<char> GEN_AO22_D4(char a1,char a2,char b1,char b2){
     return ans;
 }
 vector<char> GEN_AO22_D8(char a1,char a2,char b1,char b2){
+    // output 
     char z;
+    // wire 
     char net0, net1;
 
     net0 = and2(b1,b2);
@@ -289,7 +333,9 @@ vector<char> GEN_AO22_D8(char a1,char a2,char b1,char b2){
     return ans;
 }
 vector<char> GEN_AO31_D1(char a1,char a2,char a3,char b){
+    // output 
     char z;
+    // wire 
     char net0; 
 
     net0 = and3(a1,a2,a3);
@@ -300,7 +346,9 @@ vector<char> GEN_AO31_D1(char a1,char a2,char a3,char b){
     return ans;
 }
 vector<char> GEN_AO31_D2(char a1,char a2,char a3,char b){
+    // output 
     char z;
+    // wire 
     char net0; 
 
     net0 = and3(a1,a2,a3);
@@ -311,7 +359,9 @@ vector<char> GEN_AO31_D2(char a1,char a2,char a3,char b){
     return ans;
 }
 vector<char> GEN_AO31_D4(char a1,char a2,char a3,char b){
+    // output 
     char z;
+    // wire 
     char net0; 
 
     net0 = and3(a1,a2,a3);
@@ -322,7 +372,9 @@ vector<char> GEN_AO31_D4(char a1,char a2,char a3,char b){
     return ans;
 }
 vector<char> GEN_AO32_D1(char a1,char a2,char a3,char b1,char b2){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
     net0 = and2(b1,b2);
@@ -334,7 +386,9 @@ vector<char> GEN_AO32_D1(char a1,char a2,char a3,char b1,char b2){
     return ans;
 }
 vector<char> GEN_AO32_D2(char a1,char a2,char a3,char b1,char b2){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
     net0 = and2(b1,b2);
@@ -346,7 +400,9 @@ vector<char> GEN_AO32_D2(char a1,char a2,char a3,char b1,char b2){
     return ans;
 }
 vector<char> GEN_AO32_D4(char a1,char a2,char a3,char b1,char b2){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
     net0 = and2(b1,b2);
@@ -358,7 +414,9 @@ vector<char> GEN_AO32_D4(char a1,char a2,char a3,char b1,char b2){
     return ans;
 }
 vector<char> GEN_AO33_D1(char a1,char a2,char a3,char b1,char b2,char b3){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
     net0 = and3(b1,b2,b3);
@@ -370,7 +428,9 @@ vector<char> GEN_AO33_D1(char a1,char a2,char a3,char b1,char b2,char b3){
     return ans;
 }
 vector<char> GEN_AO33_D2(char a1,char a2,char a3,char b1,char b2,char b3){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
     net0 = and3(b1,b2,b3);
@@ -382,7 +442,9 @@ vector<char> GEN_AO33_D2(char a1,char a2,char a3,char b1,char b2,char b3){
     return ans;
 }
 vector<char> GEN_AO33_D4(char a1,char a2,char a3,char b1,char b2,char b3){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
     net0 = and3(b1,b2,b3);
@@ -394,7 +456,9 @@ vector<char> GEN_AO33_D4(char a1,char a2,char a3,char b1,char b2,char b3){
     return ans;
 }
 vector<char> GEN_AOI211_D1(char a1,char a2,char b,char c){
+    // output 
     char zn;
+    // wire 
     char net0, net1; 
 
     net0 = and2(a1,a2);
@@ -406,7 +470,9 @@ vector<char> GEN_AOI211_D1(char a1,char a2,char b,char c){
     return ans;
 }
 vector<char> GEN_AOI211_D2(char a1,char a2,char b,char c){
+    // output 
     char zn;
+    // wire 
     char net0, net1; 
 
     net0 = and2(a1,a2);
@@ -418,7 +484,9 @@ vector<char> GEN_AOI211_D2(char a1,char a2,char b,char c){
     return ans;
 }
 vector<char> GEN_AOI211_D4(char a1,char a2,char b,char c){
+    // output 
     char zn;
+    // wire 
     char net0, net1; 
 
     net0 = and2(a1,a2);
@@ -430,7 +498,9 @@ vector<char> GEN_AOI211_D4(char a1,char a2,char b,char c){
     return ans;
 }
 vector<char> GEN_AOI21_D1(char a1,char a2,char b){
+    // output 
     char zn;
+    // wire 
     char net0, net1;
 
     net0 = and2(a1,a2);
@@ -442,7 +512,9 @@ vector<char> GEN_AOI21_D1(char a1,char a2,char b){
     return ans;
 }
 vector<char> GEN_AOI21_D2(char a1,char a2,char b){
+    // output 
     char zn;
+    // wire 
     char net0, net1;
 
     net0 = and2(a1,a2);
@@ -454,7 +526,9 @@ vector<char> GEN_AOI21_D2(char a1,char a2,char b){
     return ans;
 }
 vector<char> GEN_AOI21_D4(char a1,char a2,char b){
+    // output 
     char zn;
+    // wire 
     char net0, net1;
 
     net0 = and2(a1,a2);
@@ -466,7 +540,9 @@ vector<char> GEN_AOI21_D4(char a1,char a2,char b){
     return ans;
 }
 vector<char> GEN_AOI221_D1(char a1,char a2,char b1,char b2,char c){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = and2(a1,a2);
@@ -479,7 +555,9 @@ vector<char> GEN_AOI221_D1(char a1,char a2,char b1,char b2,char c){
     return ans;
 }
 vector<char> GEN_AOI221_D2(char a1,char a2,char b1,char b2,char c){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = and2(a1,a2);
@@ -492,7 +570,9 @@ vector<char> GEN_AOI221_D2(char a1,char a2,char b1,char b2,char c){
     return ans;
 }
 vector<char> GEN_AOI221_D4(char a1,char a2,char b1,char b2,char c){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = and2(a1,a2);
@@ -505,7 +585,9 @@ vector<char> GEN_AOI221_D4(char a1,char a2,char b1,char b2,char c){
     return ans;
 }
 vector<char> GEN_AOI222_D1(char a1,char a2,char b1,char b2,char c1,char c2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2, net3; 
 
     net0 = and2(c1,c2);
@@ -519,7 +601,9 @@ vector<char> GEN_AOI222_D1(char a1,char a2,char b1,char b2,char c1,char c2){
     return ans;
 }
 vector<char> GEN_AOI222_D2(char a1,char a2,char b1,char b2,char c1,char c2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2, net3; 
 
     net0 = and2(c1,c2);
@@ -533,7 +617,9 @@ vector<char> GEN_AOI222_D2(char a1,char a2,char b1,char b2,char c1,char c2){
     return ans;
 }
 vector<char> GEN_AOI222_D4(char a1,char a2,char b1,char b2,char c1,char c2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2, net3; 
 
     net0 = and2(c1,c2);
@@ -547,7 +633,9 @@ vector<char> GEN_AOI222_D4(char a1,char a2,char b1,char b2,char c1,char c2){
     return ans;
 }
 vector<char> GEN_AOI22_D1(char a1,char a2,char b1,char b2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = and2(a1,a2);
@@ -560,7 +648,9 @@ vector<char> GEN_AOI22_D1(char a1,char a2,char b1,char b2){
     return ans;
 }
 vector<char> GEN_AOI22_D2(char a1,char a2,char b1,char b2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = and2(a1,a2);
@@ -573,7 +663,9 @@ vector<char> GEN_AOI22_D2(char a1,char a2,char b1,char b2){
     return ans;
 }
 vector<char> GEN_AOI22_D4(char a1,char a2,char b1,char b2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = and2(a1,a2);
@@ -586,7 +678,9 @@ vector<char> GEN_AOI22_D4(char a1,char a2,char b1,char b2){
     return ans;
 }
 vector<char> GEN_AOI31_D1(char a1,char a2,char a3,char b){
+    // output 
     char zn;
+    // wire 
     char net0, net1;
 
     net0 = and3(a1,a2,a3);
@@ -598,7 +692,9 @@ vector<char> GEN_AOI31_D1(char a1,char a2,char a3,char b){
     return ans;
 }
 vector<char> GEN_AOI31_D2(char a1,char a2,char a3,char b){
+    // output 
     char zn;
+    // wire 
     char net0, net1;
 
     net0 = and3(a1,a2,a3);
@@ -610,7 +706,9 @@ vector<char> GEN_AOI31_D2(char a1,char a2,char a3,char b){
     return ans;
 }
 vector<char> GEN_AOI31_D4(char a1,char a2,char a3,char b){
+    // output 
     char zn;
+    // wire 
     char net0, net1;
 
     net0 = and3(a1,a2,a3);
@@ -622,7 +720,9 @@ vector<char> GEN_AOI31_D4(char a1,char a2,char a3,char b){
     return ans;
 }
 vector<char> GEN_AOI32_D1(char a1,char a2,char a3,char b1,char b2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = and3(a1,a2,a3);
@@ -635,7 +735,9 @@ vector<char> GEN_AOI32_D1(char a1,char a2,char a3,char b1,char b2){
     return ans;
 }
 vector<char> GEN_AOI32_D2(char a1,char a2,char a3,char b1,char b2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = and3(a1,a2,a3);
@@ -648,7 +750,9 @@ vector<char> GEN_AOI32_D2(char a1,char a2,char a3,char b1,char b2){
     return ans;
 }
 vector<char> GEN_AOI32_D4(char a1,char a2,char a3,char b1,char b2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = and3(a1,a2,a3);
@@ -661,7 +765,9 @@ vector<char> GEN_AOI32_D4(char a1,char a2,char a3,char b1,char b2){
     return ans;
 }
 vector<char> GEN_AOI33_D1(char a1,char a2,char a3,char b1,char b2,char b3){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = and3(a1,a2,a3);
@@ -674,7 +780,9 @@ vector<char> GEN_AOI33_D1(char a1,char a2,char a3,char b1,char b2,char b3){
     return ans;
 }
 vector<char> GEN_AOI33_D2(char a1,char a2,char a3,char b1,char b2,char b3){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = and3(a1,a2,a3);
@@ -687,7 +795,9 @@ vector<char> GEN_AOI33_D2(char a1,char a2,char a3,char b1,char b2,char b3){
     return ans;
 }
 vector<char> GEN_AOI33_D4(char a1,char a2,char a3,char b1,char b2,char b3){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = and3(a1,a2,a3);
@@ -700,6 +810,7 @@ vector<char> GEN_AOI33_D4(char a1,char a2,char a3,char b1,char b2,char b3){
     return ans;
 }
 vector<char> GEN_BUF_D1(char i){
+    // output 
     char z;
     z = buf1(i);
 
@@ -708,6 +819,7 @@ vector<char> GEN_BUF_D1(char i){
     return ans;
 }
 vector<char> GEN_BUF_D2(char i){
+    // output 
     char z;
     z = buf1(i);
 
@@ -716,6 +828,7 @@ vector<char> GEN_BUF_D2(char i){
     return ans;
 }
 vector<char> GEN_BUF_D4(char i){
+    // output 
     char z;
     z = buf1(i);
 
@@ -724,6 +837,7 @@ vector<char> GEN_BUF_D4(char i){
     return ans;
 }
 vector<char> GEN_BUF_D8(char i){
+    // output 
     char z;
     z = buf1(i);
 
@@ -732,8 +846,11 @@ vector<char> GEN_BUF_D8(char i){
     return ans;
 }
 vector<char> GEN_FA_D1(char a,char b,char ci){
+    // output 
     char s;
+    // output 
     char co;
+    // wire 
     char net0, net1, net2; 
 
     s = xor3(a,b,ci);
@@ -748,8 +865,11 @@ vector<char> GEN_FA_D1(char a,char b,char ci){
     return ans;
 }
 vector<char> GEN_FA_D2(char a,char b,char ci){
+    // output 
     char s;
+    // output 
     char co;
+    // wire 
     char net0, net1, net2; 
 
     s = xor3(a,b,ci);
@@ -764,8 +884,11 @@ vector<char> GEN_FA_D2(char a,char b,char ci){
     return ans;
 }
 vector<char> GEN_FA_D4(char a,char b,char ci){
+    // output 
     char s;
+    // output 
     char co;
+    // wire 
     char net0, net1, net2; 
 
     s = xor3(a,b,ci);
@@ -780,7 +903,9 @@ vector<char> GEN_FA_D4(char a,char b,char ci){
     return ans;
 }
 vector<char> GEN_HA_D1(char a,char b){
+    // output 
     char s;
+    // output 
     char co;
     s = xor2(a,b);
     co = and2(a,b);
@@ -791,7 +916,9 @@ vector<char> GEN_HA_D1(char a,char b){
     return ans;
 }
 vector<char> GEN_HA_D2(char a,char b){
+    // output 
     char s;
+    // output 
     char co;
     s = xor2(a,b);
     co = and2(a,b);
@@ -802,7 +929,9 @@ vector<char> GEN_HA_D2(char a,char b){
     return ans;
 }
 vector<char> GEN_HA_D4(char a,char b){
+    // output 
     char s;
+    // output 
     char co;
     s = xor2(a,b);
     co = and2(a,b);
@@ -813,6 +942,7 @@ vector<char> GEN_HA_D4(char a,char b){
     return ans;
 }
 vector<char> GEN_INV_D1(char i){
+    // output 
     char zn;
     zn = not1(i);
 
@@ -821,6 +951,7 @@ vector<char> GEN_INV_D1(char i){
     return ans;
 }
 vector<char> GEN_INV_D2(char i){
+    // output 
     char zn;
     zn = not1(i);
 
@@ -829,6 +960,7 @@ vector<char> GEN_INV_D2(char i){
     return ans;
 }
 vector<char> GEN_INV_D4(char i){
+    // output 
     char zn;
     zn = not1(i);
 
@@ -837,6 +969,7 @@ vector<char> GEN_INV_D4(char i){
     return ans;
 }
 vector<char> GEN_INV_D8(char i){
+    // output 
     char zn;
     zn = not1(i);
 
@@ -845,7 +978,9 @@ vector<char> GEN_INV_D8(char i){
     return ans;
 }
 vector<char> GEN_MAJORITYAOI222_D1(char a,char b,char c){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2, net3; 
 
     net0 = and2(a,b);
@@ -859,7 +994,9 @@ vector<char> GEN_MAJORITYAOI222_D1(char a,char b,char c){
     return ans;
 }
 vector<char> GEN_MAJORITYAOI222_D2(char a,char b,char c){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2, net3; 
 
     net0 = and2(a,b);
@@ -873,7 +1010,9 @@ vector<char> GEN_MAJORITYAOI222_D2(char a,char b,char c){
     return ans;
 }
 vector<char> GEN_MAJORITYAOI222_D4(char a,char b,char c){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2, net3; 
 
     net0 = and2(a,b);
@@ -887,7 +1026,9 @@ vector<char> GEN_MAJORITYAOI222_D4(char a,char b,char c){
     return ans;
 }
 vector<char> GEN_MAJORITYAOI22_D1(char a1,char a2,char b1,char b2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = and2(a1,a2);
@@ -900,7 +1041,9 @@ vector<char> GEN_MAJORITYAOI22_D1(char a1,char a2,char b1,char b2){
     return ans;
 }
 vector<char> GEN_MAJORITYAOI22_D2(char a1,char a2,char b1,char b2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = and2(a1,a2);
@@ -913,7 +1056,9 @@ vector<char> GEN_MAJORITYAOI22_D2(char a1,char a2,char b1,char b2){
     return ans;
 }
 vector<char> GEN_MAJORITYAOI22_D4(char a1,char a2,char b1,char b2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = and2(a1,a2);
@@ -926,7 +1071,9 @@ vector<char> GEN_MAJORITYAOI22_D4(char a1,char a2,char b1,char b2){
     return ans;
 }
 vector<char> GEN_MAJORITYOAI22_D1(char a1,char a2,char b1,char b2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = or2(a1,a2);
@@ -939,7 +1086,9 @@ vector<char> GEN_MAJORITYOAI22_D1(char a1,char a2,char b1,char b2){
     return ans;
 }
 vector<char> GEN_MAJORITYOAI22_D2(char a1,char a2,char b1,char b2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = or2(a1,a2);
@@ -952,7 +1101,9 @@ vector<char> GEN_MAJORITYOAI22_D2(char a1,char a2,char b1,char b2){
     return ans;
 }
 vector<char> GEN_MAJORITYOAI22_D4(char a1,char a2,char b1,char b2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = or2(a1,a2);
@@ -964,155 +1115,213 @@ vector<char> GEN_MAJORITYOAI22_D4(char a1,char a2,char b1,char b2){
     ans.push_back(zn);
     return ans;
 }
-/*
 vector<char> GEN_LATCH_D1(char d,char e){
+    // output 
     char q;
-    otifier = reg0(
-    dn = supply10(
-    dn = supply10(
-    dpi = udp_tlat6((q,d,e,cdn,sdn,notifier);
+    // reg 
+    char notifier;
+
+    // supply1 
+    char cdn = '1';
+    // supply1 
+    char sdn = '1';
+    q = udp_tlat(d,e,cdn,sdn,notifier);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
 vector<char> GEN_LATCH_D2(char d,char e){
+    // output 
     char q;
-    otifier = reg0(
-    dn = supply10(
-    dn = supply10(
-    dpi = udp_tlat6((q,d,e,cdn,sdn,notifier);
+    // reg 
+    char notifier;
+
+    // supply1 
+    char cdn = '1';
+    // supply1 
+    char sdn = '1';
+    q = udp_tlat(d,e,cdn,sdn,notifier);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
 vector<char> GEN_LATCH_D4(char d,char e){
+    // output 
     char q;
-    otifier = reg0(
-    dn = supply10(
-    dn = supply10(
-    dpi = udp_tlat6((q,d,e,cdn,sdn,notifier);
+    // reg 
+    char notifier;
+
+    // supply1 
+    char cdn = '1';
+    // supply1 
+    char sdn = '1';
+    q = udp_tlat(d,e,cdn,sdn,notifier);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
 vector<char> GEN_DFCLR_D1(char d,char cp,char cdn){
+    // output 
     char q;
-    otifier = reg0(
-    dn = supply10(
-    dpi = udp_dff6((q,d,cp,cdn,sdn,notifier);
+    // reg 
+    char notifier;
+
+    // supply1 
+    char sdn = '1';
+    q = udp_dff(d,cp,cdn,sdn,notifier);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
 vector<char> GEN_DFCLR_D2(char d,char cp,char cdn){
+    // output 
     char q;
-    otifier = reg0(
-    dn = supply10(
-    dpi = udp_dff6((q,d,cp,cdn,sdn,notifier);
+    // reg 
+    char notifier;
+
+    // supply1 
+    char sdn = '1';
+    q = udp_dff(d,cp,cdn,sdn,notifier);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
 vector<char> GEN_DFCLR_D4(char d,char cp,char cdn){
+    // output 
     char q;
-    otifier = reg0(
-    dn = supply10(
-    dpi = udp_dff6((q,d,cp,cdn,sdn,notifier);
+    // reg 
+    char notifier;
+
+    // supply1 
+    char sdn = '1';
+    q = udp_dff(d,cp,cdn,sdn,notifier);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
 vector<char> GEN_DFCLR_D8(char d,char cp,char cdn){
+    // output 
     char q;
-    otifier = reg0(
-    dn = supply10(
-    dpi = udp_dff6((q,d,cp,cdn,sdn,notifier);
+    // reg 
+    char notifier;
+
+    // supply1 
+    char sdn = '1';
+    q = udp_dff(d,cp,cdn,sdn,notifier);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
 vector<char> GEN_DF_D1(char d,char cp){
+    // output 
     char q;
-    otifier = reg0(
-    dn = supply10(
-    dn = supply10(
-    dpi = udp_dff6((q,d,cp,cdn,sdn,notifier);
+    // reg 
+    char notifier;
+
+    // supply1 
+    char cdn = '1';
+    // supply1 
+    char sdn = '1';
+    q = udp_dff(d,cp,cdn,sdn,notifier);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
 vector<char> GEN_DF_D2(char d,char cp){
+    // output 
     char q;
-    otifier = reg0(
-    dn = supply10(
-    dn = supply10(
-    dpi = udp_dff6((q,d,cp,cdn,sdn,notifier);
+    // reg 
+    char notifier;
+
+    // supply1 
+    char cdn = '1';
+    // supply1 
+    char sdn = '1';
+    q = udp_dff(d,cp,cdn,sdn,notifier);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
 vector<char> GEN_DF_D4(char d,char cp){
+    // output 
     char q;
-    otifier = reg0(
-    dn = supply10(
-    dn = supply10(
-    dpi = udp_dff6((q,d,cp,cdn,sdn,notifier);
+    // reg 
+    char notifier;
+
+    // supply1 
+    char cdn = '1';
+    // supply1 
+    char sdn = '1';
+    q = udp_dff(d,cp,cdn,sdn,notifier);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
 vector<char> GEN_DF_D8(char d,char cp){
+    // output 
     char q;
-    otifier = reg0(
-    dn = supply10(
-    dn = supply10(
-    dpi = udp_dff6((q,d,cp,cdn,sdn,notifier);
+    // reg 
+    char notifier;
+
+    // supply1 
+    char cdn = '1';
+    // supply1 
+    char sdn = '1';
+    q = udp_dff(d,cp,cdn,sdn,notifier);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
 vector<char> GEN_DFSET_D1(char d,char cp,char sdn){
+    // output 
     char q;
-    otifier = reg0(
-    dn = supply10(
-    dpi = udp_dff6((q,d,cp,cdn,sdn,notifier);
+    // reg 
+    char notifier;
+
+    // supply1 
+    char cdn = '1';
+    q = udp_dff(d,cp,cdn,sdn,notifier);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
 vector<char> GEN_MUX2_D2(char i0,char i1,char s){
+    // output 
     char z;
-    dpi = udp_mux24((z,i0,i1,s);
+    z = udp_mux2(i0,i1,s);
 
     vector<char> ans;
     ans.push_back(z);
     return ans;
 }
 vector<char> GEN_MUX2_D4(char i0,char i1,char s){
+    // output 
     char z;
-    dpi = udp_mux24((z,i0,i1,s);
+    z = udp_mux2(i0,i1,s);
 
     vector<char> ans;
     ans.push_back(z);
     return ans;
 }
 vector<char> GEN_MUX2N_D1(char i0,char i1,char s){
+    // output 
     char zn;
+    // wire 
     char z; 
 
-    dpi = udp_mux24((z,i0,i1,s);
+    z = udp_mux2(i0,i1,s);
     zn = not1(z);
 
     vector<char> ans;
@@ -1120,10 +1329,12 @@ vector<char> GEN_MUX2N_D1(char i0,char i1,char s){
     return ans;
 }
 vector<char> GEN_MUX2N_D2(char i0,char i1,char s){
+    // output 
     char zn;
+    // wire 
     char z; 
 
-    dpi = udp_mux24((z,i0,i1,s);
+    z = udp_mux2(i0,i1,s);
     zn = not1(z);
 
     vector<char> ans;
@@ -1131,10 +1342,12 @@ vector<char> GEN_MUX2N_D2(char i0,char i1,char s){
     return ans;
 }
 vector<char> GEN_MUX2N_D4(char i0,char i1,char s){
+    // output 
     char zn;
+    // wire 
     char z; 
 
-    dpi = udp_mux24((z,i0,i1,s);
+    z = udp_mux2(i0,i1,s);
     zn = not1(z);
 
     vector<char> ans;
@@ -1142,44 +1355,52 @@ vector<char> GEN_MUX2N_D4(char i0,char i1,char s){
     return ans;
 }
 vector<char> GEN_MUX3_D1(char i0,char i1,char i2,char s0,char s1){
+    // output 
     char z;
+    // wire 
     char net0; 
 
-    dpi = udp_mux24((net0,i0,i1,s0);
-    dpi = udp_mux24((z,net0,i2,s1);
+    net0 = udp_mux2(i0,i1,s0);
+    z = udp_mux2(net0,i2,s1);
 
     vector<char> ans;
     ans.push_back(z);
     return ans;
 }
 vector<char> GEN_MUX3_D2(char i0,char i1,char i2,char s0,char s1){
+    // output 
     char z;
+    // wire 
     char net0; 
 
-    dpi = udp_mux24((net0,i0,i1,s0);
-    dpi = udp_mux24((z,net0,i2,s1);
+    net0 = udp_mux2(i0,i1,s0);
+    z = udp_mux2(net0,i2,s1);
 
     vector<char> ans;
     ans.push_back(z);
     return ans;
 }
 vector<char> GEN_MUX3_D4(char i0,char i1,char i2,char s0,char s1){
+    // output 
     char z;
+    // wire 
     char net0; 
 
-    dpi = udp_mux24((net0,i0,i1,s0);
-    dpi = udp_mux24((z,net0,i2,s1);
+    net0 = udp_mux2(i0,i1,s0);
+    z = udp_mux2(net0,i2,s1);
 
     vector<char> ans;
     ans.push_back(z);
     return ans;
 }
 vector<char> GEN_MUX3N_D1(char i0,char i1,char i2,char s0,char s1){
+    // output 
     char zn;
+    // wire 
     char net0, net1; 
 
-    dpi = udp_mux24((net0,i0,i1,s0);
-    dpi = udp_mux24((net1,net0,i2,s1);
+    net0 = udp_mux2(i0,i1,s0);
+    net1 = udp_mux2(net0,i2,s1);
     zn = not1(net1);
 
     vector<char> ans;
@@ -1187,11 +1408,13 @@ vector<char> GEN_MUX3N_D1(char i0,char i1,char i2,char s0,char s1){
     return ans;
 }
 vector<char> GEN_MUX3N_D2(char i0,char i1,char i2,char s0,char s1){
+    // output 
     char zn;
+    // wire 
     char net0, net1; 
 
-    dpi = udp_mux24((net0,i0,i1,s0);
-    dpi = udp_mux24((net1,net0,i2,s1);
+    net0 = udp_mux2(i0,i1,s0);
+    net1 = udp_mux2(net0,i2,s1);
     zn = not1(net1);
 
     vector<char> ans;
@@ -1199,11 +1422,13 @@ vector<char> GEN_MUX3N_D2(char i0,char i1,char i2,char s0,char s1){
     return ans;
 }
 vector<char> GEN_MUX3N_D4(char i0,char i1,char i2,char s0,char s1){
+    // output 
     char zn;
+    // wire 
     char net0, net1; 
 
-    dpi = udp_mux24((net0,i0,i1,s0);
-    dpi = udp_mux24((net1,net0,i2,s1);
+    net0 = udp_mux2(i0,i1,s0);
+    net1 = udp_mux2(net0,i2,s1);
     zn = not1(net1);
 
     vector<char> ans;
@@ -1211,48 +1436,56 @@ vector<char> GEN_MUX3N_D4(char i0,char i1,char i2,char s0,char s1){
     return ans;
 }
 vector<char> GEN_MUX4_D1(char i0,char i1,char i2,char i3,char s0,char s1){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
-    dpi = udp_mux24((net0,i2,i3,s0);
-    dpi = udp_mux24((net1,i0,i1,s0);
-    dpi = udp_mux24((z,net1,net0,s1);
+    net0 = udp_mux2(i2,i3,s0);
+    net1 = udp_mux2(i0,i1,s0);
+    z = udp_mux2(net1,net0,s1);
 
     vector<char> ans;
     ans.push_back(z);
     return ans;
 }
 vector<char> GEN_MUX4_D2(char i0,char i1,char i2,char i3,char s0,char s1){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
-    dpi = udp_mux24((net0,i2,i3,s0);
-    dpi = udp_mux24((net1,i0,i1,s0);
-    dpi = udp_mux24((z,net1,net0,s1);
+    net0 = udp_mux2(i2,i3,s0);
+    net1 = udp_mux2(i0,i1,s0);
+    z = udp_mux2(net1,net0,s1);
 
     vector<char> ans;
     ans.push_back(z);
     return ans;
 }
 vector<char> GEN_MUX4_D4(char i0,char i1,char i2,char i3,char s0,char s1){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
-    dpi = udp_mux24((net0,i2,i3,s0);
-    dpi = udp_mux24((net1,i0,i1,s0);
-    dpi = udp_mux24((z,net1,net0,s1);
+    net0 = udp_mux2(i2,i3,s0);
+    net1 = udp_mux2(i0,i1,s0);
+    z = udp_mux2(net1,net0,s1);
 
     vector<char> ans;
     ans.push_back(z);
     return ans;
 }
 vector<char> GEN_MUX4N_D1(char i0,char i1,char i2,char i3,char s0,char s1){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
-    dpi = udp_mux24((net0,i2,i3,s0);
-    dpi = udp_mux24((net1,i0,i1,s0);
-    dpi = udp_mux24((net2,net1,net0,s1);
+    net0 = udp_mux2(i2,i3,s0);
+    net1 = udp_mux2(i0,i1,s0);
+    net2 = udp_mux2(net1,net0,s1);
     zn = not1(net2);
 
     vector<char> ans;
@@ -1260,12 +1493,14 @@ vector<char> GEN_MUX4N_D1(char i0,char i1,char i2,char i3,char s0,char s1){
     return ans;
 }
 vector<char> GEN_MUX4N_D2(char i0,char i1,char i2,char i3,char s0,char s1){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
-    dpi = udp_mux24((net0,i2,i3,s0);
-    dpi = udp_mux24((net1,i0,i1,s0);
-    dpi = udp_mux24((net2,net1,net0,s1);
+    net0 = udp_mux2(i2,i3,s0);
+    net1 = udp_mux2(i0,i1,s0);
+    net2 = udp_mux2(net1,net0,s1);
     zn = not1(net2);
 
     vector<char> ans;
@@ -1273,20 +1508,22 @@ vector<char> GEN_MUX4N_D2(char i0,char i1,char i2,char i3,char s0,char s1){
     return ans;
 }
 vector<char> GEN_MUX4N_D4(char i0,char i1,char i2,char i3,char s0,char s1){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
-    dpi = udp_mux24((net0,i2,i3,s0);
-    dpi = udp_mux24((net1,i0,i1,s0);
-    dpi = udp_mux24((net2,net1,net0,s1);
+    net0 = udp_mux2(i2,i3,s0);
+    net1 = udp_mux2(i0,i1,s0);
+    net2 = udp_mux2(net1,net0,s1);
     zn = not1(net2);
 
     vector<char> ans;
     ans.push_back(zn);
     return ans;
 }
-*/
 vector<char> GEN_NAND2_D1(char a1,char a2){
+    // output 
     char zn;
     zn = nand2(a1,a2);
 
@@ -1295,6 +1532,7 @@ vector<char> GEN_NAND2_D1(char a1,char a2){
     return ans;
 }
 vector<char> GEN_NAND2_D2(char a1,char a2){
+    // output 
     char zn;
     zn = nand2(a1,a2);
 
@@ -1303,6 +1541,7 @@ vector<char> GEN_NAND2_D2(char a1,char a2){
     return ans;
 }
 vector<char> GEN_NAND2_D4(char a1,char a2){
+    // output 
     char zn;
     zn = nand2(a1,a2);
 
@@ -1311,6 +1550,7 @@ vector<char> GEN_NAND2_D4(char a1,char a2){
     return ans;
 }
 vector<char> GEN_NAND2_D8(char a1,char a2){
+    // output 
     char zn;
     zn = nand2(a1,a2);
 
@@ -1319,6 +1559,7 @@ vector<char> GEN_NAND2_D8(char a1,char a2){
     return ans;
 }
 vector<char> GEN_NAND3_D1(char a1,char a2,char a3){
+    // output 
     char zn;
     zn = nand3(a1,a2,a3);
 
@@ -1327,6 +1568,7 @@ vector<char> GEN_NAND3_D1(char a1,char a2,char a3){
     return ans;
 }
 vector<char> GEN_NAND3_D2(char a1,char a2,char a3){
+    // output 
     char zn;
     zn = nand3(a1,a2,a3);
 
@@ -1335,6 +1577,7 @@ vector<char> GEN_NAND3_D2(char a1,char a2,char a3){
     return ans;
 }
 vector<char> GEN_NAND3_D4(char a1,char a2,char a3){
+    // output 
     char zn;
     zn = nand3(a1,a2,a3);
 
@@ -1343,6 +1586,7 @@ vector<char> GEN_NAND3_D4(char a1,char a2,char a3){
     return ans;
 }
 vector<char> GEN_NAND3_D8(char a1,char a2,char a3){
+    // output 
     char zn;
     zn = nand3(a1,a2,a3);
 
@@ -1351,6 +1595,7 @@ vector<char> GEN_NAND3_D8(char a1,char a2,char a3){
     return ans;
 }
 vector<char> GEN_NAND4_D1(char a1,char a2,char a3,char a4){
+    // output 
     char zn;
     zn = nand4(a1,a2,a3,a4);
 
@@ -1359,6 +1604,7 @@ vector<char> GEN_NAND4_D1(char a1,char a2,char a3,char a4){
     return ans;
 }
 vector<char> GEN_NAND4_D2(char a1,char a2,char a3,char a4){
+    // output 
     char zn;
     zn = nand4(a1,a2,a3,a4);
 
@@ -1367,6 +1613,7 @@ vector<char> GEN_NAND4_D2(char a1,char a2,char a3,char a4){
     return ans;
 }
 vector<char> GEN_NAND4_D4(char a1,char a2,char a3,char a4){
+    // output 
     char zn;
     zn = nand4(a1,a2,a3,a4);
 
@@ -1375,6 +1622,7 @@ vector<char> GEN_NAND4_D4(char a1,char a2,char a3,char a4){
     return ans;
 }
 vector<char> GEN_NAND4_D8(char a1,char a2,char a3,char a4){
+    // output 
     char zn;
     zn = nand4(a1,a2,a3,a4);
 
@@ -1383,6 +1631,7 @@ vector<char> GEN_NAND4_D8(char a1,char a2,char a3,char a4){
     return ans;
 }
 vector<char> GEN_NOR2_D1(char a1,char a2){
+    // output 
     char zn;
     zn = nor2(a1,a2);
 
@@ -1391,6 +1640,7 @@ vector<char> GEN_NOR2_D1(char a1,char a2){
     return ans;
 }
 vector<char> GEN_NOR2_D2(char a1,char a2){
+    // output 
     char zn;
     zn = nor2(a1,a2);
 
@@ -1399,6 +1649,7 @@ vector<char> GEN_NOR2_D2(char a1,char a2){
     return ans;
 }
 vector<char> GEN_NOR2_D4(char a1,char a2){
+    // output 
     char zn;
     zn = nor2(a1,a2);
 
@@ -1407,6 +1658,7 @@ vector<char> GEN_NOR2_D4(char a1,char a2){
     return ans;
 }
 vector<char> GEN_NOR2_D8(char a1,char a2){
+    // output 
     char zn;
     zn = nor2(a1,a2);
 
@@ -1415,6 +1667,7 @@ vector<char> GEN_NOR2_D8(char a1,char a2){
     return ans;
 }
 vector<char> GEN_NOR3_D1(char a1,char a2,char a3){
+    // output 
     char zn;
     zn = nor3(a1,a2,a3);
 
@@ -1423,6 +1676,7 @@ vector<char> GEN_NOR3_D1(char a1,char a2,char a3){
     return ans;
 }
 vector<char> GEN_NOR3_D2(char a1,char a2,char a3){
+    // output 
     char zn;
     zn = nor3(a1,a2,a3);
 
@@ -1431,6 +1685,7 @@ vector<char> GEN_NOR3_D2(char a1,char a2,char a3){
     return ans;
 }
 vector<char> GEN_NOR3_D4(char a1,char a2,char a3){
+    // output 
     char zn;
     zn = nor3(a1,a2,a3);
 
@@ -1439,6 +1694,7 @@ vector<char> GEN_NOR3_D4(char a1,char a2,char a3){
     return ans;
 }
 vector<char> GEN_NOR3_D8(char a1,char a2,char a3){
+    // output 
     char zn;
     zn = nor3(a1,a2,a3);
 
@@ -1447,6 +1703,7 @@ vector<char> GEN_NOR3_D8(char a1,char a2,char a3){
     return ans;
 }
 vector<char> GEN_NOR4_D1(char a1,char a2,char a3,char a4){
+    // output 
     char zn;
     zn = nor4(a1,a2,a3,a4);
 
@@ -1455,6 +1712,7 @@ vector<char> GEN_NOR4_D1(char a1,char a2,char a3,char a4){
     return ans;
 }
 vector<char> GEN_NOR4_D2(char a1,char a2,char a3,char a4){
+    // output 
     char zn;
     zn = nor4(a1,a2,a3,a4);
 
@@ -1463,6 +1721,7 @@ vector<char> GEN_NOR4_D2(char a1,char a2,char a3,char a4){
     return ans;
 }
 vector<char> GEN_NOR4_D4(char a1,char a2,char a3,char a4){
+    // output 
     char zn;
     zn = nor4(a1,a2,a3,a4);
 
@@ -1471,6 +1730,7 @@ vector<char> GEN_NOR4_D4(char a1,char a2,char a3,char a4){
     return ans;
 }
 vector<char> GEN_NOR4_D8(char a1,char a2,char a3,char a4){
+    // output 
     char zn;
     zn = nor4(a1,a2,a3,a4);
 
@@ -1479,7 +1739,9 @@ vector<char> GEN_NOR4_D8(char a1,char a2,char a3,char a4){
     return ans;
 }
 vector<char> GEN_OA211_D1(char a1,char a2,char b,char c){
+    // output 
     char z;
+    // wire 
     char net0; 
 
     net0 = or2(a1,a2);
@@ -1490,7 +1752,9 @@ vector<char> GEN_OA211_D1(char a1,char a2,char b,char c){
     return ans;
 }
 vector<char> GEN_OA211_D2(char a1,char a2,char b,char c){
+    // output 
     char z;
+    // wire 
     char net0; 
 
     net0 = or2(a1,a2);
@@ -1501,7 +1765,9 @@ vector<char> GEN_OA211_D2(char a1,char a2,char b,char c){
     return ans;
 }
 vector<char> GEN_OA211_D4(char a1,char a2,char b,char c){
+    // output 
     char z;
+    // wire 
     char net0; 
 
     net0 = or2(a1,a2);
@@ -1512,7 +1778,9 @@ vector<char> GEN_OA211_D4(char a1,char a2,char b,char c){
     return ans;
 }
 vector<char> GEN_OA21_D1(char a1,char a2,char b){
+    // output 
     char z;
+    // wire 
     char net0; 
 
     net0 = or2(a1,a2);
@@ -1523,7 +1791,9 @@ vector<char> GEN_OA21_D1(char a1,char a2,char b){
     return ans;
 }
 vector<char> GEN_OA21_D2(char a1,char a2,char b){
+    // output 
     char z;
+    // wire 
     char net0; 
 
     net0 = or2(a1,a2);
@@ -1534,7 +1804,9 @@ vector<char> GEN_OA21_D2(char a1,char a2,char b){
     return ans;
 }
 vector<char> GEN_OA21_D4(char a1,char a2,char b){
+    // output 
     char z;
+    // wire 
     char net0; 
 
     net0 = or2(a1,a2);
@@ -1545,7 +1817,9 @@ vector<char> GEN_OA21_D4(char a1,char a2,char b){
     return ans;
 }
 vector<char> GEN_OA221_D1(char a1,char a2,char b1,char b2,char c){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
     net0 = or2(b1,b2);
@@ -1557,7 +1831,9 @@ vector<char> GEN_OA221_D1(char a1,char a2,char b1,char b2,char c){
     return ans;
 }
 vector<char> GEN_OA221_D2(char a1,char a2,char b1,char b2,char c){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
     net0 = or2(b1,b2);
@@ -1569,7 +1845,9 @@ vector<char> GEN_OA221_D2(char a1,char a2,char b1,char b2,char c){
     return ans;
 }
 vector<char> GEN_OA221_D4(char a1,char a2,char b1,char b2,char c){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
     net0 = or2(b1,b2);
@@ -1581,7 +1859,9 @@ vector<char> GEN_OA221_D4(char a1,char a2,char b1,char b2,char c){
     return ans;
 }
 vector<char> GEN_OA222_D1(char a1,char a2,char b1,char b2,char c1,char c2){
+    // output 
     char z;
+    // wire 
     char net0, net1, net2; 
 
     net0 = or2(a1,a2);
@@ -1594,7 +1874,9 @@ vector<char> GEN_OA222_D1(char a1,char a2,char b1,char b2,char c1,char c2){
     return ans;
 }
 vector<char> GEN_OA222_D2(char a1,char a2,char b1,char b2,char c1,char c2){
+    // output 
     char z;
+    // wire 
     char net0, net1, net2; 
 
     net0 = or2(a1,a2);
@@ -1607,7 +1889,9 @@ vector<char> GEN_OA222_D2(char a1,char a2,char b1,char b2,char c1,char c2){
     return ans;
 }
 vector<char> GEN_OA222_D4(char a1,char a2,char b1,char b2,char c1,char c2){
+    // output 
     char z;
+    // wire 
     char net0, net1, net2; 
 
     net0 = or2(a1,a2);
@@ -1620,7 +1904,9 @@ vector<char> GEN_OA222_D4(char a1,char a2,char b1,char b2,char c1,char c2){
     return ans;
 }
 vector<char> GEN_OA22_D1(char a1,char a2,char b1,char b2){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
     net0 = or2(b1,b2);
@@ -1632,7 +1918,9 @@ vector<char> GEN_OA22_D1(char a1,char a2,char b1,char b2){
     return ans;
 }
 vector<char> GEN_OA22_D2(char a1,char a2,char b1,char b2){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
     net0 = or2(b1,b2);
@@ -1644,7 +1932,9 @@ vector<char> GEN_OA22_D2(char a1,char a2,char b1,char b2){
     return ans;
 }
 vector<char> GEN_OA22_D4(char a1,char a2,char b1,char b2){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
     net0 = or2(b1,b2);
@@ -1656,7 +1946,9 @@ vector<char> GEN_OA22_D4(char a1,char a2,char b1,char b2){
     return ans;
 }
 vector<char> GEN_OA31_D1(char a1,char a2,char a3,char b){
+    // output 
     char z;
+    // wire 
     char net0; 
 
     net0 = or3(a1,a2,a3);
@@ -1667,7 +1959,9 @@ vector<char> GEN_OA31_D1(char a1,char a2,char a3,char b){
     return ans;
 }
 vector<char> GEN_OA31_D2(char a1,char a2,char a3,char b){
+    // output 
     char z;
+    // wire 
     char net0; 
 
     net0 = or3(a1,a2,a3);
@@ -1678,7 +1972,9 @@ vector<char> GEN_OA31_D2(char a1,char a2,char a3,char b){
     return ans;
 }
 vector<char> GEN_OA31_D4(char a1,char a2,char a3,char b){
+    // output 
     char z;
+    // wire 
     char net0; 
 
     net0 = or3(a1,a2,a3);
@@ -1689,7 +1985,9 @@ vector<char> GEN_OA31_D4(char a1,char a2,char a3,char b){
     return ans;
 }
 vector<char> GEN_OA32_D1(char a1,char a2,char a3,char b1,char b2){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
     net0 = or2(b1,b2);
@@ -1701,7 +1999,9 @@ vector<char> GEN_OA32_D1(char a1,char a2,char a3,char b1,char b2){
     return ans;
 }
 vector<char> GEN_OA32_D2(char a1,char a2,char a3,char b1,char b2){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
     net0 = or2(b1,b2);
@@ -1713,7 +2013,9 @@ vector<char> GEN_OA32_D2(char a1,char a2,char a3,char b1,char b2){
     return ans;
 }
 vector<char> GEN_OA32_D4(char a1,char a2,char a3,char b1,char b2){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
     net0 = or2(b1,b2);
@@ -1725,7 +2027,9 @@ vector<char> GEN_OA32_D4(char a1,char a2,char a3,char b1,char b2){
     return ans;
 }
 vector<char> GEN_OA33_D1(char a1,char a2,char a3,char b1,char b2,char b3){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
     net0 = or3(b1,b2,b3);
@@ -1737,7 +2041,9 @@ vector<char> GEN_OA33_D1(char a1,char a2,char a3,char b1,char b2,char b3){
     return ans;
 }
 vector<char> GEN_OA33_D2(char a1,char a2,char a3,char b1,char b2,char b3){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
     net0 = or3(b1,b2,b3);
@@ -1749,7 +2055,9 @@ vector<char> GEN_OA33_D2(char a1,char a2,char a3,char b1,char b2,char b3){
     return ans;
 }
 vector<char> GEN_OA33_D4(char a1,char a2,char a3,char b1,char b2,char b3){
+    // output 
     char z;
+    // wire 
     char net0, net1; 
 
     net0 = or3(b1,b2,b3);
@@ -1761,7 +2069,9 @@ vector<char> GEN_OA33_D4(char a1,char a2,char a3,char b1,char b2,char b3){
     return ans;
 }
 vector<char> GEN_OAI211_D1(char a1,char a2,char b,char c){
+    // output 
     char zn;
+    // wire 
     char net0, net1; 
 
     net0 = or2(a1,a2);
@@ -1773,7 +2083,9 @@ vector<char> GEN_OAI211_D1(char a1,char a2,char b,char c){
     return ans;
 }
 vector<char> GEN_OAI211_D2(char a1,char a2,char b,char c){
+    // output 
     char zn;
+    // wire 
     char net0, net1; 
 
     net0 = or2(a1,a2);
@@ -1785,7 +2097,9 @@ vector<char> GEN_OAI211_D2(char a1,char a2,char b,char c){
     return ans;
 }
 vector<char> GEN_OAI211_D4(char a1,char a2,char b,char c){
+    // output 
     char zn;
+    // wire 
     char net0, net1; 
 
     net0 = or2(a1,a2);
@@ -1797,7 +2111,9 @@ vector<char> GEN_OAI211_D4(char a1,char a2,char b,char c){
     return ans;
 }
 vector<char> GEN_OAI21_D1(char a1,char a2,char b){
+    // output 
     char zn;
+    // wire 
     char net0, net1; 
 
     net0 = or2(a1,a2);
@@ -1809,7 +2125,9 @@ vector<char> GEN_OAI21_D1(char a1,char a2,char b){
     return ans;
 }
 vector<char> GEN_OAI21_D2(char a1,char a2,char b){
+    // output 
     char zn;
+    // wire 
     char net0, net1; 
 
     net0 = or2(a1,a2);
@@ -1821,7 +2139,9 @@ vector<char> GEN_OAI21_D2(char a1,char a2,char b){
     return ans;
 }
 vector<char> GEN_OAI21_D4(char a1,char a2,char b){
+    // output 
     char zn;
+    // wire 
     char net0, net1; 
 
     net0 = or2(a1,a2);
@@ -1833,7 +2153,9 @@ vector<char> GEN_OAI21_D4(char a1,char a2,char b){
     return ans;
 }
 vector<char> GEN_OAI221_D1(char a1,char a2,char b1,char b2,char c){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = or2(a1,a2);
@@ -1846,7 +2168,9 @@ vector<char> GEN_OAI221_D1(char a1,char a2,char b1,char b2,char c){
     return ans;
 }
 vector<char> GEN_OAI221_D2(char a1,char a2,char b1,char b2,char c){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = or2(a1,a2);
@@ -1859,7 +2183,9 @@ vector<char> GEN_OAI221_D2(char a1,char a2,char b1,char b2,char c){
     return ans;
 }
 vector<char> GEN_OAI221_D4(char a1,char a2,char b1,char b2,char c){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = or2(a1,a2);
@@ -1872,7 +2198,9 @@ vector<char> GEN_OAI221_D4(char a1,char a2,char b1,char b2,char c){
     return ans;
 }
 vector<char> GEN_OAI222_D1(char a1,char a2,char b1,char b2,char c1,char c2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2, net3; 
 
     net0 = or2(c1,c2);
@@ -1886,7 +2214,9 @@ vector<char> GEN_OAI222_D1(char a1,char a2,char b1,char b2,char c1,char c2){
     return ans;
 }
 vector<char> GEN_OAI222_D2(char a1,char a2,char b1,char b2,char c1,char c2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2, net3; 
 
     net0 = or2(c1,c2);
@@ -1900,7 +2230,9 @@ vector<char> GEN_OAI222_D2(char a1,char a2,char b1,char b2,char c1,char c2){
     return ans;
 }
 vector<char> GEN_OAI222_D4(char a1,char a2,char b1,char b2,char c1,char c2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2, net3; 
 
     net0 = or2(c1,c2);
@@ -1914,7 +2246,9 @@ vector<char> GEN_OAI222_D4(char a1,char a2,char b1,char b2,char c1,char c2){
     return ans;
 }
 vector<char> GEN_OAI22_D1(char a1,char a2,char b1,char b2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = or2(a1,a2);
@@ -1927,7 +2261,9 @@ vector<char> GEN_OAI22_D1(char a1,char a2,char b1,char b2){
     return ans;
 }
 vector<char> GEN_OAI22_D2(char a1,char a2,char b1,char b2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = or2(a1,a2);
@@ -1940,7 +2276,9 @@ vector<char> GEN_OAI22_D2(char a1,char a2,char b1,char b2){
     return ans;
 }
 vector<char> GEN_OAI22_D4(char a1,char a2,char b1,char b2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = or2(a1,a2);
@@ -1953,7 +2291,9 @@ vector<char> GEN_OAI22_D4(char a1,char a2,char b1,char b2){
     return ans;
 }
 vector<char> GEN_OAI31_D1(char a1,char a2,char a3,char b){
+    // output 
     char zn;
+    // wire 
     char net0, net1; 
 
     net0 = or3(a1,a2,a3);
@@ -1965,7 +2305,9 @@ vector<char> GEN_OAI31_D1(char a1,char a2,char a3,char b){
     return ans;
 }
 vector<char> GEN_OAI31_D2(char a1,char a2,char a3,char b){
+    // output 
     char zn;
+    // wire 
     char net0, net1; 
 
     net0 = or3(a1,a2,a3);
@@ -1977,7 +2319,9 @@ vector<char> GEN_OAI31_D2(char a1,char a2,char a3,char b){
     return ans;
 }
 vector<char> GEN_OAI31_D4(char a1,char a2,char a3,char b){
+    // output 
     char zn;
+    // wire 
     char net0, net1; 
 
     net0 = or3(a1,a2,a3);
@@ -1989,7 +2333,9 @@ vector<char> GEN_OAI31_D4(char a1,char a2,char a3,char b){
     return ans;
 }
 vector<char> GEN_OAI32_D1(char a1,char a2,char a3,char b1,char b2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = or3(a1,a2,a3);
@@ -2002,7 +2348,9 @@ vector<char> GEN_OAI32_D1(char a1,char a2,char a3,char b1,char b2){
     return ans;
 }
 vector<char> GEN_OAI32_D2(char a1,char a2,char a3,char b1,char b2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = or3(a1,a2,a3);
@@ -2015,7 +2363,9 @@ vector<char> GEN_OAI32_D2(char a1,char a2,char a3,char b1,char b2){
     return ans;
 }
 vector<char> GEN_OAI32_D4(char a1,char a2,char a3,char b1,char b2){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = or3(a1,a2,a3);
@@ -2028,7 +2378,9 @@ vector<char> GEN_OAI32_D4(char a1,char a2,char a3,char b1,char b2){
     return ans;
 }
 vector<char> GEN_OAI33_D1(char a1,char a2,char a3,char b1,char b2,char b3){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = or3(a1,a2,a3);
@@ -2041,7 +2393,9 @@ vector<char> GEN_OAI33_D1(char a1,char a2,char a3,char b1,char b2,char b3){
     return ans;
 }
 vector<char> GEN_OAI33_D2(char a1,char a2,char a3,char b1,char b2,char b3){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = or3(a1,a2,a3);
@@ -2054,7 +2408,9 @@ vector<char> GEN_OAI33_D2(char a1,char a2,char a3,char b1,char b2,char b3){
     return ans;
 }
 vector<char> GEN_OAI33_D4(char a1,char a2,char a3,char b1,char b2,char b3){
+    // output 
     char zn;
+    // wire 
     char net0, net1, net2; 
 
     net0 = or3(a1,a2,a3);
@@ -2067,6 +2423,7 @@ vector<char> GEN_OAI33_D4(char a1,char a2,char a3,char b1,char b2,char b3){
     return ans;
 }
 vector<char> GEN_OR2_D1(char a1,char a2){
+    // output 
     char z;
     z = or2(a1,a2);
 
@@ -2075,6 +2432,7 @@ vector<char> GEN_OR2_D1(char a1,char a2){
     return ans;
 }
 vector<char> GEN_OR2_D2(char a1,char a2){
+    // output 
     char z;
     z = or2(a1,a2);
 
@@ -2083,6 +2441,7 @@ vector<char> GEN_OR2_D2(char a1,char a2){
     return ans;
 }
 vector<char> GEN_OR2_D4(char a1,char a2){
+    // output 
     char z;
     z = or2(a1,a2);
 
@@ -2091,6 +2450,7 @@ vector<char> GEN_OR2_D4(char a1,char a2){
     return ans;
 }
 vector<char> GEN_OR2_D8(char a1,char a2){
+    // output 
     char z;
     z = or2(a1,a2);
 
@@ -2099,6 +2459,7 @@ vector<char> GEN_OR2_D8(char a1,char a2){
     return ans;
 }
 vector<char> GEN_OR3_D1(char a1,char a2,char a3){
+    // output 
     char z;
     z = or3(a1,a2,a3);
 
@@ -2107,6 +2468,7 @@ vector<char> GEN_OR3_D1(char a1,char a2,char a3){
     return ans;
 }
 vector<char> GEN_OR3_D2(char a1,char a2,char a3){
+    // output 
     char z;
     z = or3(a1,a2,a3);
 
@@ -2115,6 +2477,7 @@ vector<char> GEN_OR3_D2(char a1,char a2,char a3){
     return ans;
 }
 vector<char> GEN_OR3_D4(char a1,char a2,char a3){
+    // output 
     char z;
     z = or3(a1,a2,a3);
 
@@ -2123,6 +2486,7 @@ vector<char> GEN_OR3_D4(char a1,char a2,char a3){
     return ans;
 }
 vector<char> GEN_OR3_D8(char a1,char a2,char a3){
+    // output 
     char z;
     z = or3(a1,a2,a3);
 
@@ -2131,6 +2495,7 @@ vector<char> GEN_OR3_D8(char a1,char a2,char a3){
     return ans;
 }
 vector<char> GEN_OR4_D1(char a1,char a2,char a3,char a4){
+    // output 
     char z;
     z = or4(a1,a2,a3,a4);
 
@@ -2139,6 +2504,7 @@ vector<char> GEN_OR4_D1(char a1,char a2,char a3,char a4){
     return ans;
 }
 vector<char> GEN_OR4_D2(char a1,char a2,char a3,char a4){
+    // output 
     char z;
     z = or4(a1,a2,a3,a4);
 
@@ -2147,6 +2513,7 @@ vector<char> GEN_OR4_D2(char a1,char a2,char a3,char a4){
     return ans;
 }
 vector<char> GEN_OR4_D4(char a1,char a2,char a3,char a4){
+    // output 
     char z;
     z = or4(a1,a2,a3,a4);
 
@@ -2155,6 +2522,7 @@ vector<char> GEN_OR4_D4(char a1,char a2,char a3,char a4){
     return ans;
 }
 vector<char> GEN_OR4_D8(char a1,char a2,char a3,char a4){
+    // output 
     char z;
     z = or4(a1,a2,a3,a4);
 
@@ -2162,257 +2530,320 @@ vector<char> GEN_OR4_D8(char a1,char a2,char a3,char a4){
     ans.push_back(z);
     return ans;
 }
-/*
 vector<char> GEN_SCAN_DFCLR_D1(char si,char d,char se,char cp,char cdn){
+    // output 
     char q;
+    // wire 
     char cdn_i, d_i, q_buf, sd, si_check, d_check, se1, se_check, xsi_check, xd_check, xcdn_i; 
 
-    otifier = reg0(
+    // reg 
+    char notifier;
+
     cdn_i = buf1(cdn);
-    dn = supply10(
-    dpi = udp_mux24((d_i,d,si,se);
-    dpi = udp_dff6((q_buf,d_i,cp,cdn_i,sdn,notifier);
+    // supply1 
+    char sdn = '1';
+    d_i = udp_mux2(d,si,se);
+    q_buf = udp_dff(d_i,cp,cdn_i,sdn,notifier);
     q = buf1(q_buf);
     sd = not1(se);
     si_check = and2(cdn_i,se);
     d_check = and2(cdn_i,sd);
     se1 = xor2(si,d);
     se_check = and2(se1,cdn_i);
-    dpi = udp_xbuf3((xsi_check,si_check,1'b1);
-    dpi = udp_xbuf3((xd_check,d_check,1'b1);
-    dpi = udp_xbuf3((xcdn_i,cdn_i,1'b1);
+    xsi_check = udp_xbuf(si_check,1'b1);
+    xd_check = udp_xbuf(d_check,1'b1);
+    xcdn_i = udp_xbuf(cdn_i,1'b1);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
 vector<char> GEN_SCAN_DFCLR_D2(char si,char d,char se,char cp,char cdn){
+    // output 
     char q;
+    // wire 
     char cdn_i, d_i, q_buf, sd, si_check, d_check, se1, se_check, xsi_check, xd_check, xcdn_i; 
 
-    otifier = reg0(
+    // reg 
+    char notifier;
+
     cdn_i = buf1(cdn);
-    dn = supply10(
-    dpi = udp_mux24((d_i,d,si,se);
-    dpi = udp_dff6((q_buf,d_i,cp,cdn_i,sdn,notifier);
+    // supply1 
+    char sdn = '1';
+    d_i = udp_mux2(d,si,se);
+    q_buf = udp_dff(d_i,cp,cdn_i,sdn,notifier);
     q = buf1(q_buf);
     sd = not1(se);
     si_check = and2(cdn_i,se);
     d_check = and2(cdn_i,sd);
     se1 = xor2(si,d);
     se_check = and2(se1,cdn_i);
-    dpi = udp_xbuf3((xsi_check,si_check,1'b1);
-    dpi = udp_xbuf3((xd_check,d_check,1'b1);
-    dpi = udp_xbuf3((xcdn_i,cdn_i,1'b1);
+    xsi_check = udp_xbuf(si_check,1'b1);
+    xd_check = udp_xbuf(d_check,1'b1);
+    xcdn_i = udp_xbuf(cdn_i,1'b1);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
 vector<char> GEN_SCAN_DFCLR_D4(char si,char d,char se,char cp,char cdn){
+    // output 
     char q;
+    // wire 
     char cdn_i, d_i, q_buf, sd, si_check, d_check, se1, se_check, xsi_check, xd_check, xcdn_i; 
 
-    otifier = reg0(
+    // reg 
+    char notifier;
+
     cdn_i = buf1(cdn);
-    dn = supply10(
-    dpi = udp_mux24((d_i,d,si,se);
-    dpi = udp_dff6((q_buf,d_i,cp,cdn_i,sdn,notifier);
+    // supply1 
+    char sdn = '1';
+    d_i = udp_mux2(d,si,se);
+    q_buf = udp_dff(d_i,cp,cdn_i,sdn,notifier);
     q = buf1(q_buf);
     sd = not1(se);
     si_check = and2(cdn_i,se);
     d_check = and2(cdn_i,sd);
     se1 = xor2(si,d);
     se_check = and2(se1,cdn_i);
-    dpi = udp_xbuf3((xsi_check,si_check,1'b1);
-    dpi = udp_xbuf3((xd_check,d_check,1'b1);
-    dpi = udp_xbuf3((xcdn_i,cdn_i,1'b1);
+    xsi_check = udp_xbuf(si_check,1'b1);
+    xd_check = udp_xbuf(d_check,1'b1);
+    xcdn_i = udp_xbuf(cdn_i,1'b1);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
 vector<char> GEN_SCAN_DFCLR_D8(char si,char d,char se,char cp,char cdn){
+    // output 
     char q;
+    // wire 
     char cdn_i, d_i, q_buf, sd, si_check, d_check, se1, se_check, xsi_check, xd_check, xcdn_i; 
 
-    otifier = reg0(
+    // reg 
+    char notifier;
+
     cdn_i = buf1(cdn);
-    dn = supply10(
-    dpi = udp_mux24((d_i,d,si,se);
-    dpi = udp_dff6((q_buf,d_i,cp,cdn_i,sdn,notifier);
+    // supply1 
+    char sdn = '1';
+    d_i = udp_mux2(d,si,se);
+    q_buf = udp_dff(d_i,cp,cdn_i,sdn,notifier);
     q = buf1(q_buf);
     sd = not1(se);
     si_check = and2(cdn_i,se);
     d_check = and2(cdn_i,sd);
     se1 = xor2(si,d);
     se_check = and2(se1,cdn_i);
-    dpi = udp_xbuf3((xsi_check,si_check,1'b1);
-    dpi = udp_xbuf3((xd_check,d_check,1'b1);
-    dpi = udp_xbuf3((xcdn_i,cdn_i,1'b1);
+    xsi_check = udp_xbuf(si_check,1'b1);
+    xd_check = udp_xbuf(d_check,1'b1);
+    xcdn_i = udp_xbuf(cdn_i,1'b1);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
 vector<char> GEN_SCAN_DF_D1(char si,char d,char se,char cp){
+    // output 
     char q;
+    // wire 
     char d_i, q_buf, sd, xse, xsd; 
 
-    otifier = reg0(
-    dn = supply10(
-    dn = supply10(
-    dpi = udp_mux24((d_i,d,si,se);
-    dpi = udp_dff6((q_buf,d_i,cp,cdn,sdn,notifier);
+    // reg 
+    char notifier;
+
+    // supply1 
+    char cdn = '1';
+    // supply1 
+    char sdn = '1';
+    d_i = udp_mux2(d,si,se);
+    q_buf = udp_dff(d_i,cp,cdn,sdn,notifier);
     q = buf1(q_buf);
     sd = not1(se);
-    dpi = udp_xbuf3((xse,se,1'b1);
-    dpi = udp_xbuf3((xsd,sd,1'b1);
+    xse = udp_xbuf(se,1'b1);
+    xsd = udp_xbuf(sd,1'b1);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
 vector<char> GEN_SCAN_DF_D2(char si,char d,char se,char cp){
+    // output 
     char q;
+    // wire 
     char d_i, q_buf, sd, xse, xsd; 
 
-    otifier = reg0(
-    dn = supply10(
-    dn = supply10(
-    dpi = udp_mux24((d_i,d,si,se);
-    dpi = udp_dff6((q_buf,d_i,cp,cdn,sdn,notifier);
+    // reg 
+    char notifier;
+
+    // supply1 
+    char cdn = '1';
+    // supply1 
+    char sdn = '1';
+    d_i = udp_mux2(d,si,se);
+    q_buf = udp_dff(d_i,cp,cdn,sdn,notifier);
     q = buf1(q_buf);
     sd = not1(se);
-    dpi = udp_xbuf3((xse,se,1'b1);
-    dpi = udp_xbuf3((xsd,sd,1'b1);
+    xse = udp_xbuf(se,1'b1);
+    xsd = udp_xbuf(sd,1'b1);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
 vector<char> GEN_SCAN_DF_D4(char si,char d,char se,char cp){
+    // output 
     char q;
+    // wire 
     char d_i, q_buf, sd, xse, xsd; 
 
-    otifier = reg0(
-    dn = supply10(
-    dn = supply10(
-    dpi = udp_mux24((d_i,d,si,se);
-    dpi = udp_dff6((q_buf,d_i,cp,cdn,sdn,notifier);
+    // reg 
+    char notifier;
+
+    // supply1 
+    char cdn = '1';
+    // supply1 
+    char sdn = '1';
+    d_i = udp_mux2(d,si,se);
+    q_buf = udp_dff(d_i,cp,cdn,sdn,notifier);
     q = buf1(q_buf);
     sd = not1(se);
-    dpi = udp_xbuf3((xse,se,1'b1);
-    dpi = udp_xbuf3((xsd,sd,1'b1);
+    xse = udp_xbuf(se,1'b1);
+    xsd = udp_xbuf(sd,1'b1);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
 vector<char> GEN_SCAN_DF_D8(char si,char d,char se,char cp){
+    // output 
     char q;
+    // wire 
     char d_i, q_buf, sd, xse, xsd; 
 
-    otifier = reg0(
-    dn = supply10(
-    dn = supply10(
-    dpi = udp_mux24((d_i,d,si,se);
-    dpi = udp_dff6((q_buf,d_i,cp,cdn,sdn,notifier);
+    // reg 
+    char notifier;
+
+    // supply1 
+    char cdn = '1';
+    // supply1 
+    char sdn = '1';
+    d_i = udp_mux2(d,si,se);
+    q_buf = udp_dff(d_i,cp,cdn,sdn,notifier);
     q = buf1(q_buf);
     sd = not1(se);
-    dpi = udp_xbuf3((xse,se,1'b1);
-    dpi = udp_xbuf3((xsd,sd,1'b1);
+    xse = udp_xbuf(se,1'b1);
+    xsd = udp_xbuf(sd,1'b1);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
 vector<char> GEN_SCAN_DFSET_D1(char si,char d,char se,char cp,char sdn){
+    // output 
     char q;
+    // wire 
     char sdn_i, d_i, q_buf, sd, si_check, d_check, xsi_check, xd_check, xsdn_i;
 
-    otifier = reg0(
+    // reg 
+    char notifier;
+
     sdn_i = buf1(sdn);
-    dn = supply10(
-    dpi = udp_mux24((d_i,d,si,se);
-    dpi = udp_dff6((q_buf,d_i,cp,cdn,sdn_i,notifier);
+    // supply1 
+    char cdn = '1';
+    d_i = udp_mux2(d,si,se);
+    q_buf = udp_dff(d_i,cp,cdn,sdn_i,notifier);
     q = buf1(q_buf);
     sd = not1(se);
     si_check = and2(sdn_i,se);
     d_check = and2(sdn_i,sd);
-    dpi = udp_xbuf3((xsi_check,si_check,1'b1);
-    dpi = udp_xbuf3((xd_check,d_check,1'b1);
-    dpi = udp_xbuf3((xsdn_i,sdn_i,1'b1);
+    xsi_check = udp_xbuf(si_check,1'b1);
+    xd_check = udp_xbuf(d_check,1'b1);
+    xsdn_i = udp_xbuf(sdn_i,1'b1);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
 vector<char> GEN_SCAN_DFSET_D2(char si,char d,char se,char cp,char sdn){
+    // output 
     char q;
+    // wire 
     char sdn_i, d_i, q_buf, sd, si_check, d_check, xsi_check, xd_check, xsdn_i;
 
-    otifier = reg0(
+    // reg 
+    char notifier;
+
     sdn_i = buf1(sdn);
-    dn = supply10(
-    dpi = udp_mux24((d_i,d,si,se);
-    dpi = udp_dff6((q_buf,d_i,cp,cdn,sdn_i,notifier);
+    // supply1 
+    char cdn = '1';
+    d_i = udp_mux2(d,si,se);
+    q_buf = udp_dff(d_i,cp,cdn,sdn_i,notifier);
     q = buf1(q_buf);
     sd = not1(se);
     si_check = and2(sdn_i,se);
     d_check = and2(sdn_i,sd);
-    dpi = udp_xbuf3((xsi_check,si_check,1'b1);
-    dpi = udp_xbuf3((xd_check,d_check,1'b1);
-    dpi = udp_xbuf3((xsdn_i,sdn_i,1'b1);
+    xsi_check = udp_xbuf(si_check,1'b1);
+    xd_check = udp_xbuf(d_check,1'b1);
+    xsdn_i = udp_xbuf(sdn_i,1'b1);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
 vector<char> GEN_SCAN_DFSET_D4(char si,char d,char se,char cp,char sdn){
+    // output 
     char q;
+    // wire 
     char sdn_i, d_i, q_buf, sd, si_check, d_check, xsi_check, xd_check, xsdn_i;
 
-    otifier = reg0(
+    // reg 
+    char notifier;
+
     sdn_i = buf1(sdn);
-    dn = supply10(
-    dpi = udp_mux24((d_i,d,si,se);
-    dpi = udp_dff6((q_buf,d_i,cp,cdn,sdn_i,notifier);
+    // supply1 
+    char cdn = '1';
+    d_i = udp_mux2(d,si,se);
+    q_buf = udp_dff(d_i,cp,cdn,sdn_i,notifier);
     q = buf1(q_buf);
     sd = not1(se);
     si_check = and2(sdn_i,se);
     d_check = and2(sdn_i,sd);
-    dpi = udp_xbuf3((xsi_check,si_check,1'b1);
-    dpi = udp_xbuf3((xd_check,d_check,1'b1);
-    dpi = udp_xbuf3((xsdn_i,sdn_i,1'b1);
+    xsi_check = udp_xbuf(si_check,1'b1);
+    xd_check = udp_xbuf(d_check,1'b1);
+    xsdn_i = udp_xbuf(sdn_i,1'b1);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
 vector<char> GEN_SCAN_DFSET_D8(char si,char d,char se,char cp,char sdn){
+    // output 
     char q;
+    // wire 
     char sdn_i, d_i, q_buf, sd, si_check, d_check, xsi_check, xd_check, xsdn_i;
 
-    otifier = reg0(
+    // reg 
+    char notifier;
+
     sdn_i = buf1(sdn);
-    dn = supply10(
-    dpi = udp_mux24((d_i,d,si,se);
-    dpi = udp_dff6((q_buf,d_i,cp,cdn,sdn_i,notifier);
+    // supply1 
+    char cdn = '1';
+    d_i = udp_mux2(d,si,se);
+    q_buf = udp_dff(d_i,cp,cdn,sdn_i,notifier);
     q = buf1(q_buf);
     sd = not1(se);
     si_check = and2(sdn_i,se);
     d_check = and2(sdn_i,sd);
-    dpi = udp_xbuf3((xsi_check,si_check,1'b1);
-    dpi = udp_xbuf3((xd_check,d_check,1'b1);
-    dpi = udp_xbuf3((xsdn_i,sdn_i,1'b1);
+    xsi_check = udp_xbuf(si_check,1'b1);
+    xd_check = udp_xbuf(d_check,1'b1);
+    xsdn_i = udp_xbuf(sdn_i,1'b1);
 
     vector<char> ans;
     ans.push_back(q);
     return ans;
 }
-*/
 vector<char> GEN_XNOR2_D1(char a1,char a2){
+    // output 
     char zn;
     zn = xnor2(a1,a2);
 
@@ -2421,6 +2852,7 @@ vector<char> GEN_XNOR2_D1(char a1,char a2){
     return ans;
 }
 vector<char> GEN_XNOR2_D2(char a1,char a2){
+    // output 
     char zn;
     zn = xnor2(a1,a2);
 
@@ -2429,6 +2861,7 @@ vector<char> GEN_XNOR2_D2(char a1,char a2){
     return ans;
 }
 vector<char> GEN_XNOR2_D4(char a1,char a2){
+    // output 
     char zn;
     zn = xnor2(a1,a2);
 
@@ -2437,6 +2870,7 @@ vector<char> GEN_XNOR2_D4(char a1,char a2){
     return ans;
 }
 vector<char> GEN_XNOR2_D8(char a1,char a2){
+    // output 
     char zn;
     zn = xnor2(a1,a2);
 
@@ -2445,6 +2879,7 @@ vector<char> GEN_XNOR2_D8(char a1,char a2){
     return ans;
 }
 vector<char> GEN_XNOR3_D1(char a1,char a2,char a3){
+    // output 
     char zn;
     zn = xnor3(a1,a2,a3);
 
@@ -2453,6 +2888,7 @@ vector<char> GEN_XNOR3_D1(char a1,char a2,char a3){
     return ans;
 }
 vector<char> GEN_XNOR3_D2(char a1,char a2,char a3){
+    // output 
     char zn;
     zn = xnor3(a1,a2,a3);
 
@@ -2461,6 +2897,7 @@ vector<char> GEN_XNOR3_D2(char a1,char a2,char a3){
     return ans;
 }
 vector<char> GEN_XNOR3_D4(char a1,char a2,char a3){
+    // output 
     char zn;
     zn = xnor3(a1,a2,a3);
 
@@ -2469,6 +2906,7 @@ vector<char> GEN_XNOR3_D4(char a1,char a2,char a3){
     return ans;
 }
 vector<char> GEN_XOR2_D1(char a1,char a2){
+    // output 
     char z;
     z = xor2(a1,a2);
 
@@ -2477,6 +2915,7 @@ vector<char> GEN_XOR2_D1(char a1,char a2){
     return ans;
 }
 vector<char> GEN_XOR2_D2(char a1,char a2){
+    // output 
     char z;
     z = xor2(a1,a2);
 
@@ -2485,6 +2924,7 @@ vector<char> GEN_XOR2_D2(char a1,char a2){
     return ans;
 }
 vector<char> GEN_XOR2_D4(char a1,char a2){
+    // output 
     char z;
     z = xor2(a1,a2);
 
@@ -2493,6 +2933,7 @@ vector<char> GEN_XOR2_D4(char a1,char a2){
     return ans;
 }
 vector<char> GEN_XOR2_D8(char a1,char a2){
+    // output 
     char z;
     z = xor2(a1,a2);
 
@@ -2501,6 +2942,7 @@ vector<char> GEN_XOR2_D8(char a1,char a2){
     return ans;
 }
 vector<char> GEN_XOR3_D1(char a1,char a2,char a3){
+    // output 
     char z;
     z = xor3(a1,a2,a3);
 
@@ -2509,6 +2951,7 @@ vector<char> GEN_XOR3_D1(char a1,char a2,char a3){
     return ans;
 }
 vector<char> GEN_XOR3_D2(char a1,char a2,char a3){
+    // output 
     char z;
     z = xor3(a1,a2,a3);
 
@@ -2517,6 +2960,7 @@ vector<char> GEN_XOR3_D2(char a1,char a2,char a3){
     return ans;
 }
 vector<char> GEN_XOR3_D4(char a1,char a2,char a3){
+    // output 
     char z;
     z = xor3(a1,a2,a3);
 
@@ -2524,20 +2968,3 @@ vector<char> GEN_XOR3_D4(char a1,char a2,char a3){
     ans.push_back(z);
     return ans;
 }
-/*
-vector<char> GEN_CLKGATE_D1(char te,char e,char cp){
-    char q;
-    d = reg0(
-    (negedg = always1(cp)
-     = qd3(te|e;
-     = assign4(=cp&qd;
-
-    vector<char> ans;
-    ans.push_back(q);
-    return ans;
-}
-vector<char> GEN_SYNC2C_D1(char clk,char d,char clr_){
-    char q;
-    ,d0 = reg0(
-    (posedg = always4(clkornegedgeclr_)
-*/
