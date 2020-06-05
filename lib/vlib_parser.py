@@ -105,7 +105,12 @@ def make_function(wr):
             buf += line.split()[0]
             buf += "("
             for i in range(len(line.split())-3):
-                buf += line.split()[3+i]
+                if(line.split()[3+i]=='1\'b1);'):
+                    buf += '\'1\');'
+                elif(line.split()[3+i]=='1\'b0);'):
+                    buf += '\'0\');'
+                else:       
+                    buf += line.split()[3+i]
             for i in range(len(buf)):
                 #print(buf[i],end="")
                 wr.write(buf[i])

@@ -2550,9 +2550,9 @@ vector<char> GEN_SCAN_DFCLR_D1(char si,char d,char se,char cp,char cdn){
     d_check = and2(cdn_i,sd);
     se1 = xor2(si,d);
     se_check = and2(se1,cdn_i);
-    xsi_check = udp_xbuf(si_check,1'b1);
-    xd_check = udp_xbuf(d_check,1'b1);
-    xcdn_i = udp_xbuf(cdn_i,1'b1);
+    xsi_check = udp_xbuf(si_check,'1');
+    xd_check = udp_xbuf(d_check,'1');
+    xcdn_i = udp_xbuf(cdn_i,'1');
 
     vector<char> ans;
     ans.push_back(q);
@@ -2578,9 +2578,9 @@ vector<char> GEN_SCAN_DFCLR_D2(char si,char d,char se,char cp,char cdn){
     d_check = and2(cdn_i,sd);
     se1 = xor2(si,d);
     se_check = and2(se1,cdn_i);
-    xsi_check = udp_xbuf(si_check,1'b1);
-    xd_check = udp_xbuf(d_check,1'b1);
-    xcdn_i = udp_xbuf(cdn_i,1'b1);
+    xsi_check = udp_xbuf(si_check,'1');
+    xd_check = udp_xbuf(d_check,'1');
+    xcdn_i = udp_xbuf(cdn_i,'1');
 
     vector<char> ans;
     ans.push_back(q);
@@ -2606,9 +2606,9 @@ vector<char> GEN_SCAN_DFCLR_D4(char si,char d,char se,char cp,char cdn){
     d_check = and2(cdn_i,sd);
     se1 = xor2(si,d);
     se_check = and2(se1,cdn_i);
-    xsi_check = udp_xbuf(si_check,1'b1);
-    xd_check = udp_xbuf(d_check,1'b1);
-    xcdn_i = udp_xbuf(cdn_i,1'b1);
+    xsi_check = udp_xbuf(si_check,'1');
+    xd_check = udp_xbuf(d_check,'1');
+    xcdn_i = udp_xbuf(cdn_i,'1');
 
     vector<char> ans;
     ans.push_back(q);
@@ -2634,9 +2634,9 @@ vector<char> GEN_SCAN_DFCLR_D8(char si,char d,char se,char cp,char cdn){
     d_check = and2(cdn_i,sd);
     se1 = xor2(si,d);
     se_check = and2(se1,cdn_i);
-    xsi_check = udp_xbuf(si_check,1'b1);
-    xd_check = udp_xbuf(d_check,1'b1);
-    xcdn_i = udp_xbuf(cdn_i,1'b1);
+    xsi_check = udp_xbuf(si_check,'1');
+    xd_check = udp_xbuf(d_check,'1');
+    xcdn_i = udp_xbuf(cdn_i,'1');
 
     vector<char> ans;
     ans.push_back(q);
@@ -2659,8 +2659,8 @@ vector<char> GEN_SCAN_DF_D1(char si,char d,char se,char cp){
     q_buf = udp_dff(d_i,cp,cdn,sdn,notifier);
     q = buf1(q_buf);
     sd = not1(se);
-    xse = udp_xbuf(se,1'b1);
-    xsd = udp_xbuf(sd,1'b1);
+    xse = udp_xbuf(se,'1');
+    xsd = udp_xbuf(sd,'1');
 
     vector<char> ans;
     ans.push_back(q);
@@ -2683,8 +2683,8 @@ vector<char> GEN_SCAN_DF_D2(char si,char d,char se,char cp){
     q_buf = udp_dff(d_i,cp,cdn,sdn,notifier);
     q = buf1(q_buf);
     sd = not1(se);
-    xse = udp_xbuf(se,1'b1);
-    xsd = udp_xbuf(sd,1'b1);
+    xse = udp_xbuf(se,'1');
+    xsd = udp_xbuf(sd,'1');
 
     vector<char> ans;
     ans.push_back(q);
@@ -2707,8 +2707,8 @@ vector<char> GEN_SCAN_DF_D4(char si,char d,char se,char cp){
     q_buf = udp_dff(d_i,cp,cdn,sdn,notifier);
     q = buf1(q_buf);
     sd = not1(se);
-    xse = udp_xbuf(se,1'b1);
-    xsd = udp_xbuf(sd,1'b1);
+    xse = udp_xbuf(se,'1');
+    xsd = udp_xbuf(sd,'1');
 
     vector<char> ans;
     ans.push_back(q);
@@ -2731,8 +2731,8 @@ vector<char> GEN_SCAN_DF_D8(char si,char d,char se,char cp){
     q_buf = udp_dff(d_i,cp,cdn,sdn,notifier);
     q = buf1(q_buf);
     sd = not1(se);
-    xse = udp_xbuf(se,1'b1);
-    xsd = udp_xbuf(sd,1'b1);
+    xse = udp_xbuf(se,'1');
+    xsd = udp_xbuf(sd,'1');
 
     vector<char> ans;
     ans.push_back(q);
@@ -2756,9 +2756,9 @@ vector<char> GEN_SCAN_DFSET_D1(char si,char d,char se,char cp,char sdn){
     sd = not1(se);
     si_check = and2(sdn_i,se);
     d_check = and2(sdn_i,sd);
-    xsi_check = udp_xbuf(si_check,1'b1);
-    xd_check = udp_xbuf(d_check,1'b1);
-    xsdn_i = udp_xbuf(sdn_i,1'b1);
+    xsi_check = udp_xbuf(si_check,'1');
+    xd_check = udp_xbuf(d_check,'1');
+    xsdn_i = udp_xbuf(sdn_i,'1');
 
     vector<char> ans;
     ans.push_back(q);
@@ -2782,9 +2782,9 @@ vector<char> GEN_SCAN_DFSET_D2(char si,char d,char se,char cp,char sdn){
     sd = not1(se);
     si_check = and2(sdn_i,se);
     d_check = and2(sdn_i,sd);
-    xsi_check = udp_xbuf(si_check,1'b1);
-    xd_check = udp_xbuf(d_check,1'b1);
-    xsdn_i = udp_xbuf(sdn_i,1'b1);
+    xsi_check = udp_xbuf(si_check,'1');
+    xd_check = udp_xbuf(d_check,'1');
+    xsdn_i = udp_xbuf(sdn_i,'1');
 
     vector<char> ans;
     ans.push_back(q);
@@ -2808,9 +2808,9 @@ vector<char> GEN_SCAN_DFSET_D4(char si,char d,char se,char cp,char sdn){
     sd = not1(se);
     si_check = and2(sdn_i,se);
     d_check = and2(sdn_i,sd);
-    xsi_check = udp_xbuf(si_check,1'b1);
-    xd_check = udp_xbuf(d_check,1'b1);
-    xsdn_i = udp_xbuf(sdn_i,1'b1);
+    xsi_check = udp_xbuf(si_check,'1');
+    xd_check = udp_xbuf(d_check,'1');
+    xsdn_i = udp_xbuf(sdn_i,'1');
 
     vector<char> ans;
     ans.push_back(q);
@@ -2834,9 +2834,9 @@ vector<char> GEN_SCAN_DFSET_D8(char si,char d,char se,char cp,char sdn){
     sd = not1(se);
     si_check = and2(sdn_i,se);
     d_check = and2(sdn_i,sd);
-    xsi_check = udp_xbuf(si_check,1'b1);
-    xd_check = udp_xbuf(d_check,1'b1);
-    xsdn_i = udp_xbuf(sdn_i,1'b1);
+    xsi_check = udp_xbuf(si_check,'1');
+    xd_check = udp_xbuf(d_check,'1');
+    xsdn_i = udp_xbuf(sdn_i,'1');
 
     vector<char> ans;
     ans.push_back(q);
