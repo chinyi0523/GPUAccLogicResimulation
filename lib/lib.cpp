@@ -3,6 +3,106 @@
 #include <string.h>
 #include <vector>
 using namespace std;
+char not1(char a){
+    int out = ~(int(a)-48);
+    return char(out+48);
+}
+char and2(char a,char b){
+    int out = (int(a)-48)&&(int(b)-48);
+    return char(out+48);
+}
+char and3(char a,char b,char c){
+    int out = (int(a)-48)&&(int(b)-48)&&(int(c)-48);
+    return char(out+48);
+}
+char and4(char a,char b,char c,char d){
+    int out = (int(a)-48)&&(int(b)-48)&&(int(c)-48)&&(int(d)-48);
+    return char(out+48);
+}
+char or2(char a,char b){
+    int out = (int(a)-48)||(int(b)-48);
+    return char(out+48);
+}
+char or3(char a,char b,char c){
+    int out = (int(a)-48)||(int(b)-48)||(int(c)-48);
+    return char(out+48);
+}
+char or4(char a,char b,char c,char d){
+    int out = (int(a)-48)||(int(b)-48)||(int(c)-48)||(int(d)-48);
+    return char(out+48);
+}
+char xor2(char a,char b){
+    int out = (int(a)-48)^(int(b)-48);
+    return char(out+48);
+}
+char xor3(char a,char b,char c){
+    int out = (int(a)-48)^(int(b)-48)^(int(c)-48);
+    return char(out+48);
+}
+char nor2(char a,char b){
+    int out = ~(int(a)-48)||(int(b)-48);
+    return char(out+48);
+}
+char nor3(char a,char b,char c){
+    int out = ~(int(a)-48)||(int(b)-48)||(int(c)-48);
+    return char(out+48);
+}
+char nor4(char a,char b,char c,char d){
+    int out = ~(int(a)-48)||(int(b)-48)||(int(c)-48)||(int(d)-48);
+    return char(out+48);
+}
+char nand2(char a,char b){
+    int out = ~(int(a)-48)&&(int(b)-48);
+    return char(out+48);
+}
+char nand3(char a,char b,char c){
+    int out = ~(int(a)-48)&&(int(b)-48)&&(int(c)-48);
+    return char(out+48);
+}
+char nand4(char a,char b,char c,char d){
+    int out = ~(int(a)-48)&&(int(b)-48)&&(int(c)-48)&&(int(d)-48);
+    return char(out+48);
+}
+char xnor2(char a,char b){
+    int out = (int(a)-48)^~(int(b)-48);
+    return char(out+48);
+}
+char xnor3(char a,char b,char c){
+    int out = (int(a)-48)^~(int(b)-48)^~(int(c)-48);
+    return char(out+48);
+}
+char buf1(char a){
+    return a;
+}
+char udp_tlat(char d,char e,char cdn,char sdn,char notifier){
+    return '0';
+}
+char udp_dff(char d,char cp,char cdn,char sdn,char notifier){ 
+    return '0';
+}
+char udp_mux2(char a,char b,char sel){
+    if(sel=='x'){
+        if(a==b) return a;
+        else return 'x';
+    }
+    else if(sel=='0'){
+        if(a=='1'||a=='0') return a;
+        else return 'x';
+    }
+    else if(sel=='1'){
+        if(b=='1'||b=='0') return b;
+        else return 'x';
+    }
+    else return 'x';
+}
+char udp_xbuf(char i,char check){
+    if(check=='1'){
+        if(i=='1'||i=='x') return '1';
+        else if(i=='0') return '0';
+        else return 'x';
+    }
+    else return 'x';
+}
 vector<char> GEN_AND2_D1(char a1,char a2){
     // output 
     char z;
