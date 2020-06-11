@@ -2,74 +2,96 @@
 #include <stdlib.h>
 #include <string.h>
 #include <vector>
+#include <bitset>
 using namespace std;
 char not1(char a){
-    int out = ~(int(a)-48);
-    return char(out+48);
+    if(a=='x'||a=='z') return 'x';
+    else if(a=='1') return '0';
+    else if(a=='0') return '1';
+    else {
+        cerr<<"ERROR IN NOT1"<<endl;
+        return '0';
+    }
 }
 char and2(char a,char b){
-    int out = (int(a)-48)&&(int(b)-48);
-    return char(out+48);
+    if(a=='0'||b=='0') return '0' ;
+    else if(a=='x'||b=='x'||a=='z'||b=='z') return 'x';
+    else return '1';
 }
 char and3(char a,char b,char c){
-    int out = (int(a)-48)&&(int(b)-48)&&(int(c)-48);
-    return char(out+48);
+    if(a=='0'||b=='0'||c=='0') return '0' ;
+    else if(a=='x'||b=='x'||c=='x'||a=='z'||b=='z'||c=='z') return 'x';
+    else return '1';
 }
 char and4(char a,char b,char c,char d){
-    int out = (int(a)-48)&&(int(b)-48)&&(int(c)-48)&&(int(d)-48);
-    return char(out+48);
+    if(a=='0'||b=='0'||c=='0'||d=='0') return '0' ;
+    else if(a=='x'||b=='x'||c=='x'||d=='x'||a=='z'||b=='z'||c=='z'||d=='z') return 'x';
+    else return '1';
 }
 char or2(char a,char b){
-    int out = (int(a)-48)||(int(b)-48);
-    return char(out+48);
+    if(a=='1'||b=='1') return '1' ;
+    else if(a=='x'||b=='x'||a=='z'||b=='z') return 'x';
+    else return '0';
 }
 char or3(char a,char b,char c){
-    int out = (int(a)-48)||(int(b)-48)||(int(c)-48);
-    return char(out+48);
+    if(a=='1'||b=='1'||c=='1') return '1' ;
+    else if(a=='x'||b=='x'||c=='x'||a=='z'||b=='z'||c=='z') return 'x';
+    else return '0';
 }
 char or4(char a,char b,char c,char d){
-    int out = (int(a)-48)||(int(b)-48)||(int(c)-48)||(int(d)-48);
-    return char(out+48);
+    if(a=='1'||b=='1'||c=='1'||d=='1') return '1' ;
+    else if(a=='x'||b=='x'||c=='x'||d=='x'||a=='z'||b=='z'||c=='z'||d=='z') return 'x';
+    else return '0';
 }
 char xor2(char a,char b){
-    int out = (int(a)-48)^(int(b)-48);
-    return char(out+48);
-}
+    if(a=='x'||b=='x'||a=='z'||b=='z') return 'x';
+    else if (a!=b) return'1';
+    else return '0';
+}    
 char xor3(char a,char b,char c){
-    int out = (int(a)-48)^(int(b)-48)^(int(c)-48);
-    return char(out+48);
+    if(a=='x'||b=='x'||c=='x'||a=='z'||b=='z'||c=='z') return 'x';
+    else if((int(a)+int(b)+int(c))%2==1) return '1';
+    else return '0';
 }
 char nor2(char a,char b){
-    int out = ~(int(a)-48)||(int(b)-48);
-    return char(out+48);
+    if(a=='1'||b=='1') return '0' ;
+    else if(a=='x'||b=='x'||a=='z'||b=='z') return 'x';
+    else return '1';
 }
 char nor3(char a,char b,char c){
-    int out = ~(int(a)-48)||(int(b)-48)||(int(c)-48);
-    return char(out+48);
+    if(a=='1'||b=='1'||c=='1') return '0' ;
+    else if(a=='x'||b=='x'||c=='x'||a=='z'||b=='z'||c=='z') return 'x';
+    else return '1';
 }
 char nor4(char a,char b,char c,char d){
-    int out = ~(int(a)-48)||(int(b)-48)||(int(c)-48)||(int(d)-48);
-    return char(out+48);
+    if(a=='1'||b=='1'||c=='1'||d=='1') return '0' ;
+    else if(a=='x'||b=='x'||c=='x'||d=='x'||a=='z'||b=='z'||c=='z'||d=='z') return 'x';
+    else return '1';
 }
 char nand2(char a,char b){
-    int out = ~(int(a)-48)&&(int(b)-48);
-    return char(out+48);
+    if(a=='0'||b=='0') return '1' ;
+    else if(a=='x'||b=='x'||a=='z'||b=='z') return 'x';
+    else return '0';
 }
 char nand3(char a,char b,char c){
-    int out = ~(int(a)-48)&&(int(b)-48)&&(int(c)-48);
-    return char(out+48);
+    if(a=='0'||b=='0'||c=='0') return '1' ;
+    else if(a=='x'||b=='x'||c=='x'||a=='z'||b=='z'||c=='z') return 'x';
+    else return '0';
 }
 char nand4(char a,char b,char c,char d){
-    int out = ~(int(a)-48)&&(int(b)-48)&&(int(c)-48)&&(int(d)-48);
-    return char(out+48);
+    if(a=='0'||b=='0'||c=='0'||d=='0') return '1' ;
+    else if(a=='x'||b=='x'||c=='x'||d=='x'||a=='z'||b=='z'||c=='z'||d=='z') return 'x';
+    else return '0';
 }
 char xnor2(char a,char b){
-    int out = (int(a)-48)^~(int(b)-48);
-    return char(out+48);
+    if(a=='x'||b=='x'||a=='z'||b=='z') return 'x';
+    else if(a==b) return '1';
+    else return '0';
 }
 char xnor3(char a,char b,char c){
-    int out = (int(a)-48)^~(int(b)-48)^~(int(c)-48);
-    return char(out+48);
+    if(a=='x'||b=='x'||c=='x'||a=='z'||b=='z'||c=='z') return 'x';
+    else if((int(a)+int(b)+int(c))%2==0) return '1';
+    else return '0';
 }
 char buf1(char a){
     return a;

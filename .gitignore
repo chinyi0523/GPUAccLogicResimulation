@@ -1,0 +1,5 @@
+lib/a.out
+lib/lib.o
+lib/*.vlib
+lib/makefile
+.DS_Store
