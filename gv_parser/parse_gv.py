@@ -50,7 +50,7 @@ for rawline in lines[1:-1]:
 		x = line.strip('assign')
 		x = x.replace(' ', '')
 		x = x.split('=')
-		# x[1] = x[1].split("'b")[1]
+		x[1] = x[1].split("'b")[1]
 		assign.append(x)
 		ipt[x[0]] = 'assign '+x[1]
 	else:
@@ -61,7 +61,6 @@ for rawline in lines[1:-1]:
 		inout = inout[:-1]
 		inout = inout.replace(' ', '')
 		inout = inout.split(',')
-		cnt = 0
 		in_sp, out_sp = [], []
 		for x in inout:
 			tmp = x[1:-1]
@@ -76,8 +75,6 @@ for rawline in lines[1:-1]:
 					wire_connect[tmp[1]].append(module[1])
 				else:
 					wire_connect[tmp[1]] = [module[1]]
-				if "'b" not in tmp[1] and tmp[1] not in ipt.keys():
-					cnt += 1
 				in_sp.append(tmp[1])
 			elif jsobj[module[0]][tmp[0]] == 'output':
 				if jsobj[module[0]]['seq'] == 1:
@@ -87,12 +84,20 @@ for rawline in lines[1:-1]:
 				out_sp.append(tmp[1])
 			else:
 				print('err')
-		cur['in_order'] = cnt
 		cur['input'] = in_sp
 		cur['output'] = out_sp
-		if cnt == 0:
-			que.put(module[1])
 		submodule[module[1]] = cur
+
+for x in submodule.keys():
+	inp = submodule[x]['input']
+	cnt = 0
+	for y in inp:
+		if "'b" not in y and not ipt[y].startswith('primary_input') and not ipt[y].startswith('pseudo_primary_input') and not ipt[y].startswith('assign'):
+			cnt += 1
+	submodule[x]['in_order'] = cnt
+	if cnt == 0:
+		submodule[x]['lev'] = 1
+		que.put(x)
 
 
 f.close()
@@ -115,7 +120,7 @@ f.write("*****************\n")
 
 while not que.empty():
 	cur_mod = que.get()
-	res = cur_mod + " " + submodule[cur_mod]['motype'] + " [ "
+	res = cur_mod + " " + submodule[cur_mod]['motype'] + " " + str(submodule[cur_mod]['lev']) + " [ "
 	inp = submodule[cur_mod]['input']
 	for i in inp:
 		res += submodule[cur_mod][i]
@@ -134,6 +139,7 @@ while not que.empty():
 		for m in wire_connect[o]:
 			submodule[m]['in_order'] -= 1
 			if submodule[m]['in_order'] == 0:
+				submodule[m]['lev'] = submodule[cur_mod]['lev']+1
 				que.put(m)
 	res += "]\n"
 	if jsobj[submodule[cur_mod]['motype']]['seq'] == 0:
