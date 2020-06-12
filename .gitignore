@@ -1,5 +1,6 @@
 lib/a.out
 lib/lib.o
 lib/*.vlib
-lib/makefile
+simulate/*.vcd
+simulate/*.txt
 .DS_Store
