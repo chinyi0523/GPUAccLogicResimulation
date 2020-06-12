@@ -17,7 +17,7 @@ que = queue.Queue()
 for rawline in lines[1:-1]:
 	line = rawline.strip(' ')
 	if line.startswith('input'):
-		x = line.strip('input')
+		x = line.lstrip('input')
 		x = x.replace(' ', '')
 		x = x.split(',')
 		for element in x:
@@ -32,7 +32,7 @@ for rawline in lines[1:-1]:
 				ipt[xx] = 'primary_input '+xx
 				pipt.append(xx)
 	elif line.startswith('output'):
-		x = line.strip('output')
+		x = line.lstrip('output')
 		x = x.replace(' ', '')
 		x = x.split(',')
 		for element in x:
@@ -47,10 +47,9 @@ for rawline in lines[1:-1]:
 	elif line.startswith('wire'):
 		continue
 	elif line.startswith('assign'):
-		x = line.strip('assign')
+		x = line.lstrip('assign')
 		x = x.replace(' ', '')
 		x = x.split('=')
-		x[1] = x[1].split("'b")[1]
 		assign.append(x)
 		ipt[x[0]] = 'assign '+x[1]
 	else:
@@ -78,7 +77,13 @@ for rawline in lines[1:-1]:
 				in_sp.append(tmp[1])
 			elif jsobj[module[0]][tmp[0]] == 'output':
 				if jsobj[module[0]]['seq'] == 1:
-					ipt[tmp[1]] = 'pseudo_primary_input '+tmp[1]
+					if tmp[1].endswith(']'):
+							t, s = tmp[1].split('[')[1].split(':')
+							xx = tmp[1].split('[')[0]
+							for i in range(int(s[:-1]), int(t)+1):
+								ipt[(xx+'['+str(i)+']')] = 'pseudo_primary_input '+(xx+'['+str(i)+']')
+					else:
+						ipt[tmp[1]] = 'pseudo_primary_input '+tmp[1]
 				else:
 					ipt[tmp[1]] = module[1]+' '+tmp[0]
 				out_sp.append(tmp[1])
@@ -92,6 +97,8 @@ for x in submodule.keys():
 	inp = submodule[x]['input']
 	cnt = 0
 	for y in inp:
+		if "'b" not in y and y not in ipt.keys():
+			ipt[y] = 'pseudo_primary_input '+y
 		if "'b" not in y and not ipt[y].startswith('primary_input') and not ipt[y].startswith('pseudo_primary_input') and not ipt[y].startswith('assign'):
 			cnt += 1
 	submodule[x]['in_order'] = cnt
@@ -118,20 +125,30 @@ for line in assign:
 
 f.write("*****************\n")
 
+cur_lev, split_group = 1, 0
+
 while not que.empty():
 	cur_mod = que.get()
-	res = cur_mod + " " + submodule[cur_mod]['motype'] + " " + str(submodule[cur_mod]['lev']) + " [ "
+	if submodule[cur_mod]['lev'] > cur_lev or split_group == 8:
+		cur_lev = submodule[cur_mod]['lev']
+		split_group = 0
+		f.write('\n')
+	res = cur_mod + " " + submodule[cur_mod]['motype'] + " " + str(submodule[cur_mod]['lev']) + " ["
 	inp = submodule[cur_mod]['input']
-	for i in inp:
+	for s, i in enumerate(inp):
+		if s > 0:
+			res += ","
 		res += submodule[cur_mod][i]
 		if i in ipt.keys():
-			res += "("+ipt[i]+") "
+			res += "("+ipt[i]+")"
 		else:
-			res += "("+i+") "
-	res += "] [ "
+			res += "("+i+")"
+	res += "] ["
 	out = submodule[cur_mod]['output']
-	for o in out:
-		res +=  (submodule[cur_mod][o]+"("+o+") ")
+	for s, o in enumerate(out):
+		if s > 0:
+			res += ","
+		res +=  (submodule[cur_mod][o]+"("+o+")")
 		if o in popt:
 			continue
 		if o not in wire_connect.keys():
@@ -143,6 +160,7 @@ while not que.empty():
 				que.put(m)
 	res += "]\n"
 	if jsobj[submodule[cur_mod]['motype']]['seq'] == 0:
+		split_group += 1
 		f.write(res)
 f.close()
 	
