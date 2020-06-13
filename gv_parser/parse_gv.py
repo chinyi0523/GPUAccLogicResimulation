@@ -11,6 +11,7 @@ popt = []
 assign = []
 submodule = {}
 jsobj = json.load(open(sys.argv[2]))
+sdfobj = json.load(open(sys.argv[3]))
 ipt = {}
 wire_connect = {}
 que = queue.Queue()
@@ -26,10 +27,10 @@ for rawline in lines[1:-1]:
 				t, s = element.split(']')[0].split(':')
 				xx = element.split(']')[1]
 				for i in range(int(s), int(t[1:])+1):
-					ipt[(xx+'['+str(i)+']')] = 'primary_input '+(xx+'['+str(i)+']')
+					ipt[(xx+'['+str(i)+']')] = 'primary_input:'+(xx+'['+str(i)+']')
 					pipt.append(xx+'['+str(i)+']')
 			else:
-				ipt[xx] = 'primary_input '+xx
+				ipt[xx] = 'primary_input:'+xx
 				pipt.append(xx)
 	elif line.startswith('output'):
 		x = line.lstrip('output')
@@ -51,54 +52,47 @@ for rawline in lines[1:-1]:
 		x = x.replace(' ', '')
 		x = x.split('=')
 		assign.append(x)
-		ipt[x[0]] = 'assign '+x[1]
+		ipt[x[0]] = 'assign:'+x[1]
 	else:
 		module, inout = line.split('(', 1)
 		module = module[:-1].split(' ')
-		cur = {}
-		cur['motype'] = module[0]
-		inout = inout[:-1]
-		inout = inout.replace(' ', '')
-		inout = inout.split(',')
-		in_sp, out_sp = [], []
-		for x in inout:
-			tmp = x[1:-1]
-			tmp = tmp.split('(')
-			if len(tmp) == 1:
-				continue
-			if tmp[1].startswith('{'):
-				continue
-			cur[tmp[1]] = tmp[0]
-			if jsobj[module[0]][tmp[0]] == 'input':
-				if tmp[1] in wire_connect.keys():
-					wire_connect[tmp[1]].append(module[1])
-				else:
-					wire_connect[tmp[1]] = [module[1]]
-				in_sp.append(tmp[1])
-			elif jsobj[module[0]][tmp[0]] == 'output':
-				if jsobj[module[0]]['seq'] == 1:
-					if tmp[1].endswith(']'):
-							t, s = tmp[1].split('[')[1].split(':')
-							xx = tmp[1].split('[')[0]
-							for i in range(int(s[:-1]), int(t)+1):
-								ipt[(xx+'['+str(i)+']')] = 'pseudo_primary_input '+(xx+'['+str(i)+']')
+		if jsobj[module[0]]['seq'] == 0:
+			cur = {}
+			cur['motype'] = module[0]
+			inout = inout[:-1]
+			inout = inout.replace(' ', '')
+			inout = inout.split(',')
+			in_sp, out_sp = [], []
+			for x in inout:
+				tmp = x[1:-1]
+				tmp = tmp.split('(')
+				if len(tmp) == 1:
+					continue
+				if tmp[1].startswith('{'):
+					continue
+				cur[tmp[1]] = tmp[0]
+				if jsobj[module[0]][tmp[0]] == 'input':
+					if tmp[1] in wire_connect.keys():
+						wire_connect[tmp[1]].append(module[1])
 					else:
-						ipt[tmp[1]] = 'pseudo_primary_input '+tmp[1]
+						wire_connect[tmp[1]] = [module[1]]
+					in_sp.append(tmp[1])
+				elif jsobj[module[0]][tmp[0]] == 'output':
+					ipt[tmp[1]] = module[1]+':'+tmp[0]
+					out_sp.append(tmp[1])
 				else:
-					ipt[tmp[1]] = module[1]+' '+tmp[0]
-				out_sp.append(tmp[1])
-			else:
-				print('err')
-		cur['input'] = in_sp
-		cur['output'] = out_sp
-		submodule[module[1]] = cur
+					print('err')
+			cur['input'] = in_sp
+			cur['output'] = out_sp
+			submodule[module[1]] = cur
 
 for x in submodule.keys():
 	inp = submodule[x]['input']
 	cnt = 0
 	for y in inp:
 		if "'b" not in y and y not in ipt.keys():
-			ipt[y] = 'pseudo_primary_input '+y
+			ipt[y] = 'pseudo_primary_input:'+y
+			pipt.append(y)
 		if "'b" not in y and not ipt[y].startswith('primary_input') and not ipt[y].startswith('pseudo_primary_input') and not ipt[y].startswith('assign'):
 			cnt += 1
 	submodule[x]['in_order'] = cnt
@@ -108,7 +102,7 @@ for x in submodule.keys():
 
 
 f.close()
-f = open(sys.argv[3], 'w')
+f = open(sys.argv[4], 'w')
 for line in pipt:
 	f.write(line+'\n')
 
@@ -133,7 +127,7 @@ while not que.empty():
 		cur_lev = submodule[cur_mod]['lev']
 		split_group = 0
 		f.write('\n')
-	res = cur_mod + " " + submodule[cur_mod]['motype'] + " " + str(submodule[cur_mod]['lev']) + " ["
+	res = cur_mod + " " + submodule[cur_mod]['motype'] + " " + str(submodule[cur_mod]['lev']) + " "
 	inp = submodule[cur_mod]['input']
 	for s, i in enumerate(inp):
 		if s > 0:
@@ -143,7 +137,7 @@ while not que.empty():
 			res += "("+ipt[i]+")"
 		else:
 			res += "("+i+")"
-	res += "] ["
+	res += " "
 	out = submodule[cur_mod]['output']
 	for s, o in enumerate(out):
 		if s > 0:
@@ -158,7 +152,9 @@ while not que.empty():
 			if submodule[m]['in_order'] == 0:
 				submodule[m]['lev'] = submodule[cur_mod]['lev']+1
 				que.put(m)
-	res += "]\n"
+	delay = json.dumps(sdfobj[cur_mod])
+	res += (' '+delay)
+	res += "\n"
 	if jsobj[submodule[cur_mod]['motype']]['seq'] == 0:
 		split_group += 1
 		f.write(res)
