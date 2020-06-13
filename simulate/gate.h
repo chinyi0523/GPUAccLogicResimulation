@@ -3,7 +3,7 @@
 #include <unordered_set> 
 using namespace std;
 class Gate;
-typedef vector<pair<string,Gate>> GateList;
+typedef vector<pair<string,Gate*>> GateList;
 typedef vector<tuple<unsigned long long int,string>> TimeStamp;
 class Gate{
 public:
@@ -16,9 +16,23 @@ public:
     GateList getFin() const {return _fin;}
     GateList getFout() const {return _fout;}
     TimeStamp getTimeStamp() const {return _timeStamp;}
-    void set_fin(GateList fin){ _fin = fin; }
+    void add_fin(pair<string,Gate*> fin){ _fin.push_back(fin); }
     void set_fout(GateList fout){ _fout = fout; }
     void set_timeStamp(TimeStamp ts){ _timeStamp = ts; }
+    void printGateInfo(){
+        cout<<"_______________________\n";
+        cout<<"** Current Gate Info **\n";
+        cout<<"Name : "<<this->_name<<"\n";
+        cout<<"Type : "<<this->_type<<"\n";
+        cout<<"Level: "<<this->_level<<"\n";
+        cout<<"Group: "<<this->_group<<"\n";
+        cout<<"F-IN : \n";
+        for(int i=0;i<_fin.size();i++){
+            cout<<"     ."<<_fin.at(i).first<<"("<<(_fin.at(i).second)->getName()<<")\n";
+        }
+        cout<<"F-OUT: Still writing...\n";
+        cout<<"_______________________\n";
+    }
 private:
     string _name;
     string _type;
