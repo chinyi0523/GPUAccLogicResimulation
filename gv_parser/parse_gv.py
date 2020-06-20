@@ -152,8 +152,16 @@ while not que.empty():
 			if submodule[m]['in_order'] == 0:
 				submodule[m]['lev'] = submodule[cur_mod]['lev']+1
 				que.put(m)
-	delay = json.dumps(sdfobj[cur_mod])
-	res += (' '+delay)
+	delay_dict = sdfobj[cur_mod]
+	res += ' '
+	for pin, delay in delay_dict.items():
+		pin_in, pin_out = pin.split(',')
+		res += ('['+pin_in+'-'+pin_out+':')
+		if type(delay) is list:
+			res += (str(delay[0])+'-'+str(delay[1]))
+		else:
+			res += ('"0"'+str(delay["0"][0])+'-'+str(delay["0"][1])+',"1"'+str(delay["1"][0])+'-'+str(delay["1"][1]))
+		res += ']'
 	res += "\n"
 	if jsobj[submodule[cur_mod]['motype']]['seq'] == 0:
 		split_group += 1
