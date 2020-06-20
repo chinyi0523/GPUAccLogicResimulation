@@ -27,6 +27,8 @@ for rawline in lines:
 			seq = 1
 	elif line.startswith('output'):
 		tmp[line.split(' ')[-1][:-1]] = 'output'
+	elif line.startswith('udp_dff') or line.startswith('udp_tlat'):
+		seq = 1
 
 
 f.close()
