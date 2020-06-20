@@ -1,9 +1,10 @@
 #include <string>
 #include <vector>
+#include <map>
 #include <unordered_set> 
 using namespace std;
 class Gate;
-typedef vector<pair<string,Gate*>> GateList;
+typedef map<string,tuple<string,string,Gate*>> GateList;
 typedef vector<tuple<unsigned long long int,string>> TimeStamp;
 class Gate{
 public:
@@ -16,8 +17,8 @@ public:
     GateList getFin() const {return _fin;}
     GateList getFout() const {return _fout;}
     TimeStamp getTimeStamp() const {return _timeStamp;}
-    void add_fin(pair<string,Gate*> fin){ _fin.push_back(fin); }
-    void set_fout(GateList fout){ _fout = fout; }
+    void add_fin(string inp_gate,tuple<string,string,Gate*> fin){ _fin[inp_gate] = fin; }
+    void add_fout(string oup_gate,tuple<string,string,Gate*> fout){ _fout[oup_gate] = fout; }
     void set_timeStamp(TimeStamp ts){ _timeStamp = ts; }
     void printGateInfo(){
         cout<<"_______________________\n";
@@ -27,10 +28,19 @@ public:
         cout<<"Level: "<<this->_level<<"\n";
         cout<<"Group: "<<this->_group<<"\n";
         cout<<"F-IN : \n";
-        for(int i=0;i<_fin.size();i++){
-            cout<<"     ."<<_fin.at(i).first<<"("<<(_fin.at(i).second)->getName()<<")\n";
+        map<string,tuple<string,string,Gate*>>::iterator iter;
+        for(iter=_fin.begin();iter!=_fin.end();iter++){
+            if(get<0>(iter->second)=="CONST0"||get<0>(iter->second)=="CONST1"){
+               cout<<"     ."<<iter->first<<"("<<get<0>(iter->second)<<")\n"; 
+            }
+            else {
+                cout<<"     ."<<iter->first<<"("<<(get<2>(iter->second))->getName()<<": "<<get<0>(iter->second)<<")\n";
+            }
         }
-        cout<<"F-OUT: Still writing...\n";
+        cout<<"F-OUT: \n";
+        for(iter=_fout.begin();iter!=_fout.end();iter++){
+            cout<<"     ."<<get<1>(iter->second)<<"("<<(get<2>(iter->second))->getName()<<": "<<get<0>(iter->second)<<")\n";
+        }
         cout<<"_______________________\n";
     }
 private:
