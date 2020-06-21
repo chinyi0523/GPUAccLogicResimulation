@@ -2,10 +2,12 @@
 #include <vector>
 #include <map>
 #include <unordered_set> 
+#include <tuple>
 using namespace std;
 class Gate;
 typedef map<string,tuple<string,string,Gate*>> GateList;
 typedef vector<tuple<unsigned long long int,string>> TimeStamp;
+typedef map<string, map<bool, tuple<float,float>>> Delay;
 class Gate{
 public:
     Gate();
@@ -17,9 +19,11 @@ public:
     GateList getFin() const {return _fin;}
     GateList getFout() const {return _fout;}
     TimeStamp getTimeStamp() const {return _timeStamp;}
+    Delay getDelayInfo() const {return _delayInfo;}
     void add_fin(string inp_gate,tuple<string,string,Gate*> fin){ _fin[inp_gate] = fin; }
     void add_fout(string oup_gate,tuple<string,string,Gate*> fout){ _fout[oup_gate] = fout; }
     void set_timeStamp(TimeStamp ts){ _timeStamp = ts; }
+    void set_delayInfo(Delay delay){_delayInfo = delay; }
     void printGateInfo(){
         cout<<"_______________________\n";
         cout<<"** Current Gate Info **\n";
@@ -51,4 +55,5 @@ private:
     GateList _fin;
     GateList _fout;
     TimeStamp _timeStamp;
+    Delay _delayInfo;
 };

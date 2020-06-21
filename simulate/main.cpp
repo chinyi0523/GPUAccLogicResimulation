@@ -5,6 +5,7 @@
 #include <string.h>
 #include <vector>
 #include <map>
+#include <tuple>
 #include "lib.h"
 #include "waveform.h"
 #include "gate.h"
@@ -89,7 +90,9 @@ int main(int argc, char* argv[]){
             int level = atoi(tokens.at(2).c_str());
             string inputs = tokens.at(3);
             string outputs = tokens.at(4);
+            string delay_info = tokens.at(5);
             Gate* curr_gate_addr = new Gate(name,type,level,group);
+            //cout<<"Gate Name: "<<curr_gate_addr->getName()<<endl;
             //cout<<"Gate Type: "<<curr_gate_addr->getType()<<endl;
             tokens = split_string(inputs, ',');
             for(int i=0;i<tokens.size();i++){
@@ -155,6 +158,63 @@ int main(int argc, char* argv[]){
                 
                 
             }
+
+            //////////////////Deal with delay///////////////////////////
+            map<string, map<bool, tuple<float,float>>> delayMap;
+            tokens = split_string(delay_info, '[');
+            vector<string> io_tokens;
+            string io;
+            bool flag;
+            string delay;
+            vector<string> delay_vector; 
+            float rising_delay, falling_dealy;
+            for(int i=1; i<tokens.size(); i++){ // tokens 前面好像有一個空格
+                io_tokens = split_string(tokens[i], ',');
+                if(io_tokens.size() == 2){ 
+                    // consider posedge/negedge
+                    vector<string> tmp_tokens = split_string(io_tokens[0], '"');
+                    io = tmp_tokens[0].substr(0, tmp_tokens[0].length()-1);
+                    istringstream(tmp_tokens[1]) >> flag;
+                    delay = tmp_tokens[2];
+                    delay_vector = split_string(delay, '-');
+                    rising_delay = stof(delay_vector[0]);
+                    falling_dealy = stof(delay_vector[1]);
+                    delayMap[io][flag] = tuple<float,float>(rising_delay, falling_dealy); // flag=0
+
+                    tmp_tokens = split_string(io_tokens[1], '"');
+                    istringstream(tmp_tokens[1]) >> flag;
+                    delay = tmp_tokens[2];
+                    delay_vector = split_string(delay, '-');
+                    rising_delay = stof(delay_vector[0]);
+                    falling_dealy = stof(delay_vector[1]);
+                    delayMap[io][flag] = tuple<float,float>(rising_delay, falling_dealy); // flag=1
+                }else if(io_tokens.size() == 1){ 
+                    // no need to consider posedge/negedge
+                    size_t found = io_tokens[0].find(':');
+                    io =  io_tokens[0].substr(0,found);
+                    delay = io_tokens[0].substr(found+1,io_tokens[0].length()-found-2);
+                    delay_vector = split_string(delay, '-');
+                    rising_delay = stof(delay_vector[0]);
+                    falling_dealy = stof(delay_vector[1]);
+                    delayMap[io][false] = tuple<float,float>(rising_delay, falling_dealy);
+                    delayMap[io][true] = tuple<float,float>(rising_delay, falling_dealy);
+                }else{
+                    cout << "Error: io_tokens' size=" << io_tokens.size() << endl;
+                }
+            }
+            curr_gate_addr->set_delayInfo(delayMap);
+            /* Delay debug message
+            delayMap = curr_gate_addr->getDelayInfo();
+            tuple<float,float> printDelay;
+            cout<<"Gate Delay: "<<endl;
+            for(auto const &ent1 : delayMap) {
+                cout << ent1.first << endl;
+                for(auto const &ent2 : ent1.second) {
+                    printDelay = ent2.second;
+                    cout << ent2.first << '\t' << get<0>(printDelay) << '\t' << get<1>(printDelay) << endl;
+                }
+            }*/
+
             //if(group==1477)
             //curr_gate_addr->printGateInfo();
             //cout<<outputs<<endl;
