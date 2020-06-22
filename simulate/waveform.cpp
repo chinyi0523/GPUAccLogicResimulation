@@ -61,7 +61,7 @@ Waveform::read(const string& vcdFile)
 
 		while(getline(file, line))
 		{
-			//if(cnt % 10000 == 0) cout << "processed " << cnt << endl;
+			if(cnt % 10000 == 0) cout << "processed " << cnt << endl;
             cnt++;
             vector<string> tokens = split(line, ' ');
             

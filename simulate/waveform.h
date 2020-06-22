@@ -32,10 +32,12 @@ public:
    // define constructor & member functions
    bool read(const string&);
    void print(const int&);
+   int getSize() {return _waveforms.size();}
+   waveformElem getWaveformElem(int index) {return _waveforms[index];}
 private:
    vector<waveformElem>       _waveforms;  // Use it to store waveform elements.  
    map<string, map<int, int>> _idToIndex;  // id: bit: index; 
-   map<string, map<int, int>>           _nameToIndex;       // name: bit: index; 
+   map<string, map<int, int>> _nameToIndex;       // name: bit: index; 
    map<string, int>           _idToWidth;   
    map<string, vector<string>> _idToEndStart;                 
 };

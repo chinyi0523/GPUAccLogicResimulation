@@ -22,16 +22,7 @@ int main(int argc, char* argv[]){
     }
     char* vcdFile = argv[1];
  	char* netlistFile = argv[2];
-    /*
-    Waveform waveform;
-    if (waveform.read(vcdFile)){
-        cout << "File \"" << vcdFile << "\" was read in successfully." << endl;
-    }
-    else {
-        cerr << "Failed to read in file \"" << vcdFile << "\"!" << endl;
-        exit(1); // vcdFile does not exist.
-    }
-    */
+
     fstream fin;
 	fin.open(netlistFile, fstream::in);
     if(!fin.is_open()){
@@ -40,6 +31,8 @@ int main(int argc, char* argv[]){
     }
     map <string,Gate*> Netlist;
     string line;
+
+    //Reading Primary (Pseudo) Inputs
     while(getline(fin, line)){
         if(line=="*****************"){
             cout<<"Finish reading inputs\n";
@@ -50,6 +43,8 @@ int main(int argc, char* argv[]){
             Netlist[line] = curr_gate_addr;
         }
     }
+
+    //Reading Outputs
     while(getline(fin, line)){
         if(line=="*****************"){
             cout<<"Finish reading outputs\n";
@@ -61,12 +56,16 @@ int main(int argc, char* argv[]){
         }
 
     }
+
+    //Reading Constants
     while(getline(fin, line)){
         if(line=="*****************"){
             cout<<"Finish reading constants\n";
             break;
         }
     }
+
+    //Reading Gates
     int group = 1;
     int i=0;
     while(getline(fin, line)){
@@ -75,6 +74,7 @@ int main(int argc, char* argv[]){
             group++;
             if(group%10==0)
                 cout<<"Constructing Group "<<group<<"\n";
+            //Terminating Function: stop at group ?
             /*
             if(group==108){
                 exit(1);
@@ -92,9 +92,9 @@ int main(int argc, char* argv[]){
             string outputs = tokens.at(4);
             string delay_info = tokens.at(5);
             Gate* curr_gate_addr = new Gate(name,type,level,group);
-            //cout<<"Gate Name: "<<curr_gate_addr->getName()<<endl;
-            //cout<<"Gate Type: "<<curr_gate_addr->getType()<<endl;
             tokens = split_string(inputs, ',');
+
+            //Fanin Construction
             for(int i=0;i<tokens.size();i++){
                 //cout<<" "<<tokens[i]<<" inpt: ";
                 size_t found = tokens[i].find("(");
@@ -158,6 +158,7 @@ int main(int argc, char* argv[]){
                 
                 
             }
+            //End of Fanin construction
 
             //////////////////Deal with delay///////////////////////////
             map<string, map<bool, tuple<float,float>>> delayMap;
@@ -230,6 +231,27 @@ int main(int argc, char* argv[]){
             exit(1);
             */
             Netlist[name] = curr_gate_addr;
+        }
+    }
+
+    /////////////////////Add primary input waveform///////////////////////////////
+    Waveform waveform;
+    if (waveform.read(vcdFile)){
+        cout << "File \"" << vcdFile << "\" was read in successfully." << endl;
+    }
+    else {
+        cerr << "Failed to read in file \"" << vcdFile << "\"!" << endl;
+        exit(1); // vcdFile does not exist.
+    }
+    
+    for(int i = 0; i < waveform.getSize(); i++){
+        string name = waveform.getWaveformElem(i).getName();
+        string bit = to_string(waveform.getWaveformElem(i).getBit());
+        string gateName = name + '[' + bit + ']';
+        if(Netlist.find(gateName) == Netlist.end()){
+            cout << "Error: gateName=" << gateName << endl;
+        }else{
+            Netlist[gateName]->set_timeStamp( waveform.getWaveformElem(i).getTimestamp() );
         }
     }
 }
