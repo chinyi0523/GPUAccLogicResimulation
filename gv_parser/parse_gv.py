@@ -15,6 +15,8 @@ sdfobj = json.load(open(sys.argv[3]))
 ipt = {}
 wire_connect = {}
 que = queue.Queue()
+attach_module = set()
+inv_que = queue.Queue()
 for rawline in lines[1:-1]:
 	line = rawline.strip(' ')
 	if line.startswith('input'):
@@ -30,8 +32,8 @@ for rawline in lines[1:-1]:
 					ipt[(xx+'['+str(i)+']')] = 'primary_input:'+(xx+'['+str(i)+']')
 					pipt.append(xx+'['+str(i)+']')
 			else:
-				ipt[xx] = 'primary_input:'+xx
-				pipt.append(xx)
+				ipt[xx] = 'primary_input:'+xx+'[0]'
+				pipt.append(xx+'[0]')
 	elif line.startswith('output'):
 		x = line.lstrip('output')
 		x = x.replace(' ', '')
@@ -79,6 +81,8 @@ for rawline in lines[1:-1]:
 					in_sp.append(tmp[1])
 				elif jsobj[module[0]][tmp[0]] == 'output':
 					ipt[tmp[1]] = module[1]+':'+tmp[0]
+					if tmp[1] in popt:
+						attach_module.add(module[1])
 					out_sp.append(tmp[1])
 				else:
 					print('err')
@@ -91,8 +95,12 @@ for x in submodule.keys():
 	cnt = 0
 	for y in inp:
 		if "'b" not in y and y not in ipt.keys():
-			ipt[y] = 'pseudo_primary_input:'+y
-			pipt.append(y)
+			if y.endswith(']'):
+				ipt[y] = 'pseudo_primary_input:'+y
+				pipt.append(y)
+			else:
+				ipt[y] = 'pseudo_primary_input:'+y+'[0]'
+				pipt.append(y+'[0]')
 		if "'b" not in y and not ipt[y].startswith('primary_input') and not ipt[y].startswith('pseudo_primary_input') and not ipt[y].startswith('assign'):
 			cnt += 1
 	submodule[x]['in_order'] = cnt
@@ -100,6 +108,22 @@ for x in submodule.keys():
 		submodule[x]['lev'] = 1
 		que.put(x)
 
+for s in attach_module:
+	inv_que.put(s)
+
+while not inv_que.empty():
+	cur_mod = inv_que.get()
+	inp = submodule[cur_mod]['input']
+	for x in inp:
+		if x in ipt.keys():
+			nxt_mod = ipt[x].split(':')[0]
+			if nxt_mod == 'primary_input' or nxt_mod == 'pseudo_primary_input' or nxt_mod == 'assign':
+				continue
+			else:
+				if nxt_mod not in attach_module:
+					attach_module.add(nxt_mod)
+					inv_que.put(nxt_mod)
+				continue
 
 f.close()
 f = open(sys.argv[4], 'w')
@@ -123,6 +147,8 @@ cur_lev, split_group = 1, 0
 
 while not que.empty():
 	cur_mod = que.get()
+	if cur_mod not in attach_module:
+		continue
 	if submodule[cur_mod]['lev'] > cur_lev or split_group == 8:
 		cur_lev = submodule[cur_mod]['lev']
 		split_group = 0
