@@ -2,8 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <vector>
-#include <bitset>
+#include <map>
 using namespace std;
+typedef vector<char> (*FnPtr)(char, char, char, char, char, char);
 char not1(char a){
     if(a=='x'||a=='z') return 'x';
     else if(a=='1') return '0';
@@ -125,7 +126,7 @@ char udp_xbuf(char i,char check){
     }
     else return 'x';
 }
-vector<char> GEN_AND2_D1(char a1,char a2){
+vector<char> GEN_AND2_D1(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char z;
     z = and2(a1,a2);
@@ -134,7 +135,7 @@ vector<char> GEN_AND2_D1(char a1,char a2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AND2_D2(char a1,char a2){
+vector<char> GEN_AND2_D2(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char z;
     z = and2(a1,a2);
@@ -143,7 +144,7 @@ vector<char> GEN_AND2_D2(char a1,char a2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AND2_D4(char a1,char a2){
+vector<char> GEN_AND2_D4(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char z;
     z = and2(a1,a2);
@@ -152,7 +153,7 @@ vector<char> GEN_AND2_D4(char a1,char a2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AND2_D8(char a1,char a2){
+vector<char> GEN_AND2_D8(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char z;
     z = and2(a1,a2);
@@ -161,7 +162,7 @@ vector<char> GEN_AND2_D8(char a1,char a2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AND3_D1(char a1,char a2,char a3){
+vector<char> GEN_AND3_D1(char a1,char a2,char a3,char xx0,char xx1,char xx2){
     // output 
     char z;
     z = and3(a1,a2,a3);
@@ -170,7 +171,7 @@ vector<char> GEN_AND3_D1(char a1,char a2,char a3){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AND3_D2(char a1,char a2,char a3){
+vector<char> GEN_AND3_D2(char a1,char a2,char a3,char xx0,char xx1,char xx2){
     // output 
     char z;
     z = and3(a1,a2,a3);
@@ -179,7 +180,7 @@ vector<char> GEN_AND3_D2(char a1,char a2,char a3){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AND3_D4(char a1,char a2,char a3){
+vector<char> GEN_AND3_D4(char a1,char a2,char a3,char xx0,char xx1,char xx2){
     // output 
     char z;
     z = and3(a1,a2,a3);
@@ -188,7 +189,7 @@ vector<char> GEN_AND3_D4(char a1,char a2,char a3){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AND3_D8(char a1,char a2,char a3){
+vector<char> GEN_AND3_D8(char a1,char a2,char a3,char xx0,char xx1,char xx2){
     // output 
     char z;
     z = and3(a1,a2,a3);
@@ -197,7 +198,7 @@ vector<char> GEN_AND3_D8(char a1,char a2,char a3){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AND4_D1(char a1,char a2,char a3,char a4){
+vector<char> GEN_AND4_D1(char a1,char a2,char a3,char a4,char xx0,char xx1){
     // output 
     char z;
     z = and4(a1,a2,a3,a4);
@@ -206,7 +207,7 @@ vector<char> GEN_AND4_D1(char a1,char a2,char a3,char a4){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AND4_D2(char a1,char a2,char a3,char a4){
+vector<char> GEN_AND4_D2(char a1,char a2,char a3,char a4,char xx0,char xx1){
     // output 
     char z;
     z = and4(a1,a2,a3,a4);
@@ -215,7 +216,7 @@ vector<char> GEN_AND4_D2(char a1,char a2,char a3,char a4){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AND4_D4(char a1,char a2,char a3,char a4){
+vector<char> GEN_AND4_D4(char a1,char a2,char a3,char a4,char xx0,char xx1){
     // output 
     char z;
     z = and4(a1,a2,a3,a4);
@@ -224,7 +225,7 @@ vector<char> GEN_AND4_D4(char a1,char a2,char a3,char a4){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AND4_D8(char a1,char a2,char a3,char a4){
+vector<char> GEN_AND4_D8(char a1,char a2,char a3,char a4,char xx0,char xx1){
     // output 
     char z;
     z = and4(a1,a2,a3,a4);
@@ -233,7 +234,7 @@ vector<char> GEN_AND4_D8(char a1,char a2,char a3,char a4){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AO211_D1(char a1,char a2,char b,char c){
+vector<char> GEN_AO211_D1(char a1,char a2,char b,char c,char xx0,char xx1){
     // output 
     char z;
     // wire 
@@ -246,7 +247,7 @@ vector<char> GEN_AO211_D1(char a1,char a2,char b,char c){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AO211_D2(char a1,char a2,char b,char c){
+vector<char> GEN_AO211_D2(char a1,char a2,char b,char c,char xx0,char xx1){
     // output 
     char z;
     // wire 
@@ -259,7 +260,7 @@ vector<char> GEN_AO211_D2(char a1,char a2,char b,char c){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AO211_D4(char a1,char a2,char b,char c){
+vector<char> GEN_AO211_D4(char a1,char a2,char b,char c,char xx0,char xx1){
     // output 
     char z;
     // wire 
@@ -272,7 +273,7 @@ vector<char> GEN_AO211_D4(char a1,char a2,char b,char c){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AO21_D1(char a1,char a2,char b){
+vector<char> GEN_AO21_D1(char a1,char a2,char b,char xx0,char xx1,char xx2){
     // output 
     char z;
     // wire 
@@ -285,7 +286,7 @@ vector<char> GEN_AO21_D1(char a1,char a2,char b){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AO21_D2(char a1,char a2,char b){
+vector<char> GEN_AO21_D2(char a1,char a2,char b,char xx0,char xx1,char xx2){
     // output 
     char z;
     // wire 
@@ -298,7 +299,7 @@ vector<char> GEN_AO21_D2(char a1,char a2,char b){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AO21_D4(char a1,char a2,char b){
+vector<char> GEN_AO21_D4(char a1,char a2,char b,char xx0,char xx1,char xx2){
     // output 
     char z;
     // wire 
@@ -311,7 +312,7 @@ vector<char> GEN_AO21_D4(char a1,char a2,char b){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AO221_D1(char a1,char a2,char b1,char b2,char c){
+vector<char> GEN_AO221_D1(char a1,char a2,char b1,char b2,char c,char xx0){
     // output 
     char z;
     // wire 
@@ -325,7 +326,7 @@ vector<char> GEN_AO221_D1(char a1,char a2,char b1,char b2,char c){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AO221_D2(char a1,char a2,char b1,char b2,char c){
+vector<char> GEN_AO221_D2(char a1,char a2,char b1,char b2,char c,char xx0){
     // output 
     char z;
     // wire 
@@ -339,7 +340,7 @@ vector<char> GEN_AO221_D2(char a1,char a2,char b1,char b2,char c){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AO221_D4(char a1,char a2,char b1,char b2,char c){
+vector<char> GEN_AO221_D4(char a1,char a2,char b1,char b2,char c,char xx0){
     // output 
     char z;
     // wire 
@@ -398,7 +399,7 @@ vector<char> GEN_AO222_D4(char a1,char a2,char b1,char b2,char c1,char c2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AO22_D1(char a1,char a2,char b1,char b2){
+vector<char> GEN_AO22_D1(char a1,char a2,char b1,char b2,char xx0,char xx1){
     // output 
     char z;
     // wire 
@@ -412,7 +413,7 @@ vector<char> GEN_AO22_D1(char a1,char a2,char b1,char b2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AO22_D2(char a1,char a2,char b1,char b2){
+vector<char> GEN_AO22_D2(char a1,char a2,char b1,char b2,char xx0,char xx1){
     // output 
     char z;
     // wire 
@@ -426,7 +427,7 @@ vector<char> GEN_AO22_D2(char a1,char a2,char b1,char b2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AO22_D4(char a1,char a2,char b1,char b2){
+vector<char> GEN_AO22_D4(char a1,char a2,char b1,char b2,char xx0,char xx1){
     // output 
     char z;
     // wire 
@@ -440,7 +441,7 @@ vector<char> GEN_AO22_D4(char a1,char a2,char b1,char b2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AO22_D8(char a1,char a2,char b1,char b2){
+vector<char> GEN_AO22_D8(char a1,char a2,char b1,char b2,char xx0,char xx1){
     // output 
     char z;
     // wire 
@@ -454,7 +455,7 @@ vector<char> GEN_AO22_D8(char a1,char a2,char b1,char b2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AO31_D1(char a1,char a2,char a3,char b){
+vector<char> GEN_AO31_D1(char a1,char a2,char a3,char b,char xx0,char xx1){
     // output 
     char z;
     // wire 
@@ -467,7 +468,7 @@ vector<char> GEN_AO31_D1(char a1,char a2,char a3,char b){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AO31_D2(char a1,char a2,char a3,char b){
+vector<char> GEN_AO31_D2(char a1,char a2,char a3,char b,char xx0,char xx1){
     // output 
     char z;
     // wire 
@@ -480,7 +481,7 @@ vector<char> GEN_AO31_D2(char a1,char a2,char a3,char b){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AO31_D4(char a1,char a2,char a3,char b){
+vector<char> GEN_AO31_D4(char a1,char a2,char a3,char b,char xx0,char xx1){
     // output 
     char z;
     // wire 
@@ -493,7 +494,7 @@ vector<char> GEN_AO31_D4(char a1,char a2,char a3,char b){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AO32_D1(char a1,char a2,char a3,char b1,char b2){
+vector<char> GEN_AO32_D1(char a1,char a2,char a3,char b1,char b2,char xx0){
     // output 
     char z;
     // wire 
@@ -507,7 +508,7 @@ vector<char> GEN_AO32_D1(char a1,char a2,char a3,char b1,char b2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AO32_D2(char a1,char a2,char a3,char b1,char b2){
+vector<char> GEN_AO32_D2(char a1,char a2,char a3,char b1,char b2,char xx0){
     // output 
     char z;
     // wire 
@@ -521,7 +522,7 @@ vector<char> GEN_AO32_D2(char a1,char a2,char a3,char b1,char b2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AO32_D4(char a1,char a2,char a3,char b1,char b2){
+vector<char> GEN_AO32_D4(char a1,char a2,char a3,char b1,char b2,char xx0){
     // output 
     char z;
     // wire 
@@ -577,7 +578,7 @@ vector<char> GEN_AO33_D4(char a1,char a2,char a3,char b1,char b2,char b3){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_AOI211_D1(char a1,char a2,char b,char c){
+vector<char> GEN_AOI211_D1(char a1,char a2,char b,char c,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -591,7 +592,7 @@ vector<char> GEN_AOI211_D1(char a1,char a2,char b,char c){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_AOI211_D2(char a1,char a2,char b,char c){
+vector<char> GEN_AOI211_D2(char a1,char a2,char b,char c,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -605,7 +606,7 @@ vector<char> GEN_AOI211_D2(char a1,char a2,char b,char c){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_AOI211_D4(char a1,char a2,char b,char c){
+vector<char> GEN_AOI211_D4(char a1,char a2,char b,char c,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -619,7 +620,7 @@ vector<char> GEN_AOI211_D4(char a1,char a2,char b,char c){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_AOI21_D1(char a1,char a2,char b){
+vector<char> GEN_AOI21_D1(char a1,char a2,char b,char xx0,char xx1,char xx2){
     // output 
     char zn;
     // wire 
@@ -633,7 +634,7 @@ vector<char> GEN_AOI21_D1(char a1,char a2,char b){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_AOI21_D2(char a1,char a2,char b){
+vector<char> GEN_AOI21_D2(char a1,char a2,char b,char xx0,char xx1,char xx2){
     // output 
     char zn;
     // wire 
@@ -647,7 +648,7 @@ vector<char> GEN_AOI21_D2(char a1,char a2,char b){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_AOI21_D4(char a1,char a2,char b){
+vector<char> GEN_AOI21_D4(char a1,char a2,char b,char xx0,char xx1,char xx2){
     // output 
     char zn;
     // wire 
@@ -661,7 +662,7 @@ vector<char> GEN_AOI21_D4(char a1,char a2,char b){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_AOI221_D1(char a1,char a2,char b1,char b2,char c){
+vector<char> GEN_AOI221_D1(char a1,char a2,char b1,char b2,char c,char xx0){
     // output 
     char zn;
     // wire 
@@ -676,7 +677,7 @@ vector<char> GEN_AOI221_D1(char a1,char a2,char b1,char b2,char c){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_AOI221_D2(char a1,char a2,char b1,char b2,char c){
+vector<char> GEN_AOI221_D2(char a1,char a2,char b1,char b2,char c,char xx0){
     // output 
     char zn;
     // wire 
@@ -691,7 +692,7 @@ vector<char> GEN_AOI221_D2(char a1,char a2,char b1,char b2,char c){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_AOI221_D4(char a1,char a2,char b1,char b2,char c){
+vector<char> GEN_AOI221_D4(char a1,char a2,char b1,char b2,char c,char xx0){
     // output 
     char zn;
     // wire 
@@ -754,7 +755,7 @@ vector<char> GEN_AOI222_D4(char a1,char a2,char b1,char b2,char c1,char c2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_AOI22_D1(char a1,char a2,char b1,char b2){
+vector<char> GEN_AOI22_D1(char a1,char a2,char b1,char b2,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -769,7 +770,7 @@ vector<char> GEN_AOI22_D1(char a1,char a2,char b1,char b2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_AOI22_D2(char a1,char a2,char b1,char b2){
+vector<char> GEN_AOI22_D2(char a1,char a2,char b1,char b2,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -784,7 +785,7 @@ vector<char> GEN_AOI22_D2(char a1,char a2,char b1,char b2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_AOI22_D4(char a1,char a2,char b1,char b2){
+vector<char> GEN_AOI22_D4(char a1,char a2,char b1,char b2,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -799,7 +800,7 @@ vector<char> GEN_AOI22_D4(char a1,char a2,char b1,char b2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_AOI31_D1(char a1,char a2,char a3,char b){
+vector<char> GEN_AOI31_D1(char a1,char a2,char a3,char b,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -813,7 +814,7 @@ vector<char> GEN_AOI31_D1(char a1,char a2,char a3,char b){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_AOI31_D2(char a1,char a2,char a3,char b){
+vector<char> GEN_AOI31_D2(char a1,char a2,char a3,char b,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -827,7 +828,7 @@ vector<char> GEN_AOI31_D2(char a1,char a2,char a3,char b){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_AOI31_D4(char a1,char a2,char a3,char b){
+vector<char> GEN_AOI31_D4(char a1,char a2,char a3,char b,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -841,7 +842,7 @@ vector<char> GEN_AOI31_D4(char a1,char a2,char a3,char b){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_AOI32_D1(char a1,char a2,char a3,char b1,char b2){
+vector<char> GEN_AOI32_D1(char a1,char a2,char a3,char b1,char b2,char xx0){
     // output 
     char zn;
     // wire 
@@ -856,7 +857,7 @@ vector<char> GEN_AOI32_D1(char a1,char a2,char a3,char b1,char b2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_AOI32_D2(char a1,char a2,char a3,char b1,char b2){
+vector<char> GEN_AOI32_D2(char a1,char a2,char a3,char b1,char b2,char xx0){
     // output 
     char zn;
     // wire 
@@ -871,7 +872,7 @@ vector<char> GEN_AOI32_D2(char a1,char a2,char a3,char b1,char b2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_AOI32_D4(char a1,char a2,char a3,char b1,char b2){
+vector<char> GEN_AOI32_D4(char a1,char a2,char a3,char b1,char b2,char xx0){
     // output 
     char zn;
     // wire 
@@ -931,7 +932,7 @@ vector<char> GEN_AOI33_D4(char a1,char a2,char a3,char b1,char b2,char b3){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_BUF_D1(char i){
+vector<char> GEN_BUF_D1(char i,char xx0,char xx1,char xx2,char xx3,char xx4){
     // output 
     char z;
     z = buf1(i);
@@ -940,7 +941,7 @@ vector<char> GEN_BUF_D1(char i){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_BUF_D2(char i){
+vector<char> GEN_BUF_D2(char i,char xx0,char xx1,char xx2,char xx3,char xx4){
     // output 
     char z;
     z = buf1(i);
@@ -949,7 +950,7 @@ vector<char> GEN_BUF_D2(char i){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_BUF_D4(char i){
+vector<char> GEN_BUF_D4(char i,char xx0,char xx1,char xx2,char xx3,char xx4){
     // output 
     char z;
     z = buf1(i);
@@ -958,7 +959,7 @@ vector<char> GEN_BUF_D4(char i){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_BUF_D8(char i){
+vector<char> GEN_BUF_D8(char i,char xx0,char xx1,char xx2,char xx3,char xx4){
     // output 
     char z;
     z = buf1(i);
@@ -967,7 +968,7 @@ vector<char> GEN_BUF_D8(char i){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_FA_D1(char a,char b,char ci){
+vector<char> GEN_FA_D1(char a,char b,char ci,char xx0,char xx1,char xx2){
     // output 
     char s;
     // output 
@@ -986,7 +987,7 @@ vector<char> GEN_FA_D1(char a,char b,char ci){
     ans.push_back(co);
     return ans;
 }
-vector<char> GEN_FA_D2(char a,char b,char ci){
+vector<char> GEN_FA_D2(char a,char b,char ci,char xx0,char xx1,char xx2){
     // output 
     char s;
     // output 
@@ -1005,7 +1006,7 @@ vector<char> GEN_FA_D2(char a,char b,char ci){
     ans.push_back(co);
     return ans;
 }
-vector<char> GEN_FA_D4(char a,char b,char ci){
+vector<char> GEN_FA_D4(char a,char b,char ci,char xx0,char xx1,char xx2){
     // output 
     char s;
     // output 
@@ -1024,7 +1025,7 @@ vector<char> GEN_FA_D4(char a,char b,char ci){
     ans.push_back(co);
     return ans;
 }
-vector<char> GEN_HA_D1(char a,char b){
+vector<char> GEN_HA_D1(char a,char b,char xx0,char xx1,char xx2,char xx3){
     // output 
     char s;
     // output 
@@ -1037,7 +1038,7 @@ vector<char> GEN_HA_D1(char a,char b){
     ans.push_back(co);
     return ans;
 }
-vector<char> GEN_HA_D2(char a,char b){
+vector<char> GEN_HA_D2(char a,char b,char xx0,char xx1,char xx2,char xx3){
     // output 
     char s;
     // output 
@@ -1050,7 +1051,7 @@ vector<char> GEN_HA_D2(char a,char b){
     ans.push_back(co);
     return ans;
 }
-vector<char> GEN_HA_D4(char a,char b){
+vector<char> GEN_HA_D4(char a,char b,char xx0,char xx1,char xx2,char xx3){
     // output 
     char s;
     // output 
@@ -1063,7 +1064,7 @@ vector<char> GEN_HA_D4(char a,char b){
     ans.push_back(co);
     return ans;
 }
-vector<char> GEN_INV_D1(char i){
+vector<char> GEN_INV_D1(char i,char xx0,char xx1,char xx2,char xx3,char xx4){
     // output 
     char zn;
     zn = not1(i);
@@ -1072,7 +1073,7 @@ vector<char> GEN_INV_D1(char i){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_INV_D2(char i){
+vector<char> GEN_INV_D2(char i,char xx0,char xx1,char xx2,char xx3,char xx4){
     // output 
     char zn;
     zn = not1(i);
@@ -1081,7 +1082,7 @@ vector<char> GEN_INV_D2(char i){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_INV_D4(char i){
+vector<char> GEN_INV_D4(char i,char xx0,char xx1,char xx2,char xx3,char xx4){
     // output 
     char zn;
     zn = not1(i);
@@ -1090,7 +1091,7 @@ vector<char> GEN_INV_D4(char i){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_INV_D8(char i){
+vector<char> GEN_INV_D8(char i,char xx0,char xx1,char xx2,char xx3,char xx4){
     // output 
     char zn;
     zn = not1(i);
@@ -1099,7 +1100,7 @@ vector<char> GEN_INV_D8(char i){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_MAJORITYAOI222_D1(char a,char b,char c){
+vector<char> GEN_MAJORITYAOI222_D1(char a,char b,char c,char xx0,char xx1,char xx2){
     // output 
     char zn;
     // wire 
@@ -1115,7 +1116,7 @@ vector<char> GEN_MAJORITYAOI222_D1(char a,char b,char c){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_MAJORITYAOI222_D2(char a,char b,char c){
+vector<char> GEN_MAJORITYAOI222_D2(char a,char b,char c,char xx0,char xx1,char xx2){
     // output 
     char zn;
     // wire 
@@ -1131,7 +1132,7 @@ vector<char> GEN_MAJORITYAOI222_D2(char a,char b,char c){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_MAJORITYAOI222_D4(char a,char b,char c){
+vector<char> GEN_MAJORITYAOI222_D4(char a,char b,char c,char xx0,char xx1,char xx2){
     // output 
     char zn;
     // wire 
@@ -1147,7 +1148,7 @@ vector<char> GEN_MAJORITYAOI222_D4(char a,char b,char c){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_MAJORITYAOI22_D1(char a1,char a2,char b1,char b2){
+vector<char> GEN_MAJORITYAOI22_D1(char a1,char a2,char b1,char b2,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -1162,7 +1163,7 @@ vector<char> GEN_MAJORITYAOI22_D1(char a1,char a2,char b1,char b2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_MAJORITYAOI22_D2(char a1,char a2,char b1,char b2){
+vector<char> GEN_MAJORITYAOI22_D2(char a1,char a2,char b1,char b2,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -1177,7 +1178,7 @@ vector<char> GEN_MAJORITYAOI22_D2(char a1,char a2,char b1,char b2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_MAJORITYAOI22_D4(char a1,char a2,char b1,char b2){
+vector<char> GEN_MAJORITYAOI22_D4(char a1,char a2,char b1,char b2,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -1192,7 +1193,7 @@ vector<char> GEN_MAJORITYAOI22_D4(char a1,char a2,char b1,char b2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_MAJORITYOAI22_D1(char a1,char a2,char b1,char b2){
+vector<char> GEN_MAJORITYOAI22_D1(char a1,char a2,char b1,char b2,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -1207,7 +1208,7 @@ vector<char> GEN_MAJORITYOAI22_D1(char a1,char a2,char b1,char b2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_MAJORITYOAI22_D2(char a1,char a2,char b1,char b2){
+vector<char> GEN_MAJORITYOAI22_D2(char a1,char a2,char b1,char b2,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -1222,7 +1223,7 @@ vector<char> GEN_MAJORITYOAI22_D2(char a1,char a2,char b1,char b2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_MAJORITYOAI22_D4(char a1,char a2,char b1,char b2){
+vector<char> GEN_MAJORITYOAI22_D4(char a1,char a2,char b1,char b2,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -1237,7 +1238,7 @@ vector<char> GEN_MAJORITYOAI22_D4(char a1,char a2,char b1,char b2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_LATCH_D1(char d,char e){
+vector<char> GEN_LATCH_D1(char d,char e,char xx0,char xx1,char xx2,char xx3){
     // output 
     char q;
     // reg 
@@ -1253,7 +1254,7 @@ vector<char> GEN_LATCH_D1(char d,char e){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_LATCH_D2(char d,char e){
+vector<char> GEN_LATCH_D2(char d,char e,char xx0,char xx1,char xx2,char xx3){
     // output 
     char q;
     // reg 
@@ -1269,7 +1270,7 @@ vector<char> GEN_LATCH_D2(char d,char e){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_LATCH_D4(char d,char e){
+vector<char> GEN_LATCH_D4(char d,char e,char xx0,char xx1,char xx2,char xx3){
     // output 
     char q;
     // reg 
@@ -1285,7 +1286,7 @@ vector<char> GEN_LATCH_D4(char d,char e){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_DFCLR_D1(char d,char cp,char cdn){
+vector<char> GEN_DFCLR_D1(char d,char cp,char cdn,char xx0,char xx1,char xx2){
     // output 
     char q;
     // reg 
@@ -1299,7 +1300,7 @@ vector<char> GEN_DFCLR_D1(char d,char cp,char cdn){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_DFCLR_D2(char d,char cp,char cdn){
+vector<char> GEN_DFCLR_D2(char d,char cp,char cdn,char xx0,char xx1,char xx2){
     // output 
     char q;
     // reg 
@@ -1313,7 +1314,7 @@ vector<char> GEN_DFCLR_D2(char d,char cp,char cdn){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_DFCLR_D4(char d,char cp,char cdn){
+vector<char> GEN_DFCLR_D4(char d,char cp,char cdn,char xx0,char xx1,char xx2){
     // output 
     char q;
     // reg 
@@ -1327,7 +1328,7 @@ vector<char> GEN_DFCLR_D4(char d,char cp,char cdn){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_DFCLR_D8(char d,char cp,char cdn){
+vector<char> GEN_DFCLR_D8(char d,char cp,char cdn,char xx0,char xx1,char xx2){
     // output 
     char q;
     // reg 
@@ -1341,7 +1342,7 @@ vector<char> GEN_DFCLR_D8(char d,char cp,char cdn){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_DF_D1(char d,char cp){
+vector<char> GEN_DF_D1(char d,char cp,char xx0,char xx1,char xx2,char xx3){
     // output 
     char q;
     // reg 
@@ -1357,7 +1358,7 @@ vector<char> GEN_DF_D1(char d,char cp){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_DF_D2(char d,char cp){
+vector<char> GEN_DF_D2(char d,char cp,char xx0,char xx1,char xx2,char xx3){
     // output 
     char q;
     // reg 
@@ -1373,7 +1374,7 @@ vector<char> GEN_DF_D2(char d,char cp){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_DF_D4(char d,char cp){
+vector<char> GEN_DF_D4(char d,char cp,char xx0,char xx1,char xx2,char xx3){
     // output 
     char q;
     // reg 
@@ -1389,7 +1390,7 @@ vector<char> GEN_DF_D4(char d,char cp){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_DF_D8(char d,char cp){
+vector<char> GEN_DF_D8(char d,char cp,char xx0,char xx1,char xx2,char xx3){
     // output 
     char q;
     // reg 
@@ -1405,7 +1406,7 @@ vector<char> GEN_DF_D8(char d,char cp){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_DFSET_D1(char d,char cp,char sdn){
+vector<char> GEN_DFSET_D1(char d,char cp,char sdn,char xx0,char xx1,char xx2){
     // output 
     char q;
     // reg 
@@ -1419,7 +1420,49 @@ vector<char> GEN_DFSET_D1(char d,char cp,char sdn){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_MUX2_D2(char i0,char i1,char s){
+vector<char> GEN_DFSET_D2(char d,char cp,char sdn,char xx0,char xx1,char xx2){
+    // output 
+    char q;
+    // reg 
+    char notifier;
+
+    // supply1 
+    char cdn = '1';
+    q = udp_dff(d,cp,cdn,sdn,notifier);
+
+    vector<char> ans;
+    ans.push_back(q);
+    return ans;
+}
+vector<char> GEN_DFSET_D4(char d,char cp,char sdn,char xx0,char xx1,char xx2){
+    // output 
+    char q;
+    // reg 
+    char notifier;
+
+    // supply1 
+    char cdn = '1';
+    q = udp_dff(d,cp,cdn,sdn,notifier);
+
+    vector<char> ans;
+    ans.push_back(q);
+    return ans;
+}
+vector<char> GEN_DFSET_D8(char d,char cp,char sdn,char xx0,char xx1,char xx2){
+    // output 
+    char q;
+    // reg 
+    char notifier;
+
+    // supply1 
+    char cdn = '1';
+    q = udp_dff(d,cp,cdn,sdn,notifier);
+
+    vector<char> ans;
+    ans.push_back(q);
+    return ans;
+}
+vector<char> GEN_MUX2_D1(char i0,char i1,char s,char xx0,char xx1,char xx2){
     // output 
     char z;
     z = udp_mux2(i0,i1,s);
@@ -1428,7 +1471,7 @@ vector<char> GEN_MUX2_D2(char i0,char i1,char s){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_MUX2_D4(char i0,char i1,char s){
+vector<char> GEN_MUX2_D2(char i0,char i1,char s,char xx0,char xx1,char xx2){
     // output 
     char z;
     z = udp_mux2(i0,i1,s);
@@ -1437,7 +1480,16 @@ vector<char> GEN_MUX2_D4(char i0,char i1,char s){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_MUX2N_D1(char i0,char i1,char s){
+vector<char> GEN_MUX2_D4(char i0,char i1,char s,char xx0,char xx1,char xx2){
+    // output 
+    char z;
+    z = udp_mux2(i0,i1,s);
+
+    vector<char> ans;
+    ans.push_back(z);
+    return ans;
+}
+vector<char> GEN_MUX2N_D1(char i0,char i1,char s,char xx0,char xx1,char xx2){
     // output 
     char zn;
     // wire 
@@ -1450,7 +1502,7 @@ vector<char> GEN_MUX2N_D1(char i0,char i1,char s){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_MUX2N_D2(char i0,char i1,char s){
+vector<char> GEN_MUX2N_D2(char i0,char i1,char s,char xx0,char xx1,char xx2){
     // output 
     char zn;
     // wire 
@@ -1463,7 +1515,7 @@ vector<char> GEN_MUX2N_D2(char i0,char i1,char s){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_MUX2N_D4(char i0,char i1,char s){
+vector<char> GEN_MUX2N_D4(char i0,char i1,char s,char xx0,char xx1,char xx2){
     // output 
     char zn;
     // wire 
@@ -1476,7 +1528,7 @@ vector<char> GEN_MUX2N_D4(char i0,char i1,char s){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_MUX3_D1(char i0,char i1,char i2,char s0,char s1){
+vector<char> GEN_MUX3_D1(char i0,char i1,char i2,char s0,char s1,char xx0){
     // output 
     char z;
     // wire 
@@ -1489,7 +1541,7 @@ vector<char> GEN_MUX3_D1(char i0,char i1,char i2,char s0,char s1){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_MUX3_D2(char i0,char i1,char i2,char s0,char s1){
+vector<char> GEN_MUX3_D2(char i0,char i1,char i2,char s0,char s1,char xx0){
     // output 
     char z;
     // wire 
@@ -1502,7 +1554,7 @@ vector<char> GEN_MUX3_D2(char i0,char i1,char i2,char s0,char s1){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_MUX3_D4(char i0,char i1,char i2,char s0,char s1){
+vector<char> GEN_MUX3_D4(char i0,char i1,char i2,char s0,char s1,char xx0){
     // output 
     char z;
     // wire 
@@ -1515,7 +1567,7 @@ vector<char> GEN_MUX3_D4(char i0,char i1,char i2,char s0,char s1){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_MUX3N_D1(char i0,char i1,char i2,char s0,char s1){
+vector<char> GEN_MUX3N_D1(char i0,char i1,char i2,char s0,char s1,char xx0){
     // output 
     char zn;
     // wire 
@@ -1529,7 +1581,7 @@ vector<char> GEN_MUX3N_D1(char i0,char i1,char i2,char s0,char s1){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_MUX3N_D2(char i0,char i1,char i2,char s0,char s1){
+vector<char> GEN_MUX3N_D2(char i0,char i1,char i2,char s0,char s1,char xx0){
     // output 
     char zn;
     // wire 
@@ -1543,7 +1595,7 @@ vector<char> GEN_MUX3N_D2(char i0,char i1,char i2,char s0,char s1){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_MUX3N_D4(char i0,char i1,char i2,char s0,char s1){
+vector<char> GEN_MUX3N_D4(char i0,char i1,char i2,char s0,char s1,char xx0){
     // output 
     char zn;
     // wire 
@@ -1644,7 +1696,7 @@ vector<char> GEN_MUX4N_D4(char i0,char i1,char i2,char i3,char s0,char s1){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NAND2_D1(char a1,char a2){
+vector<char> GEN_NAND2_D1(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char zn;
     zn = nand2(a1,a2);
@@ -1653,7 +1705,7 @@ vector<char> GEN_NAND2_D1(char a1,char a2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NAND2_D2(char a1,char a2){
+vector<char> GEN_NAND2_D2(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char zn;
     zn = nand2(a1,a2);
@@ -1662,7 +1714,7 @@ vector<char> GEN_NAND2_D2(char a1,char a2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NAND2_D4(char a1,char a2){
+vector<char> GEN_NAND2_D4(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char zn;
     zn = nand2(a1,a2);
@@ -1671,7 +1723,7 @@ vector<char> GEN_NAND2_D4(char a1,char a2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NAND2_D8(char a1,char a2){
+vector<char> GEN_NAND2_D8(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char zn;
     zn = nand2(a1,a2);
@@ -1680,7 +1732,7 @@ vector<char> GEN_NAND2_D8(char a1,char a2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NAND3_D1(char a1,char a2,char a3){
+vector<char> GEN_NAND3_D1(char a1,char a2,char a3,char xx0,char xx1,char xx2){
     // output 
     char zn;
     zn = nand3(a1,a2,a3);
@@ -1689,7 +1741,7 @@ vector<char> GEN_NAND3_D1(char a1,char a2,char a3){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NAND3_D2(char a1,char a2,char a3){
+vector<char> GEN_NAND3_D2(char a1,char a2,char a3,char xx0,char xx1,char xx2){
     // output 
     char zn;
     zn = nand3(a1,a2,a3);
@@ -1698,7 +1750,7 @@ vector<char> GEN_NAND3_D2(char a1,char a2,char a3){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NAND3_D4(char a1,char a2,char a3){
+vector<char> GEN_NAND3_D4(char a1,char a2,char a3,char xx0,char xx1,char xx2){
     // output 
     char zn;
     zn = nand3(a1,a2,a3);
@@ -1707,7 +1759,7 @@ vector<char> GEN_NAND3_D4(char a1,char a2,char a3){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NAND3_D8(char a1,char a2,char a3){
+vector<char> GEN_NAND3_D8(char a1,char a2,char a3,char xx0,char xx1,char xx2){
     // output 
     char zn;
     zn = nand3(a1,a2,a3);
@@ -1716,7 +1768,7 @@ vector<char> GEN_NAND3_D8(char a1,char a2,char a3){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NAND4_D1(char a1,char a2,char a3,char a4){
+vector<char> GEN_NAND4_D1(char a1,char a2,char a3,char a4,char xx0,char xx1){
     // output 
     char zn;
     zn = nand4(a1,a2,a3,a4);
@@ -1725,7 +1777,7 @@ vector<char> GEN_NAND4_D1(char a1,char a2,char a3,char a4){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NAND4_D2(char a1,char a2,char a3,char a4){
+vector<char> GEN_NAND4_D2(char a1,char a2,char a3,char a4,char xx0,char xx1){
     // output 
     char zn;
     zn = nand4(a1,a2,a3,a4);
@@ -1734,7 +1786,7 @@ vector<char> GEN_NAND4_D2(char a1,char a2,char a3,char a4){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NAND4_D4(char a1,char a2,char a3,char a4){
+vector<char> GEN_NAND4_D4(char a1,char a2,char a3,char a4,char xx0,char xx1){
     // output 
     char zn;
     zn = nand4(a1,a2,a3,a4);
@@ -1743,7 +1795,7 @@ vector<char> GEN_NAND4_D4(char a1,char a2,char a3,char a4){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NAND4_D8(char a1,char a2,char a3,char a4){
+vector<char> GEN_NAND4_D8(char a1,char a2,char a3,char a4,char xx0,char xx1){
     // output 
     char zn;
     zn = nand4(a1,a2,a3,a4);
@@ -1752,7 +1804,7 @@ vector<char> GEN_NAND4_D8(char a1,char a2,char a3,char a4){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NOR2_D1(char a1,char a2){
+vector<char> GEN_NOR2_D1(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char zn;
     zn = nor2(a1,a2);
@@ -1761,7 +1813,7 @@ vector<char> GEN_NOR2_D1(char a1,char a2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NOR2_D2(char a1,char a2){
+vector<char> GEN_NOR2_D2(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char zn;
     zn = nor2(a1,a2);
@@ -1770,7 +1822,7 @@ vector<char> GEN_NOR2_D2(char a1,char a2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NOR2_D4(char a1,char a2){
+vector<char> GEN_NOR2_D4(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char zn;
     zn = nor2(a1,a2);
@@ -1779,7 +1831,7 @@ vector<char> GEN_NOR2_D4(char a1,char a2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NOR2_D8(char a1,char a2){
+vector<char> GEN_NOR2_D8(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char zn;
     zn = nor2(a1,a2);
@@ -1788,7 +1840,7 @@ vector<char> GEN_NOR2_D8(char a1,char a2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NOR3_D1(char a1,char a2,char a3){
+vector<char> GEN_NOR3_D1(char a1,char a2,char a3,char xx0,char xx1,char xx2){
     // output 
     char zn;
     zn = nor3(a1,a2,a3);
@@ -1797,7 +1849,7 @@ vector<char> GEN_NOR3_D1(char a1,char a2,char a3){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NOR3_D2(char a1,char a2,char a3){
+vector<char> GEN_NOR3_D2(char a1,char a2,char a3,char xx0,char xx1,char xx2){
     // output 
     char zn;
     zn = nor3(a1,a2,a3);
@@ -1806,7 +1858,7 @@ vector<char> GEN_NOR3_D2(char a1,char a2,char a3){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NOR3_D4(char a1,char a2,char a3){
+vector<char> GEN_NOR3_D4(char a1,char a2,char a3,char xx0,char xx1,char xx2){
     // output 
     char zn;
     zn = nor3(a1,a2,a3);
@@ -1815,7 +1867,7 @@ vector<char> GEN_NOR3_D4(char a1,char a2,char a3){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NOR3_D8(char a1,char a2,char a3){
+vector<char> GEN_NOR3_D8(char a1,char a2,char a3,char xx0,char xx1,char xx2){
     // output 
     char zn;
     zn = nor3(a1,a2,a3);
@@ -1824,7 +1876,7 @@ vector<char> GEN_NOR3_D8(char a1,char a2,char a3){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NOR4_D1(char a1,char a2,char a3,char a4){
+vector<char> GEN_NOR4_D1(char a1,char a2,char a3,char a4,char xx0,char xx1){
     // output 
     char zn;
     zn = nor4(a1,a2,a3,a4);
@@ -1833,7 +1885,7 @@ vector<char> GEN_NOR4_D1(char a1,char a2,char a3,char a4){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NOR4_D2(char a1,char a2,char a3,char a4){
+vector<char> GEN_NOR4_D2(char a1,char a2,char a3,char a4,char xx0,char xx1){
     // output 
     char zn;
     zn = nor4(a1,a2,a3,a4);
@@ -1842,7 +1894,7 @@ vector<char> GEN_NOR4_D2(char a1,char a2,char a3,char a4){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NOR4_D4(char a1,char a2,char a3,char a4){
+vector<char> GEN_NOR4_D4(char a1,char a2,char a3,char a4,char xx0,char xx1){
     // output 
     char zn;
     zn = nor4(a1,a2,a3,a4);
@@ -1851,7 +1903,7 @@ vector<char> GEN_NOR4_D4(char a1,char a2,char a3,char a4){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_NOR4_D8(char a1,char a2,char a3,char a4){
+vector<char> GEN_NOR4_D8(char a1,char a2,char a3,char a4,char xx0,char xx1){
     // output 
     char zn;
     zn = nor4(a1,a2,a3,a4);
@@ -1860,7 +1912,7 @@ vector<char> GEN_NOR4_D8(char a1,char a2,char a3,char a4){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_OA211_D1(char a1,char a2,char b,char c){
+vector<char> GEN_OA211_D1(char a1,char a2,char b,char c,char xx0,char xx1){
     // output 
     char z;
     // wire 
@@ -1873,7 +1925,7 @@ vector<char> GEN_OA211_D1(char a1,char a2,char b,char c){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OA211_D2(char a1,char a2,char b,char c){
+vector<char> GEN_OA211_D2(char a1,char a2,char b,char c,char xx0,char xx1){
     // output 
     char z;
     // wire 
@@ -1886,7 +1938,7 @@ vector<char> GEN_OA211_D2(char a1,char a2,char b,char c){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OA211_D4(char a1,char a2,char b,char c){
+vector<char> GEN_OA211_D4(char a1,char a2,char b,char c,char xx0,char xx1){
     // output 
     char z;
     // wire 
@@ -1899,7 +1951,7 @@ vector<char> GEN_OA211_D4(char a1,char a2,char b,char c){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OA21_D1(char a1,char a2,char b){
+vector<char> GEN_OA21_D1(char a1,char a2,char b,char xx0,char xx1,char xx2){
     // output 
     char z;
     // wire 
@@ -1912,7 +1964,7 @@ vector<char> GEN_OA21_D1(char a1,char a2,char b){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OA21_D2(char a1,char a2,char b){
+vector<char> GEN_OA21_D2(char a1,char a2,char b,char xx0,char xx1,char xx2){
     // output 
     char z;
     // wire 
@@ -1925,7 +1977,7 @@ vector<char> GEN_OA21_D2(char a1,char a2,char b){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OA21_D4(char a1,char a2,char b){
+vector<char> GEN_OA21_D4(char a1,char a2,char b,char xx0,char xx1,char xx2){
     // output 
     char z;
     // wire 
@@ -1938,7 +1990,7 @@ vector<char> GEN_OA21_D4(char a1,char a2,char b){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OA221_D1(char a1,char a2,char b1,char b2,char c){
+vector<char> GEN_OA221_D1(char a1,char a2,char b1,char b2,char c,char xx0){
     // output 
     char z;
     // wire 
@@ -1952,7 +2004,7 @@ vector<char> GEN_OA221_D1(char a1,char a2,char b1,char b2,char c){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OA221_D2(char a1,char a2,char b1,char b2,char c){
+vector<char> GEN_OA221_D2(char a1,char a2,char b1,char b2,char c,char xx0){
     // output 
     char z;
     // wire 
@@ -1966,7 +2018,7 @@ vector<char> GEN_OA221_D2(char a1,char a2,char b1,char b2,char c){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OA221_D4(char a1,char a2,char b1,char b2,char c){
+vector<char> GEN_OA221_D4(char a1,char a2,char b1,char b2,char c,char xx0){
     // output 
     char z;
     // wire 
@@ -2025,7 +2077,7 @@ vector<char> GEN_OA222_D4(char a1,char a2,char b1,char b2,char c1,char c2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OA22_D1(char a1,char a2,char b1,char b2){
+vector<char> GEN_OA22_D1(char a1,char a2,char b1,char b2,char xx0,char xx1){
     // output 
     char z;
     // wire 
@@ -2039,7 +2091,7 @@ vector<char> GEN_OA22_D1(char a1,char a2,char b1,char b2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OA22_D2(char a1,char a2,char b1,char b2){
+vector<char> GEN_OA22_D2(char a1,char a2,char b1,char b2,char xx0,char xx1){
     // output 
     char z;
     // wire 
@@ -2053,7 +2105,7 @@ vector<char> GEN_OA22_D2(char a1,char a2,char b1,char b2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OA22_D4(char a1,char a2,char b1,char b2){
+vector<char> GEN_OA22_D4(char a1,char a2,char b1,char b2,char xx0,char xx1){
     // output 
     char z;
     // wire 
@@ -2067,7 +2119,7 @@ vector<char> GEN_OA22_D4(char a1,char a2,char b1,char b2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OA31_D1(char a1,char a2,char a3,char b){
+vector<char> GEN_OA31_D1(char a1,char a2,char a3,char b,char xx0,char xx1){
     // output 
     char z;
     // wire 
@@ -2080,7 +2132,7 @@ vector<char> GEN_OA31_D1(char a1,char a2,char a3,char b){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OA31_D2(char a1,char a2,char a3,char b){
+vector<char> GEN_OA31_D2(char a1,char a2,char a3,char b,char xx0,char xx1){
     // output 
     char z;
     // wire 
@@ -2093,7 +2145,7 @@ vector<char> GEN_OA31_D2(char a1,char a2,char a3,char b){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OA31_D4(char a1,char a2,char a3,char b){
+vector<char> GEN_OA31_D4(char a1,char a2,char a3,char b,char xx0,char xx1){
     // output 
     char z;
     // wire 
@@ -2106,7 +2158,7 @@ vector<char> GEN_OA31_D4(char a1,char a2,char a3,char b){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OA32_D1(char a1,char a2,char a3,char b1,char b2){
+vector<char> GEN_OA32_D1(char a1,char a2,char a3,char b1,char b2,char xx0){
     // output 
     char z;
     // wire 
@@ -2120,7 +2172,7 @@ vector<char> GEN_OA32_D1(char a1,char a2,char a3,char b1,char b2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OA32_D2(char a1,char a2,char a3,char b1,char b2){
+vector<char> GEN_OA32_D2(char a1,char a2,char a3,char b1,char b2,char xx0){
     // output 
     char z;
     // wire 
@@ -2134,7 +2186,7 @@ vector<char> GEN_OA32_D2(char a1,char a2,char a3,char b1,char b2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OA32_D4(char a1,char a2,char a3,char b1,char b2){
+vector<char> GEN_OA32_D4(char a1,char a2,char a3,char b1,char b2,char xx0){
     // output 
     char z;
     // wire 
@@ -2190,7 +2242,7 @@ vector<char> GEN_OA33_D4(char a1,char a2,char a3,char b1,char b2,char b3){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OAI211_D1(char a1,char a2,char b,char c){
+vector<char> GEN_OAI211_D1(char a1,char a2,char b,char c,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -2204,7 +2256,7 @@ vector<char> GEN_OAI211_D1(char a1,char a2,char b,char c){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_OAI211_D2(char a1,char a2,char b,char c){
+vector<char> GEN_OAI211_D2(char a1,char a2,char b,char c,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -2218,7 +2270,7 @@ vector<char> GEN_OAI211_D2(char a1,char a2,char b,char c){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_OAI211_D4(char a1,char a2,char b,char c){
+vector<char> GEN_OAI211_D4(char a1,char a2,char b,char c,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -2232,7 +2284,7 @@ vector<char> GEN_OAI211_D4(char a1,char a2,char b,char c){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_OAI21_D1(char a1,char a2,char b){
+vector<char> GEN_OAI21_D1(char a1,char a2,char b,char xx0,char xx1,char xx2){
     // output 
     char zn;
     // wire 
@@ -2246,7 +2298,7 @@ vector<char> GEN_OAI21_D1(char a1,char a2,char b){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_OAI21_D2(char a1,char a2,char b){
+vector<char> GEN_OAI21_D2(char a1,char a2,char b,char xx0,char xx1,char xx2){
     // output 
     char zn;
     // wire 
@@ -2260,7 +2312,7 @@ vector<char> GEN_OAI21_D2(char a1,char a2,char b){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_OAI21_D4(char a1,char a2,char b){
+vector<char> GEN_OAI21_D4(char a1,char a2,char b,char xx0,char xx1,char xx2){
     // output 
     char zn;
     // wire 
@@ -2274,7 +2326,7 @@ vector<char> GEN_OAI21_D4(char a1,char a2,char b){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_OAI221_D1(char a1,char a2,char b1,char b2,char c){
+vector<char> GEN_OAI221_D1(char a1,char a2,char b1,char b2,char c,char xx0){
     // output 
     char zn;
     // wire 
@@ -2289,7 +2341,7 @@ vector<char> GEN_OAI221_D1(char a1,char a2,char b1,char b2,char c){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_OAI221_D2(char a1,char a2,char b1,char b2,char c){
+vector<char> GEN_OAI221_D2(char a1,char a2,char b1,char b2,char c,char xx0){
     // output 
     char zn;
     // wire 
@@ -2304,7 +2356,7 @@ vector<char> GEN_OAI221_D2(char a1,char a2,char b1,char b2,char c){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_OAI221_D4(char a1,char a2,char b1,char b2,char c){
+vector<char> GEN_OAI221_D4(char a1,char a2,char b1,char b2,char c,char xx0){
     // output 
     char zn;
     // wire 
@@ -2367,7 +2419,7 @@ vector<char> GEN_OAI222_D4(char a1,char a2,char b1,char b2,char c1,char c2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_OAI22_D1(char a1,char a2,char b1,char b2){
+vector<char> GEN_OAI22_D1(char a1,char a2,char b1,char b2,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -2382,7 +2434,7 @@ vector<char> GEN_OAI22_D1(char a1,char a2,char b1,char b2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_OAI22_D2(char a1,char a2,char b1,char b2){
+vector<char> GEN_OAI22_D2(char a1,char a2,char b1,char b2,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -2397,7 +2449,7 @@ vector<char> GEN_OAI22_D2(char a1,char a2,char b1,char b2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_OAI22_D4(char a1,char a2,char b1,char b2){
+vector<char> GEN_OAI22_D4(char a1,char a2,char b1,char b2,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -2412,7 +2464,7 @@ vector<char> GEN_OAI22_D4(char a1,char a2,char b1,char b2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_OAI31_D1(char a1,char a2,char a3,char b){
+vector<char> GEN_OAI31_D1(char a1,char a2,char a3,char b,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -2426,7 +2478,7 @@ vector<char> GEN_OAI31_D1(char a1,char a2,char a3,char b){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_OAI31_D2(char a1,char a2,char a3,char b){
+vector<char> GEN_OAI31_D2(char a1,char a2,char a3,char b,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -2440,7 +2492,7 @@ vector<char> GEN_OAI31_D2(char a1,char a2,char a3,char b){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_OAI31_D4(char a1,char a2,char a3,char b){
+vector<char> GEN_OAI31_D4(char a1,char a2,char a3,char b,char xx0,char xx1){
     // output 
     char zn;
     // wire 
@@ -2454,7 +2506,7 @@ vector<char> GEN_OAI31_D4(char a1,char a2,char a3,char b){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_OAI32_D1(char a1,char a2,char a3,char b1,char b2){
+vector<char> GEN_OAI32_D1(char a1,char a2,char a3,char b1,char b2,char xx0){
     // output 
     char zn;
     // wire 
@@ -2469,7 +2521,7 @@ vector<char> GEN_OAI32_D1(char a1,char a2,char a3,char b1,char b2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_OAI32_D2(char a1,char a2,char a3,char b1,char b2){
+vector<char> GEN_OAI32_D2(char a1,char a2,char a3,char b1,char b2,char xx0){
     // output 
     char zn;
     // wire 
@@ -2484,7 +2536,7 @@ vector<char> GEN_OAI32_D2(char a1,char a2,char a3,char b1,char b2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_OAI32_D4(char a1,char a2,char a3,char b1,char b2){
+vector<char> GEN_OAI32_D4(char a1,char a2,char a3,char b1,char b2,char xx0){
     // output 
     char zn;
     // wire 
@@ -2544,7 +2596,7 @@ vector<char> GEN_OAI33_D4(char a1,char a2,char a3,char b1,char b2,char b3){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_OR2_D1(char a1,char a2){
+vector<char> GEN_OR2_D1(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char z;
     z = or2(a1,a2);
@@ -2553,7 +2605,7 @@ vector<char> GEN_OR2_D1(char a1,char a2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OR2_D2(char a1,char a2){
+vector<char> GEN_OR2_D2(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char z;
     z = or2(a1,a2);
@@ -2562,7 +2614,7 @@ vector<char> GEN_OR2_D2(char a1,char a2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OR2_D4(char a1,char a2){
+vector<char> GEN_OR2_D4(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char z;
     z = or2(a1,a2);
@@ -2571,7 +2623,7 @@ vector<char> GEN_OR2_D4(char a1,char a2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OR2_D8(char a1,char a2){
+vector<char> GEN_OR2_D8(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char z;
     z = or2(a1,a2);
@@ -2580,7 +2632,7 @@ vector<char> GEN_OR2_D8(char a1,char a2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OR3_D1(char a1,char a2,char a3){
+vector<char> GEN_OR3_D1(char a1,char a2,char a3,char xx0,char xx1,char xx2){
     // output 
     char z;
     z = or3(a1,a2,a3);
@@ -2589,7 +2641,7 @@ vector<char> GEN_OR3_D1(char a1,char a2,char a3){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OR3_D2(char a1,char a2,char a3){
+vector<char> GEN_OR3_D2(char a1,char a2,char a3,char xx0,char xx1,char xx2){
     // output 
     char z;
     z = or3(a1,a2,a3);
@@ -2598,7 +2650,7 @@ vector<char> GEN_OR3_D2(char a1,char a2,char a3){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OR3_D4(char a1,char a2,char a3){
+vector<char> GEN_OR3_D4(char a1,char a2,char a3,char xx0,char xx1,char xx2){
     // output 
     char z;
     z = or3(a1,a2,a3);
@@ -2607,7 +2659,7 @@ vector<char> GEN_OR3_D4(char a1,char a2,char a3){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OR3_D8(char a1,char a2,char a3){
+vector<char> GEN_OR3_D8(char a1,char a2,char a3,char xx0,char xx1,char xx2){
     // output 
     char z;
     z = or3(a1,a2,a3);
@@ -2616,7 +2668,7 @@ vector<char> GEN_OR3_D8(char a1,char a2,char a3){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OR4_D1(char a1,char a2,char a3,char a4){
+vector<char> GEN_OR4_D1(char a1,char a2,char a3,char a4,char xx0,char xx1){
     // output 
     char z;
     z = or4(a1,a2,a3,a4);
@@ -2625,7 +2677,7 @@ vector<char> GEN_OR4_D1(char a1,char a2,char a3,char a4){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OR4_D2(char a1,char a2,char a3,char a4){
+vector<char> GEN_OR4_D2(char a1,char a2,char a3,char a4,char xx0,char xx1){
     // output 
     char z;
     z = or4(a1,a2,a3,a4);
@@ -2634,7 +2686,7 @@ vector<char> GEN_OR4_D2(char a1,char a2,char a3,char a4){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OR4_D4(char a1,char a2,char a3,char a4){
+vector<char> GEN_OR4_D4(char a1,char a2,char a3,char a4,char xx0,char xx1){
     // output 
     char z;
     z = or4(a1,a2,a3,a4);
@@ -2643,7 +2695,7 @@ vector<char> GEN_OR4_D4(char a1,char a2,char a3,char a4){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_OR4_D8(char a1,char a2,char a3,char a4){
+vector<char> GEN_OR4_D8(char a1,char a2,char a3,char a4,char xx0,char xx1){
     // output 
     char z;
     z = or4(a1,a2,a3,a4);
@@ -2652,7 +2704,7 @@ vector<char> GEN_OR4_D8(char a1,char a2,char a3,char a4){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_SCAN_DFCLR_D1(char si,char d,char se,char cp,char cdn){
+vector<char> GEN_SCAN_DFCLR_D1(char si,char d,char se,char cp,char cdn,char xx0){
     // output 
     char q;
     // wire 
@@ -2680,7 +2732,7 @@ vector<char> GEN_SCAN_DFCLR_D1(char si,char d,char se,char cp,char cdn){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_SCAN_DFCLR_D2(char si,char d,char se,char cp,char cdn){
+vector<char> GEN_SCAN_DFCLR_D2(char si,char d,char se,char cp,char cdn,char xx0){
     // output 
     char q;
     // wire 
@@ -2708,7 +2760,7 @@ vector<char> GEN_SCAN_DFCLR_D2(char si,char d,char se,char cp,char cdn){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_SCAN_DFCLR_D4(char si,char d,char se,char cp,char cdn){
+vector<char> GEN_SCAN_DFCLR_D4(char si,char d,char se,char cp,char cdn,char xx0){
     // output 
     char q;
     // wire 
@@ -2736,7 +2788,7 @@ vector<char> GEN_SCAN_DFCLR_D4(char si,char d,char se,char cp,char cdn){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_SCAN_DFCLR_D8(char si,char d,char se,char cp,char cdn){
+vector<char> GEN_SCAN_DFCLR_D8(char si,char d,char se,char cp,char cdn,char xx0){
     // output 
     char q;
     // wire 
@@ -2764,7 +2816,7 @@ vector<char> GEN_SCAN_DFCLR_D8(char si,char d,char se,char cp,char cdn){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_SCAN_DF_D1(char si,char d,char se,char cp){
+vector<char> GEN_SCAN_DF_D1(char si,char d,char se,char cp,char xx0,char xx1){
     // output 
     char q;
     // wire 
@@ -2788,7 +2840,7 @@ vector<char> GEN_SCAN_DF_D1(char si,char d,char se,char cp){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_SCAN_DF_D2(char si,char d,char se,char cp){
+vector<char> GEN_SCAN_DF_D2(char si,char d,char se,char cp,char xx0,char xx1){
     // output 
     char q;
     // wire 
@@ -2812,7 +2864,7 @@ vector<char> GEN_SCAN_DF_D2(char si,char d,char se,char cp){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_SCAN_DF_D4(char si,char d,char se,char cp){
+vector<char> GEN_SCAN_DF_D4(char si,char d,char se,char cp,char xx0,char xx1){
     // output 
     char q;
     // wire 
@@ -2836,7 +2888,7 @@ vector<char> GEN_SCAN_DF_D4(char si,char d,char se,char cp){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_SCAN_DF_D8(char si,char d,char se,char cp){
+vector<char> GEN_SCAN_DF_D8(char si,char d,char se,char cp,char xx0,char xx1){
     // output 
     char q;
     // wire 
@@ -2860,7 +2912,7 @@ vector<char> GEN_SCAN_DF_D8(char si,char d,char se,char cp){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_SCAN_DFSET_D1(char si,char d,char se,char cp,char sdn){
+vector<char> GEN_SCAN_DFSET_D1(char si,char d,char se,char cp,char sdn,char xx0){
     // output 
     char q;
     // wire 
@@ -2886,7 +2938,7 @@ vector<char> GEN_SCAN_DFSET_D1(char si,char d,char se,char cp,char sdn){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_SCAN_DFSET_D2(char si,char d,char se,char cp,char sdn){
+vector<char> GEN_SCAN_DFSET_D2(char si,char d,char se,char cp,char sdn,char xx0){
     // output 
     char q;
     // wire 
@@ -2912,7 +2964,7 @@ vector<char> GEN_SCAN_DFSET_D2(char si,char d,char se,char cp,char sdn){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_SCAN_DFSET_D4(char si,char d,char se,char cp,char sdn){
+vector<char> GEN_SCAN_DFSET_D4(char si,char d,char se,char cp,char sdn,char xx0){
     // output 
     char q;
     // wire 
@@ -2938,7 +2990,7 @@ vector<char> GEN_SCAN_DFSET_D4(char si,char d,char se,char cp,char sdn){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_SCAN_DFSET_D8(char si,char d,char se,char cp,char sdn){
+vector<char> GEN_SCAN_DFSET_D8(char si,char d,char se,char cp,char sdn,char xx0){
     // output 
     char q;
     // wire 
@@ -2964,7 +3016,7 @@ vector<char> GEN_SCAN_DFSET_D8(char si,char d,char se,char cp,char sdn){
     ans.push_back(q);
     return ans;
 }
-vector<char> GEN_XNOR2_D1(char a1,char a2){
+vector<char> GEN_XNOR2_D1(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char zn;
     zn = xnor2(a1,a2);
@@ -2973,7 +3025,7 @@ vector<char> GEN_XNOR2_D1(char a1,char a2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_XNOR2_D2(char a1,char a2){
+vector<char> GEN_XNOR2_D2(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char zn;
     zn = xnor2(a1,a2);
@@ -2982,7 +3034,7 @@ vector<char> GEN_XNOR2_D2(char a1,char a2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_XNOR2_D4(char a1,char a2){
+vector<char> GEN_XNOR2_D4(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char zn;
     zn = xnor2(a1,a2);
@@ -2991,7 +3043,7 @@ vector<char> GEN_XNOR2_D4(char a1,char a2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_XNOR2_D8(char a1,char a2){
+vector<char> GEN_XNOR2_D8(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char zn;
     zn = xnor2(a1,a2);
@@ -3000,7 +3052,7 @@ vector<char> GEN_XNOR2_D8(char a1,char a2){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_XNOR3_D1(char a1,char a2,char a3){
+vector<char> GEN_XNOR3_D1(char a1,char a2,char a3,char xx0,char xx1,char xx2){
     // output 
     char zn;
     zn = xnor3(a1,a2,a3);
@@ -3009,7 +3061,7 @@ vector<char> GEN_XNOR3_D1(char a1,char a2,char a3){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_XNOR3_D2(char a1,char a2,char a3){
+vector<char> GEN_XNOR3_D2(char a1,char a2,char a3,char xx0,char xx1,char xx2){
     // output 
     char zn;
     zn = xnor3(a1,a2,a3);
@@ -3018,7 +3070,7 @@ vector<char> GEN_XNOR3_D2(char a1,char a2,char a3){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_XNOR3_D4(char a1,char a2,char a3){
+vector<char> GEN_XNOR3_D4(char a1,char a2,char a3,char xx0,char xx1,char xx2){
     // output 
     char zn;
     zn = xnor3(a1,a2,a3);
@@ -3027,7 +3079,7 @@ vector<char> GEN_XNOR3_D4(char a1,char a2,char a3){
     ans.push_back(zn);
     return ans;
 }
-vector<char> GEN_XOR2_D1(char a1,char a2){
+vector<char> GEN_XOR2_D1(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char z;
     z = xor2(a1,a2);
@@ -3036,7 +3088,7 @@ vector<char> GEN_XOR2_D1(char a1,char a2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_XOR2_D2(char a1,char a2){
+vector<char> GEN_XOR2_D2(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char z;
     z = xor2(a1,a2);
@@ -3045,7 +3097,7 @@ vector<char> GEN_XOR2_D2(char a1,char a2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_XOR2_D4(char a1,char a2){
+vector<char> GEN_XOR2_D4(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char z;
     z = xor2(a1,a2);
@@ -3054,7 +3106,7 @@ vector<char> GEN_XOR2_D4(char a1,char a2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_XOR2_D8(char a1,char a2){
+vector<char> GEN_XOR2_D8(char a1,char a2,char xx0,char xx1,char xx2,char xx3){
     // output 
     char z;
     z = xor2(a1,a2);
@@ -3063,7 +3115,7 @@ vector<char> GEN_XOR2_D8(char a1,char a2){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_XOR3_D1(char a1,char a2,char a3){
+vector<char> GEN_XOR3_D1(char a1,char a2,char a3,char xx0,char xx1,char xx2){
     // output 
     char z;
     z = xor3(a1,a2,a3);
@@ -3072,7 +3124,7 @@ vector<char> GEN_XOR3_D1(char a1,char a2,char a3){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_XOR3_D2(char a1,char a2,char a3){
+vector<char> GEN_XOR3_D2(char a1,char a2,char a3,char xx0,char xx1,char xx2){
     // output 
     char z;
     z = xor3(a1,a2,a3);
@@ -3081,7 +3133,7 @@ vector<char> GEN_XOR3_D2(char a1,char a2,char a3){
     ans.push_back(z);
     return ans;
 }
-vector<char> GEN_XOR3_D4(char a1,char a2,char a3){
+vector<char> GEN_XOR3_D4(char a1,char a2,char a3,char xx0,char xx1,char xx2){
     // output 
     char z;
     z = xor3(a1,a2,a3);
@@ -3089,4 +3141,230 @@ vector<char> GEN_XOR3_D4(char a1,char a2,char a3){
     vector<char> ans;
     ans.push_back(z);
     return ans;
+}
+
+void construct_funct_map(map<std::string, FnPtr> & Map){
+    Map["GEN_AND2_D1"] = GEN_AND2_D1;
+    Map["GEN_AND2_D2"] = GEN_AND2_D2;
+    Map["GEN_AND2_D4"] = GEN_AND2_D4;
+    Map["GEN_AND2_D8"] = GEN_AND2_D8;
+    Map["GEN_AND3_D1"] = GEN_AND3_D1;
+    Map["GEN_AND3_D2"] = GEN_AND3_D2;
+    Map["GEN_AND3_D4"] = GEN_AND3_D4;
+    Map["GEN_AND3_D8"] = GEN_AND3_D8;
+    Map["GEN_AND4_D1"] = GEN_AND4_D1;
+    Map["GEN_AND4_D2"] = GEN_AND4_D2;
+    Map["GEN_AND4_D4"] = GEN_AND4_D4;
+    Map["GEN_AND4_D8"] = GEN_AND4_D8;
+    Map["GEN_AO211_D1"] = GEN_AO211_D1;
+    Map["GEN_AO211_D2"] = GEN_AO211_D2;
+    Map["GEN_AO211_D4"] = GEN_AO211_D4;
+    Map["GEN_AO21_D1"] = GEN_AO21_D1;
+    Map["GEN_AO21_D2"] = GEN_AO21_D2;
+    Map["GEN_AO21_D4"] = GEN_AO21_D4;
+    Map["GEN_AO221_D1"] = GEN_AO221_D1;
+    Map["GEN_AO221_D2"] = GEN_AO221_D2;
+    Map["GEN_AO221_D4"] = GEN_AO221_D4;
+    Map["GEN_AO222_D1"] = GEN_AO222_D1;
+    Map["GEN_AO222_D2"] = GEN_AO222_D2;
+    Map["GEN_AO222_D4"] = GEN_AO222_D4;
+    Map["GEN_AO22_D1"] = GEN_AO22_D1;
+    Map["GEN_AO22_D2"] = GEN_AO22_D2;
+    Map["GEN_AO22_D4"] = GEN_AO22_D4;
+    Map["GEN_AO22_D8"] = GEN_AO22_D8;
+    Map["GEN_AO31_D1"] = GEN_AO31_D1;
+    Map["GEN_AO31_D2"] = GEN_AO31_D2;
+    Map["GEN_AO31_D4"] = GEN_AO31_D4;
+    Map["GEN_AO32_D1"] = GEN_AO32_D1;
+    Map["GEN_AO32_D2"] = GEN_AO32_D2;
+    Map["GEN_AO32_D4"] = GEN_AO32_D4;
+    Map["GEN_AO33_D1"] = GEN_AO33_D1;
+    Map["GEN_AO33_D2"] = GEN_AO33_D2;
+    Map["GEN_AO33_D4"] = GEN_AO33_D4;
+    Map["GEN_AOI211_D1"] = GEN_AOI211_D1;
+    Map["GEN_AOI211_D2"] = GEN_AOI211_D2;
+    Map["GEN_AOI211_D4"] = GEN_AOI211_D4;
+    Map["GEN_AOI21_D1"] = GEN_AOI21_D1;
+    Map["GEN_AOI21_D2"] = GEN_AOI21_D2;
+    Map["GEN_AOI21_D4"] = GEN_AOI21_D4;
+    Map["GEN_AOI221_D1"] = GEN_AOI221_D1;
+    Map["GEN_AOI221_D2"] = GEN_AOI221_D2;
+    Map["GEN_AOI221_D4"] = GEN_AOI221_D4;
+    Map["GEN_AOI222_D1"] = GEN_AOI222_D1;
+    Map["GEN_AOI222_D2"] = GEN_AOI222_D2;
+    Map["GEN_AOI222_D4"] = GEN_AOI222_D4;
+    Map["GEN_AOI22_D1"] = GEN_AOI22_D1;
+    Map["GEN_AOI22_D2"] = GEN_AOI22_D2;
+    Map["GEN_AOI22_D4"] = GEN_AOI22_D4;
+    Map["GEN_AOI31_D1"] = GEN_AOI31_D1;
+    Map["GEN_AOI31_D2"] = GEN_AOI31_D2;
+    Map["GEN_AOI31_D4"] = GEN_AOI31_D4;
+    Map["GEN_AOI32_D1"] = GEN_AOI32_D1;
+    Map["GEN_AOI32_D2"] = GEN_AOI32_D2;
+    Map["GEN_AOI32_D4"] = GEN_AOI32_D4;
+    Map["GEN_AOI33_D1"] = GEN_AOI33_D1;
+    Map["GEN_AOI33_D2"] = GEN_AOI33_D2;
+    Map["GEN_AOI33_D4"] = GEN_AOI33_D4;
+    Map["GEN_BUF_D1"] = GEN_BUF_D1;
+    Map["GEN_BUF_D2"] = GEN_BUF_D2;
+    Map["GEN_BUF_D4"] = GEN_BUF_D4;
+    Map["GEN_BUF_D8"] = GEN_BUF_D8;
+    Map["GEN_FA_D1"] = GEN_FA_D1;
+    Map["GEN_FA_D2"] = GEN_FA_D2;
+    Map["GEN_FA_D4"] = GEN_FA_D4;
+    Map["GEN_HA_D1"] = GEN_HA_D1;
+    Map["GEN_HA_D2"] = GEN_HA_D2;
+    Map["GEN_HA_D4"] = GEN_HA_D4;
+    Map["GEN_INV_D1"] = GEN_INV_D1;
+    Map["GEN_INV_D2"] = GEN_INV_D2;
+    Map["GEN_INV_D4"] = GEN_INV_D4;
+    Map["GEN_INV_D8"] = GEN_INV_D8;
+    Map["GEN_MAJORITYAOI222_D1"] = GEN_MAJORITYAOI222_D1;
+    Map["GEN_MAJORITYAOI222_D2"] = GEN_MAJORITYAOI222_D2;
+    Map["GEN_MAJORITYAOI222_D4"] = GEN_MAJORITYAOI222_D4;
+    Map["GEN_MAJORITYAOI22_D1"] = GEN_MAJORITYAOI22_D1;
+    Map["GEN_MAJORITYAOI22_D2"] = GEN_MAJORITYAOI22_D2;
+    Map["GEN_MAJORITYAOI22_D4"] = GEN_MAJORITYAOI22_D4;
+    Map["GEN_MAJORITYOAI22_D1"] = GEN_MAJORITYOAI22_D1;
+    Map["GEN_MAJORITYOAI22_D2"] = GEN_MAJORITYOAI22_D2;
+    Map["GEN_MAJORITYOAI22_D4"] = GEN_MAJORITYOAI22_D4;
+    Map["GEN_LATCH_D1"] = GEN_LATCH_D1;
+    Map["GEN_LATCH_D2"] = GEN_LATCH_D2;
+    Map["GEN_LATCH_D4"] = GEN_LATCH_D4;
+    Map["GEN_DFCLR_D1"] = GEN_DFCLR_D1;
+    Map["GEN_DFCLR_D2"] = GEN_DFCLR_D2;
+    Map["GEN_DFCLR_D4"] = GEN_DFCLR_D4;
+    Map["GEN_DFCLR_D8"] = GEN_DFCLR_D8;
+    Map["GEN_DF_D1"] = GEN_DF_D1;
+    Map["GEN_DF_D2"] = GEN_DF_D2;
+    Map["GEN_DF_D4"] = GEN_DF_D4;
+    Map["GEN_DF_D8"] = GEN_DF_D8;
+    Map["GEN_DFSET_D1"] = GEN_DFSET_D1;
+    Map["GEN_DFSET_D2"] = GEN_DFSET_D2;
+    Map["GEN_DFSET_D4"] = GEN_DFSET_D4;
+    Map["GEN_DFSET_D8"] = GEN_DFSET_D8;
+    Map["GEN_MUX2_D1"] = GEN_MUX2_D1;
+    Map["GEN_MUX2_D2"] = GEN_MUX2_D2;
+    Map["GEN_MUX2_D4"] = GEN_MUX2_D4;
+    Map["GEN_MUX2N_D1"] = GEN_MUX2N_D1;
+    Map["GEN_MUX2N_D2"] = GEN_MUX2N_D2;
+    Map["GEN_MUX2N_D4"] = GEN_MUX2N_D4;
+    Map["GEN_MUX3_D1"] = GEN_MUX3_D1;
+    Map["GEN_MUX3_D2"] = GEN_MUX3_D2;
+    Map["GEN_MUX3_D4"] = GEN_MUX3_D4;
+    Map["GEN_MUX3N_D1"] = GEN_MUX3N_D1;
+    Map["GEN_MUX3N_D2"] = GEN_MUX3N_D2;
+    Map["GEN_MUX3N_D4"] = GEN_MUX3N_D4;
+    Map["GEN_MUX4_D1"] = GEN_MUX4_D1;
+    Map["GEN_MUX4_D2"] = GEN_MUX4_D2;
+    Map["GEN_MUX4_D4"] = GEN_MUX4_D4;
+    Map["GEN_MUX4N_D1"] = GEN_MUX4N_D1;
+    Map["GEN_MUX4N_D2"] = GEN_MUX4N_D2;
+    Map["GEN_MUX4N_D4"] = GEN_MUX4N_D4;
+    Map["GEN_NAND2_D1"] = GEN_NAND2_D1;
+    Map["GEN_NAND2_D2"] = GEN_NAND2_D2;
+    Map["GEN_NAND2_D4"] = GEN_NAND2_D4;
+    Map["GEN_NAND2_D8"] = GEN_NAND2_D8;
+    Map["GEN_NAND3_D1"] = GEN_NAND3_D1;
+    Map["GEN_NAND3_D2"] = GEN_NAND3_D2;
+    Map["GEN_NAND3_D4"] = GEN_NAND3_D4;
+    Map["GEN_NAND3_D8"] = GEN_NAND3_D8;
+    Map["GEN_NAND4_D1"] = GEN_NAND4_D1;
+    Map["GEN_NAND4_D2"] = GEN_NAND4_D2;
+    Map["GEN_NAND4_D4"] = GEN_NAND4_D4;
+    Map["GEN_NAND4_D8"] = GEN_NAND4_D8;
+    Map["GEN_NOR2_D1"] = GEN_NOR2_D1;
+    Map["GEN_NOR2_D2"] = GEN_NOR2_D2;
+    Map["GEN_NOR2_D4"] = GEN_NOR2_D4;
+    Map["GEN_NOR2_D8"] = GEN_NOR2_D8;
+    Map["GEN_NOR3_D1"] = GEN_NOR3_D1;
+    Map["GEN_NOR3_D2"] = GEN_NOR3_D2;
+    Map["GEN_NOR3_D4"] = GEN_NOR3_D4;
+    Map["GEN_NOR3_D8"] = GEN_NOR3_D8;
+    Map["GEN_NOR4_D1"] = GEN_NOR4_D1;
+    Map["GEN_NOR4_D2"] = GEN_NOR4_D2;
+    Map["GEN_NOR4_D4"] = GEN_NOR4_D4;
+    Map["GEN_NOR4_D8"] = GEN_NOR4_D8;
+    Map["GEN_OA211_D1"] = GEN_OA211_D1;
+    Map["GEN_OA211_D2"] = GEN_OA211_D2;
+    Map["GEN_OA211_D4"] = GEN_OA211_D4;
+    Map["GEN_OA21_D1"] = GEN_OA21_D1;
+    Map["GEN_OA21_D2"] = GEN_OA21_D2;
+    Map["GEN_OA21_D4"] = GEN_OA21_D4;
+    Map["GEN_OA221_D1"] = GEN_OA221_D1;
+    Map["GEN_OA221_D2"] = GEN_OA221_D2;
+    Map["GEN_OA221_D4"] = GEN_OA221_D4;
+    Map["GEN_OA222_D1"] = GEN_OA222_D1;
+    Map["GEN_OA222_D2"] = GEN_OA222_D2;
+    Map["GEN_OA222_D4"] = GEN_OA222_D4;
+    Map["GEN_OA22_D1"] = GEN_OA22_D1;
+    Map["GEN_OA22_D2"] = GEN_OA22_D2;
+    Map["GEN_OA22_D4"] = GEN_OA22_D4;
+    Map["GEN_OA31_D1"] = GEN_OA31_D1;
+    Map["GEN_OA31_D2"] = GEN_OA31_D2;
+    Map["GEN_OA31_D4"] = GEN_OA31_D4;
+    Map["GEN_OA32_D1"] = GEN_OA32_D1;
+    Map["GEN_OA32_D2"] = GEN_OA32_D2;
+    Map["GEN_OA32_D4"] = GEN_OA32_D4;
+    Map["GEN_OA33_D1"] = GEN_OA33_D1;
+    Map["GEN_OA33_D2"] = GEN_OA33_D2;
+    Map["GEN_OA33_D4"] = GEN_OA33_D4;
+    Map["GEN_OAI211_D1"] = GEN_OAI211_D1;
+    Map["GEN_OAI211_D2"] = GEN_OAI211_D2;
+    Map["GEN_OAI211_D4"] = GEN_OAI211_D4;
+    Map["GEN_OAI21_D1"] = GEN_OAI21_D1;
+    Map["GEN_OAI21_D2"] = GEN_OAI21_D2;
+    Map["GEN_OAI21_D4"] = GEN_OAI21_D4;
+    Map["GEN_OAI221_D1"] = GEN_OAI221_D1;
+    Map["GEN_OAI221_D2"] = GEN_OAI221_D2;
+    Map["GEN_OAI221_D4"] = GEN_OAI221_D4;
+    Map["GEN_OAI222_D1"] = GEN_OAI222_D1;
+    Map["GEN_OAI222_D2"] = GEN_OAI222_D2;
+    Map["GEN_OAI222_D4"] = GEN_OAI222_D4;
+    Map["GEN_OAI22_D1"] = GEN_OAI22_D1;
+    Map["GEN_OAI22_D2"] = GEN_OAI22_D2;
+    Map["GEN_OAI22_D4"] = GEN_OAI22_D4;
+    Map["GEN_OAI31_D1"] = GEN_OAI31_D1;
+    Map["GEN_OAI31_D2"] = GEN_OAI31_D2;
+    Map["GEN_OAI31_D4"] = GEN_OAI31_D4;
+    Map["GEN_OAI32_D1"] = GEN_OAI32_D1;
+    Map["GEN_OAI32_D2"] = GEN_OAI32_D2;
+    Map["GEN_OAI32_D4"] = GEN_OAI32_D4;
+    Map["GEN_OAI33_D1"] = GEN_OAI33_D1;
+    Map["GEN_OAI33_D2"] = GEN_OAI33_D2;
+    Map["GEN_OAI33_D4"] = GEN_OAI33_D4;
+    Map["GEN_OR2_D1"] = GEN_OR2_D1;
+    Map["GEN_OR2_D2"] = GEN_OR2_D2;
+    Map["GEN_OR2_D4"] = GEN_OR2_D4;
+    Map["GEN_OR2_D8"] = GEN_OR2_D8;
+    Map["GEN_OR3_D1"] = GEN_OR3_D1;
+    Map["GEN_OR3_D2"] = GEN_OR3_D2;
+    Map["GEN_OR3_D4"] = GEN_OR3_D4;
+    Map["GEN_OR3_D8"] = GEN_OR3_D8;
+    Map["GEN_OR4_D1"] = GEN_OR4_D1;
+    Map["GEN_OR4_D2"] = GEN_OR4_D2;
+    Map["GEN_OR4_D4"] = GEN_OR4_D4;
+    Map["GEN_OR4_D8"] = GEN_OR4_D8;
+    Map["GEN_SCAN_DFCLR_D1"] = GEN_SCAN_DFCLR_D1;
+    Map["GEN_SCAN_DFCLR_D2"] = GEN_SCAN_DFCLR_D2;
+    Map["GEN_SCAN_DFCLR_D4"] = GEN_SCAN_DFCLR_D4;
+    Map["GEN_SCAN_DFCLR_D8"] = GEN_SCAN_DFCLR_D8;
+    Map["GEN_SCAN_DF_D1"] = GEN_SCAN_DF_D1;
+    Map["GEN_SCAN_DF_D2"] = GEN_SCAN_DF_D2;
+    Map["GEN_SCAN_DF_D4"] = GEN_SCAN_DF_D4;
+    Map["GEN_SCAN_DF_D8"] = GEN_SCAN_DF_D8;
+    Map["GEN_SCAN_DFSET_D1"] = GEN_SCAN_DFSET_D1;
+    Map["GEN_SCAN_DFSET_D2"] = GEN_SCAN_DFSET_D2;
+    Map["GEN_SCAN_DFSET_D4"] = GEN_SCAN_DFSET_D4;
+    Map["GEN_SCAN_DFSET_D8"] = GEN_SCAN_DFSET_D8;
+    Map["GEN_XNOR2_D1"] = GEN_XNOR2_D1;
+    Map["GEN_XNOR2_D2"] = GEN_XNOR2_D2;
+    Map["GEN_XNOR2_D4"] = GEN_XNOR2_D4;
+    Map["GEN_XNOR2_D8"] = GEN_XNOR2_D8;
+    Map["GEN_XNOR3_D1"] = GEN_XNOR3_D1;
+    Map["GEN_XNOR3_D2"] = GEN_XNOR3_D2;
+    Map["GEN_XNOR3_D4"] = GEN_XNOR3_D4;
+    Map["GEN_XOR2_D1"] = GEN_XOR2_D1;
+    Map["GEN_XOR2_D2"] = GEN_XOR2_D2;
+    Map["GEN_XOR2_D4"] = GEN_XOR2_D4;
 }

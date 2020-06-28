@@ -11,10 +11,13 @@
 #include "gate.h"
 using namespace std;
 vector<string> split_string(const string& s, char delimiter);
+typedef vector<char> (*FnPtr)(char, char, char, char, char, char);
 void help_message(){
     cout << "Usage: ./sim <input vcd file> <netlist>" << endl;
     cout << "Missing or too many options !"<<endl;
 }
+
+
 int main(int argc, char* argv[]){
     if(argc!=3){
         help_message();
@@ -22,7 +25,12 @@ int main(int argc, char* argv[]){
     }
     char* vcdFile = argv[1];
  	char* netlistFile = argv[2];
-
+    //Usage:
+    //std::map<std::string, FnPtr> myMap;
+    //construct_funct_map(myMap);
+    //vector<char> res = myMap["GEN_AND2_D1"]('1','1','0','0','0','0');
+    //std::cout << res[0]<<endl;
+    //
     fstream fin;
 	fin.open(netlistFile, fstream::in);
     if(!fin.is_open()){

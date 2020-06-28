@@ -6,6 +6,7 @@ def make_function(wr):
     oup = []
     wire = []
     already = False
+    cnt_input=0
     while (1):
         line = f.readline()
         #line.split(str="", num=string.count(str))
@@ -19,13 +20,16 @@ def make_function(wr):
             buf += line.split()[1][:len(line.split()[1])-1]
             inp.append(line.split()[1][:len(line.split()[1])-1])
             buf += ","
-            
+            cnt_input +=1
         elif line[2:8] == "output":
+
             if(not already):
                 for i in range(len(buf)-1):
                     #print(buf[i],end = "")
                     wr.write(buf[i])
                 #print("){")
+                for i in range(6-cnt_input):
+                    wr.write(",char xx{cnt}".format(cnt=i))
                 wr.write("){\n")
                 already = True
             buf.clear()
@@ -116,6 +120,7 @@ def make_function(wr):
                 wr.write(buf[i])
             wr.write('\n')
         elif line[0:9] == "endmodule":
+            cnt_input = 0
             #print()
             #print("    vector<char> ans;")
             wr.write("\n    vector<char> ans;\n")
