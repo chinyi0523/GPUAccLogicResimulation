@@ -30,7 +30,10 @@ int main(int argc, char* argv[]){
     //construct_funct_map(myMap);
     //vector<char> res = myMap["GEN_AND2_D1"]('1','1','0','0','0','0');
     //std::cout << res[0]<<endl;
-    //
+    
+    //name_list
+    vector<string> order_name_list;
+
     fstream fin;
 	fin.open(netlistFile, fstream::in);
     if(!fin.is_open()){
@@ -61,6 +64,7 @@ int main(int argc, char* argv[]){
         else{
             Gate* curr_gate_addr = new Gate(line,"primary_output",0,0);
             Netlist[line] = curr_gate_addr;
+            order_name_list.push_back(line);
         }
 
     }
@@ -76,10 +80,13 @@ int main(int argc, char* argv[]){
     //Reading Gates
     int group = 1;
     int i=0;
+    int current_level=1;
+    order_name_list.push_back("*");
     while(getline(fin, line)){
         //cout<<"!!! "<<line<<" !!!"<<endl;
         if(line==""){
             group++;
+            order_name_list.push_back("*");
             if(group%10==0)
                 cout<<"Constructing Group "<<group<<"\n";
             //Terminating Function: stop at group ?
@@ -96,11 +103,16 @@ int main(int argc, char* argv[]){
             string name = tokens.at(0);
             string type = tokens.at(1);
             int level = atoi(tokens.at(2).c_str());
+            if(current_level!=level) {
+                order_name_list.push_back("**");
+                current_level = level;
+            }
             string inputs = tokens.at(3);
             string outputs = tokens.at(4);
             string delay_info = tokens.at(5);
             Gate* curr_gate_addr = new Gate(name,type,level,group);
             tokens = split_string(inputs, ',');
+            order_name_list.push_back(name);
 
             //Fanin Construction
             for(int i=0;i<tokens.size();i++){
@@ -241,7 +253,24 @@ int main(int argc, char* argv[]){
             Netlist[name] = curr_gate_addr;
         }
     }
-
+    /*
+    int l=0; int g=0;
+    for(int i=0;i<order_name_list.size();i++){
+        if(order_name_list.at(i)=="**"){
+            l++;
+            g=0;
+            cout<<"Level "<<l<<endl;
+        }
+        else if(order_name_list.at(i)=="*"){
+            g++;
+            cout<<endl;
+            cout<<"Group "<<g<<endl;
+        }
+        else
+        cout<<order_name_list[i]<<" ";
+    }
+    */
+    exit(1);
     /////////////////////Add primary input waveform///////////////////////////////
     Waveform waveform;
     if (waveform.read(vcdFile)){
