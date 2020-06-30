@@ -64,7 +64,7 @@ int main(int argc, char* argv[]){
         else{
             Gate* curr_gate_addr = new Gate(line,"primary_output",0,0);
             Netlist[line] = curr_gate_addr;
-            order_name_list.push_back(line);
+            //order_name_list.push_back(line);
         }
 
     }
@@ -87,8 +87,8 @@ int main(int argc, char* argv[]){
         if(line==""){
             group++;
             order_name_list.push_back("*");
-            if(group%10==0)
-                cout<<"Constructing Group "<<group<<"\n";
+            //if(group%10==0)
+            //    cout<<"Constructing Group "<<group<<"\n";
             //Terminating Function: stop at group ?
             /*
             if(group==108){
@@ -270,8 +270,9 @@ int main(int argc, char* argv[]){
         cout<<order_name_list[i]<<" ";
     }
     */
-    exit(1);
+    
     /////////////////////Add primary input waveform///////////////////////////////
+    /*
     Waveform waveform;
     if (waveform.read(vcdFile)){
         cout << "File \"" << vcdFile << "\" was read in successfully." << endl;
@@ -280,7 +281,6 @@ int main(int argc, char* argv[]){
         cerr << "Failed to read in file \"" << vcdFile << "\"!" << endl;
         exit(1); // vcdFile does not exist.
     }
-    
     for(int i = 0; i < waveform.getSize(); i++){
         string name = waveform.getWaveformElem(i).getName();
         string bit = to_string(waveform.getWaveformElem(i).getBit());
@@ -291,6 +291,37 @@ int main(int argc, char* argv[]){
             Netlist[gateName]->set_timeStamp( waveform.getWaveformElem(i).getTimestamp() );
         }
     }
+    */
+    cout<<order_name_list.size()<<endl;
+    for(i=0;i<order_name_list.size();i++){
+        if(order_name_list.at(i)=="*"){
+            continue;
+        }
+        cout<<(order_name_list.at(i))<<endl;
+        Netlist[order_name_list.at(i)] -> printGateInfo();
+        
+        GateList _fin = Netlist[order_name_list.at(i)] -> getFin();
+        map<string,tuple<string,string,Gate*>>::iterator iter;
+        vector<pair<string,TimeStamp>> input_timestamps;
+        for(iter=_fin.begin();iter!=_fin.end();iter++){
+            if(get<0>(iter->second)=="CONST0"||get<0>(iter->second)=="CONST1"){
+               cout<<"     ."<<iter->first<<"("<<get<0>(iter->second)<<")\n"; 
+            }
+            else {
+                // iter->first input port
+                // get<2>(iter->second) input gate pointer
+                // get<0>(iter->second) which output of input gate
+                //cout<<"     ."<<iter->first<<"("<<(get<2>(iter->second))->getName()<<": "<<get<0>(iter->second)<<")\n";
+                pair<string,TimeStamp> temp (iter->first,get<2>(iter->second) -> getTimeStamp());
+                input_timestamps.push_back(temp);
+            }
+        }
+        int timestamp_pointer[input_timestamps.size()];
+        for(int j=0;j<input_timestamps.size();j++) timestamp_pointer[i] = 0;
+        
+        exit(1);
+    }
+
 }
 
 vector<string> split_string(const string& s, char delimiter)
