@@ -36,9 +36,9 @@ vector<string> maxMin(vector<string> endStart)
 
 // WaveformElem class function
 void
-waveformElem::add(const unsigned long long int& time, const string& value)
+waveformElem::add(const float& time, const string& value)
 {
-    _timeStamp.push_back( tuple<unsigned long long int,string>(time, value));
+    _timeStamp.push_back( tuple<float,string>(time, value));
 }
 
 //Waveform class function
@@ -55,16 +55,17 @@ Waveform::read(const string& vcdFile)
         //bool flag = 0;
         bool valueChangeFlag = 0;
         int index = 0;
-        unsigned long long int timeStamp = 0;
+        float timeStamp = 0;
         unsigned long long int cnt = 0;
-        //unsigned long long int tmp_cnt = 0;
+        //float tmp_cnt = 0;
 
 		while(getline(file, line))
 		{
 			if(cnt % 10000 == 0) cout << "processed " << cnt << endl;
             cnt++;
             vector<string> tokens = split(line, ' ');
-            
+            //cout << "processed " << cnt << endl;
+            //cout << line << endl;
             //vcd define variables section
             if(tokens[0] == "$var"){
                 int width = stoi(tokens[2]);
@@ -94,6 +95,7 @@ Waveform::read(const string& vcdFile)
                 }else {cout << "Strange tokens size" << endl;}
                 _idToWidth[id] = width;
                 _idToEndStart[id] = endStart;
+                //if(id=="!") cout<<_idToEndStart[id].size()<<endl;
                 //tmp_cnt += width;
                 //cout << "definition "<< id << " " << tmp_cnt << " " << _waveforms.size() << endl;
                 //cout << "End definition" << endl;
@@ -122,7 +124,6 @@ Waveform::read(const string& vcdFile)
             //     continue;
             // }
             
-
             //vcd value change section	
             if(line[0] == '#'){
                 timeStamp = stoull(line.substr(1));
@@ -135,21 +136,41 @@ Waveform::read(const string& vcdFile)
                     //cout << "update value single bit" << endl;
                     newValue = tokens[0][0];
                     id = tokens[0].substr(1); 
+                    //id = tokens[0].substr(1,tokens[1].length()-2); 
                     int eleIndex = _idToIndex[id][0];
                     _waveforms[eleIndex].add(timeStamp, newValue);
                 }else{
+                    //cout<<"X"<<endl;
                     //cout << "update value multiple bits" << endl;
-                    id = tokens[1]; 
+                    id = tokens[1];
+                    //id = tokens[1].substr(0,tokens[1].length()-1); 
                     width = _idToWidth[id];
+                    /*
+                    cout<<"__________"<<endl;
+                    cout<<id<<endl;
+                    cout<<"length "<<id.length()<<endl;
+                    cout<<"length "<<id[0]<<endl;
+                    cout<<"length "<<id[1]<<endl;
+                    cout<<_idToEndStart[id].size()<<endl;
+                    cout<<_idToEndStart["!"].size()<<endl;
+                    cout<<"__________"<<endl;
+                    */
+                    //cout<<"y"<<endl;
+                    //cout<<"id"<<endl;;
+                    //cout<<id<<endl;
+                    //cout<<_idToEndStart[id].size()<<endl;
+                    
                     for(int j = stoi(_idToEndStart[id][1]); j <= stoi(_idToEndStart[id][0]); j++){
                         if(tokens[0] == "b0") newValue = "0";
                         else if(tokens[0] == "bx") newValue = "x";
                         else if(tokens[0] == "bz") newValue = "z";
                         else if(j > tokens[0].length()) newValue = "0";
                         else newValue = tokens[0][1+j];
+        
                         int eleIndex = _idToIndex[id][j];
                         _waveforms[eleIndex].add(timeStamp, newValue);
                     }
+                    //cout<<"y"<<endl;
                 }
                 //cout << "End update value" << endl;
             }
@@ -166,7 +187,7 @@ Waveform::print(const int& index)
     file.open("output.txt", fstream::out);
     file << "bit: " << _waveforms[index].getBit() << "\tid: " << _waveforms[index].getId() << "\tname: " << _waveforms[index].getName() << endl;
 
-    vector< tuple<unsigned long long int,string>> timeStamp =  _waveforms[index].getTimestamp();
+    vector< tuple<float,string>> timeStamp =  _waveforms[index].getTimestamp();
     for(const auto &i : timeStamp) cout << get<0>(i) << "  " << get<1>(i) << endl;
 
     file.close();

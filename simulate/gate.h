@@ -6,7 +6,7 @@
 using namespace std;
 class Gate;
 typedef map<string,tuple<string,string,Gate*>> GateList;
-typedef vector<tuple<unsigned long long int,string>> TimeStamp;
+typedef vector<tuple<float,string>> TimeStamp;
 typedef map<string, map<bool, tuple<float,float>>> Delay;   //delay["in_port_name, out_port_name"][0(or1]
 class Gate{
 public:
@@ -23,7 +23,7 @@ public:
     void add_fin(string inp_gate,tuple<string,string,Gate*> fin){ _fin[inp_gate] = fin; }
     void add_fout(string oup_gate,tuple<string,string,Gate*> fout){ _fout[oup_gate] = fout; }
     void set_timeStamp(TimeStamp ts){ _timeStamp = ts; }
-    void add_timdStamp(tuple<unsigned long long int,string> ts){_timeStamp.push_back(ts); }
+    void add_timeStamp(tuple<unsigned long long int,string> ts){_timeStamp.push_back(ts); }
     void set_delayInfo(Delay delay){_delayInfo = delay; }
     void printGateInfo(){
         cout<<"_______________________\n";

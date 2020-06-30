@@ -16,14 +16,14 @@ public:
    int getBit() {return _bit;}
    string getId() {return _id;}
    string getName() {return _name;}
-   vector< tuple<unsigned long long int,string>> getTimestamp() {return _timeStamp;}
-   void add(const unsigned long long int&, const string&);
+   vector< tuple<float,string>> getTimestamp() {return _timeStamp;}
+   void add(const float&, const string&);
 
 private:
    int _bit;
    string _id; 
    string _name;
-   vector< tuple<unsigned long long int,string>> _timeStamp;
+   vector< tuple<float,string>> _timeStamp;
 };
 
 class Waveform
