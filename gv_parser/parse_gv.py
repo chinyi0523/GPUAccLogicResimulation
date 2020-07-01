@@ -15,7 +15,6 @@ sdfobj = json.load(open(sys.argv[3]))
 ipt = {}
 wire_connect = {}
 que = queue.Queue()
-attach_module = set()
 inv_que = queue.Queue()
 for rawline in lines[1:-1]:
 	line = rawline.strip(' ')
@@ -81,8 +80,6 @@ for rawline in lines[1:-1]:
 					in_sp.append(tmp[1])
 				elif jsobj[module[0]][tmp[0]] == 'output':
 					ipt[tmp[1]] = module[1]+':'+tmp[0]
-					if tmp[1] in popt:
-						attach_module.add(module[1])
 					out_sp.append(tmp[1])
 				else:
 					print('err')
@@ -108,23 +105,6 @@ for x in submodule.keys():
 		submodule[x]['lev'] = 1
 		que.put(x)
 
-for s in attach_module:
-	inv_que.put(s)
-
-while not inv_que.empty():
-	cur_mod = inv_que.get()
-	inp = submodule[cur_mod]['input']
-	for x in inp:
-		if x in ipt.keys():
-			nxt_mod = ipt[x].split(':')[0]
-			if nxt_mod == 'primary_input' or nxt_mod == 'pseudo_primary_input' or nxt_mod == 'assign':
-				continue
-			else:
-				if nxt_mod not in attach_module:
-					attach_module.add(nxt_mod)
-					inv_que.put(nxt_mod)
-				continue
-
 f.close()
 f = open(sys.argv[4], 'w')
 for line in pipt:
@@ -147,8 +127,6 @@ cur_lev, split_group = 1, 0
 
 while not que.empty():
 	cur_mod = que.get()
-	if cur_mod not in attach_module:
-		continue
 	if submodule[cur_mod]['lev'] > cur_lev or split_group == 8:
 		cur_lev = submodule[cur_mod]['lev']
 		split_group = 0
