@@ -107,8 +107,8 @@ for x in submodule.keys():
 
 f.close()
 f = open(sys.argv[4], 'w')
-for line in pipt:
-	f.write(line+'\n')
+# for line in pipt:
+# 	f.write(line+'\n')
 
 f.write("*****************\n")
 
@@ -146,7 +146,10 @@ while not que.empty():
 	for s, o in enumerate(out):
 		if s > 0:
 			res += ","
-		res +=  (submodule[cur_mod][o]+"("+o+")")
+		res +=  (submodule[cur_mod][o]+"("+o)
+		if not o.endswith(']'):
+			res += '[0]'
+		res += ")"
 		if o in popt:
 			continue
 		if o not in wire_connect.keys():
